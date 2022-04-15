@@ -1,0 +1,1500 @@
+// *{
+//     outline:1px solid red;
+  
+// }
+
+/////JS用的class//
+
+
+//////////////////
+
+.game_body{
+    font-family:微軟正黑體;
+    list-style:none;
+}
+
+
+@media all and (max-width:767px){
+
+
+    .game_body{
+        background-image: url(../img/game/body-bg.png);
+        background-position: 44% 25%;
+        
+        background-repeat:no-repeat;
+        width:100%;
+        .container {
+            width:100%;
+        }
+    }
+ 
+    .game_banner{
+        width:100%;
+        padding-top: 70px;
+        .container{
+            .game_title{
+                font-size: 0;
+                width: 60%;
+                margin: auto;
+                position: relative;
+                background-image: url(../img/header/banner_cloud.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                padding: 40px 0px 30px 0px;
+                .icon_l{
+                    width: 25px;
+                    height: 25px;
+                }
+                .icon_r{
+                    width: 25px;
+                    height: 25px;
+                }
+                .title{
+                    margin: 0px 10px;
+                }
+            }
+        }
+    }
+    .game_role{
+        // background-image: url(../img/game/role_bg.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        // overflow:hidden;        
+        margin-top:100px;
+        position:relative;
+        padding-bottom:80px;
+            .banner_pyramid{
+                padding:5px;
+                display:none;
+                position:absolute;
+                top:1%;
+                left:4%;
+            }
+            .banner_tree{
+                // padding:5px;
+                width:100%;
+                display:inline-block;
+                position:absolute;
+                top:-10%;
+                img {
+                    width:100%;
+                }
+                
+            }
+            .banner_mountain{
+                padding:5px;
+                display:none;
+                position:absolute;
+                top:-5%;
+                right:2%;
+                
+            }
+            .container {
+                padding-top:100px;
+                .role_title{
+                    background-image: url(../img/game/game_reel.png);
+                    height:100px;
+                    width: 180px;
+                    margin-left:auto;
+                    margin-right:auto;
+                    background-repeat: no-repeat;
+                    text-align:center;
+                  
+                    margin-bottom:70px;
+                    h2 {
+                        line-height: 100px;
+                        font-size: $h2_fz;
+                    }
+                }
+    
+                .role_info{
+
+                    
+                    margin-top:20px;
+                    // padding-right:100px;
+                    // width:95%;
+                    height:300px;
+                    margin-left:auto;
+                    margin-right:auto;
+                    border:8px #41b1d1 solid;
+                    border-radius:7%;
+                    box-shadow:0 0 0 8px #639b9f ;
+                    background-color: #e5e5e5;
+                    position:relative;
+                    display:flex;
+                    background-image: url(../img/game/role_bg2.png);
+                    background-repeat: no-repeat;
+                    background-position: center bottom;
+                    background-size: 105%;
+                    position:relative;
+                    .food_menu{
+                        display:none;
+                    }
+                        .cloud1 {
+                            position:absolute;
+                            top:-8%;
+                            left:-10%;
+                        }
+                        .cloud2 {
+                            position:absolute;
+                            bottom:-20%;
+                            right:-2%;
+                        }
+                        .role_pic{
+                            width:50%;
+                            // padding-right:5px;
+
+                            .info_pic{
+                                width:50%;
+                                filter: drop-shadow(0px 5px 7px rgba(0, 0, 0, 0.7));
+                                position:absolute;
+                                top:18%;
+                                text-align:center;
+                                img {
+                                    width:100%;
+                                }
+                            }
+                            .info_name{
+                                border-bottom:3px solid #d2d2d2;
+                                width: 160px;
+                                position:absolute;
+                                left:2%;
+                                bottom:15%;
+                                padding-bottom:10px;
+                                text-align:center;
+                            }
+                        }
+                        .role_value{
+                            width:50%;
+                            display:flex;
+                            align-items: center;
+                            .chart_canvas {
+                                margin-left:-30px;
+                            }
+                            .info_value{
+                                width:80%;
+                                padding-left:20%;
+                                margin-top:80px;
+                                display:inline-block;
+                     
+                                // .info_value{
+                                //     width:100%;
+                                //     display:inline-block;
+                                //     .value_life,.value_jump{
+                                //         height:50px;
+                                //         width:100%;
+                                //     }
+                                //     .value_life {
+                                //         img {
+                                //             display:none;
+                                //             // width: 25px;
+                                //             // margin-left:2px;
+                                //         }
+                                //     }
+                                // }
+                            }
+                            .info_diagram{
+                                text-align:center;
+                                padding-top:30px;
+                                padding-left:15px;
+                            }             
+                        }
+                }
+            }
+    }
+
+    .game_scene {
+        // background-color: #e4d18c;
+        padding-bottom: 20px;
+        .scene_title{
+            background-image: url(../img/game/game_reel.png);
+            height:100px;
+            width: 180px;
+            margin-left:auto;
+            margin-right:auto;
+            background-repeat: no-repeat;
+            text-align:center;
+            
+            h2 {
+                line-height: 100px;
+                font-size: $h2_fz;
+            }
+        }
+        .scene_map{
+            width:100%;
+            padding-top: 30px;
+            text-align:center;
+            position:relative;
+            img{
+                width:100%;
+            }
+            .forest_pointer {
+                cursor:pointer;                
+                width: 20px;
+                height: 3px;
+                position:absolute;
+                left:80px;
+                top:50px;
+                z-index:3;
+                transition:0.5s all;
+                &:hover ~ .game_full_map img:nth-of-type(1){
+                    filter:drop-shadow(0px 20px 20px white)
+                }
+                .forest_pointer_title{  
+                    padding:5px;
+                    margin-bottom:5px;
+                    background-color: #e5e5e5;
+                    color:#967d7d;
+                    border:#967d7d solid 1px;
+                    border-radius:10%;
+                    width:40px;
+                }
+            }
+            .desert_pointer {
+                cursor:pointer;
+                width: 20px;
+                height: 3px;
+                position:absolute;
+                transition:0.5s all;
+                left:190px;
+                top:30px;
+                z-index:2;
+                &:hover ~ .game_full_map img:nth-of-type(2){
+                    filter:drop-shadow(0px 20px 20px white)
+                }
+                .desert_pointer_title{
+                    
+                    padding:5px;
+                    margin-bottom:5px;
+                    background-color: #e5e5e5;
+                    color:#967d7d;
+                    border:#967d7d solid 1px;
+                    border-radius:10%;
+                    width:40px;
+                }
+            }
+            .mountain_pointer {
+                cursor:pointer;
+                width: 20px;
+                height: 3px;
+                position:absolute;
+                transition:0.5s all;
+                left:280px;
+                top:20px;
+                z-index:2;
+                &:hover ~ .game_full_map img:nth-of-type(3){
+                    filter:drop-shadow(0px 20px 25px white)
+                }
+                .moutain_pointer_title
+                {
+                    padding:5px;
+                    margin-bottom:5px;
+                    background-color: #e5e5e5;
+                    color:#967d7d;
+                    border:#967d7d solid 1px;
+                    border-radius:10%;
+                    width:40px;
+                }
+            }
+            .pointer_shaking{
+                animation:pointerShaking 0.5s infinite linear;
+            }
+        
+            @keyframes pointerShaking {
+                25%{ transform:translateY(-5px);}
+                75%{ transform:translateY(5px);}
+                // 100%{ transform:translateY(0px);}
+            }
+            .game_full_map {
+              
+                width: 100%;
+                height: 100px;
+                position:relative;
+                display:flex;
+                justify-content: center;
+          
+                img {
+                    width:35%;
+                    position:absolute;
+                    
+                }
+                img:nth-of-type(1){
+                    top:9%;
+                    left:5%;
+                    z-index:2;
+
+                }
+
+                img:nth-of-type(2){
+                    top:-1%;
+                    left:28.5%;
+                    z-index:1;
+
+                }
+                img:nth-of-type(3){
+                    top:9%;
+                    right:4%;
+                    z-index:0;
+                }
+            }
+            
+        }
+    }
+    .game_playing {
+        
+        position:relative;
+        // background-color: #e4d18c;
+   
+        width:100%;
+        .playing_container {
+            // border:red solid 1px;
+            perspective: 800px;
+            transform-style:preserve-3d;
+            width:95%;
+            height: 200px; 
+            margin-left:auto;
+            margin-right:auto;
+            padding-bottom:100px;
+            position:relative;
+            .game_intro_window{
+                display:flex;
+                justify-content: center;
+                align-items:top;
+                width: 100%;
+                height: 250px;
+                background-image: url(../img/game/game_intro_bg.png);
+                position:fixed;
+                left:0;
+                right:0;
+                top:0;
+                bottom:0;
+                margin:auto;
+                z-index:10;
+                border-radius: 10%;
+                #game_control_title{
+                    background-image: url(../img/game/game_reel.png);
+                    height:50px;
+                    width: 90px;
+                    display:inline-block;
+                    border-radius:25%;
+                    background-repeat: no-repeat;
+                    background-position:center center;
+                    text-align:center;
+                    position:absolute;
+                    left:2%;
+                    top:2%;
+                    display:flex;
+                    align-items: center;
+                    justify-content: center;
+                    @include btn_cloudb(150px);
+       
+                }
+                img {
+                    display:inline-block;
+                    
+    
+                }
+                #game_intro_content {
+                    width:90%;
+                    position:absolute;
+                    left:0;
+                    right:0;
+                    bottom:1%;
+                    margin:auto;
+                }
+                #game_closeBtn{
+                    position:absolute;
+                    top:1%;
+                    right:1%;
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            img {
+                width:100%;
+            }
+            .playing_intro {
+                position:relative;
+                display:flex;
+                justify-content: center;
+                padding:20px;
+                // width: 200px;
+                // margin-right:auto;
+                // margin-left:auto;
+                @include btn_cloudb(100px);
+
+            }
+            
+
+
+            .arrowLeft,.arrowRight {
+                position:absolute;
+                width:30px;
+                height: 30px;
+                font-size: 30px;
+                top:55%;
+                transform:translateY(-50%);
+            }
+            .arrowLeft{
+                left:0px;
+                z-index:5;
+            }
+            .arrowRight{
+                right:0px;
+                z-index:5;
+            }
+            .playing_window{
+                cursor:pointer;
+                border-radius:5%;
+                position:absolute;
+                background-color: #fff;
+                text-align:center;
+                width:100%;
+                height:205px;
+                // height: 430px;
+                transition:0.5s all;
+                display:flex;
+                align-items:center;
+                justify-content: center;
+                @include btn_cloudp(100px);
+            }
+    
+            .playing_forest{
+                transition:0.6s all;
+                background-color: #fa0;
+                background-image: url(../img/game/playing_forest.png);
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+        
+            .playing_desert{
+                transition:0.6s all;
+                background-color: #aca;
+                background-image: url(../img/game/playing_desert.png);
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+        
+            .playing_mountain{
+                transition:0.6s all;
+                background-color: #aa1;
+                background-image: url(../img/game/playing_mountain.png);
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+        }
+    }
+
+    .game_rank{
+        // background-color: #e4d18c;
+        .container{
+            .rank_title{
+                margin-bottom:30px;
+                background-image: url(../img/game/game_reel.png);
+                height:100px;
+                width: 180px;
+                margin-left:auto;
+                margin-right:auto;
+                background-repeat: no-repeat;
+                text-align:center;
+              
+                h2 {
+                    line-height: 100px;
+                }
+            }
+            .rank_chart{
+                // outline:1px solid red;
+                width: 100%;
+                height: 780px;
+                margin-left:auto;
+                margin-right:auto;
+                background-image: url(../img/game/rank_chart.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                background-position: center center;
+                .rank_top10_title{
+                    font-size: 16px;
+                    color:white;
+                    text-align:center;
+                    background-image: url(../img/game/rank_top10_title.png);
+                    height:60px;
+                    line-height: 60px;
+                    background-repeat: no-repeat;
+                    background-position: 50% 0;
+    
+                }
+                .chart_top{
+                    display:flex;
+                    justify-content: space-around;
+                    padding-top:20px;
+                  
+                    font-family:Microsoft JhenHei;
+                    .chart_top1,.chart_top2,.chart_top3{
+                        background-image: url(../img/game/chart_topx.png);
+                        background-repeat: no-repeat;
+                        background-size: 102%;
+                        width: 120px;
+                        height: 200px;
+                        position:relative;
+                        font-size: 16px;
+                        line-height: 28px;
+                        padding-top:25px;
+                        padding-left:5px;
+                        padding-right:5px;
+                        text-align:center;
+                        img{
+                            width: 65px;
+                        
+                        }
+                        .top_score{
+                            color:#724848;
+                        }
+                    }
+                    .chart_top1{
+    
+                        &:before {
+                            content:"No. 1";
+                            position:absolute;
+                            top:-10px;
+                            left:0;
+                            right:0;
+                            margin:auto;
+                            text-align:center;
+                        }                    
+                    }
+                    .chart_top2{
+    
+                        &:before {
+                            content:"No. 2";
+                            position:absolute;
+                            top:-10px;
+                            left:0;
+                            right:0;
+                            margin:auto;
+                            text-align:center;
+                        }                    
+                    }
+                    .chart_top3{
+    
+                        &:before {
+                            content:"No. 3";
+                            position:absolute;
+                            top:-10px;
+                            left:0;
+                            right:0;
+                            margin:auto;
+                            text-align:center;
+                        }                        
+                    }
+                }
+                .chart_ranking{
+                    position:relative;
+                    height:450px;
+                    .ranking_table{
+                        margin-left:auto;
+                        margin-right:auto;
+                        width:80%;
+                        text-align:center;
+                        font-size: 16px;
+                        color:#724848;
+                        line-height: 40px;
+                        td {
+                            border-bottom:1px solid #aaa;
+                        }
+                    }
+                    img {
+                        width:100%;
+                        position:absolute;
+                        bottom:-15%;
+                        margin:auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+@media all and (min-width:768px){ ///桌機版
+
+    
+    .game_body{
+        // padding-top:100px;
+        background-image: url(../img/game/body-bg.png);
+        background-position: 0% 5%; 
+        background-repeat:no-repeat;
+        background-attachment:fixed;
+
+        
+        .container {
+            width: 1200px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+        .normalScale {
+            transform:scale(0.5);
+        }
+        h1{
+            font-size: $h1_fz;
+        }
+        
+        h2{
+            font-size: $h2_fz;
+        }
+        
+    }
+    
+    .game_banner{
+        width:100%;
+        padding-top: 120px;
+        .container{
+            .game_title{
+                font-size: 0;
+                width: 30%;
+                margin: auto;
+                position: relative;
+                background-image: url(../img/header/banner_cloud.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                padding: 60px 0px 50px 0px;
+                .icon_l{
+                    width: 25px;
+                    height: 25px;
+                }
+                .icon_r{
+                    width: 25px;
+                    height: 25px;
+                }
+                .title{
+                    margin: 0px 20px;
+                }
+            }
+        }
+    }
+    .game_role{
+        
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        margin-top:100px;
+        position:relative;
+        padding-bottom:120px;
+            .banner_pyramid{
+                padding:5px;
+                display:inline-block;
+                position:absolute;
+                top:2%;
+                left:4%;
+            }
+            .banner_tree{
+                padding:5px;
+                display:inline-block;
+                position:absolute;
+                left:50%;
+                top:-18%;
+                transform:translate(-50%,0);
+            }
+            .banner_mountain{
+                padding:5px;
+                display:inline-block;
+                position:absolute;
+                top:-1%;
+                right:2%;
+                
+            }
+            .container {
+                padding-top: 160px;
+                .role_title{
+                    background-image: url(../img/game/game_reel.png);
+                    height:100px;
+                    width: 180px;
+                    background-repeat: no-repeat;
+                    text-align:center;
+                    margin-left:50px;
+                    h2 {
+                        line-height: 100px;
+                        font-size: $h2_fz;
+                    }
+                }
+
+                .role_info{
+                    margin-top:20px;
+                    width:650px;
+                    height:370px;
+                    margin-left:auto;
+                    margin-right:auto;
+                    border:8px #41b1d1 solid;
+                    border-radius:30px;
+                    background-color: #ffffff;
+                    position:relative;
+                    display:flex;
+                    background-image: url(../img/game/role_bg2.png);
+                    background-repeat: no-repeat;
+                    background-position: center bottom;
+                    background-size: 105%;
+                    position:relative;
+                    animation:cloudsMove 1.0s linear;
+                    .food_menu{
+                        position:absolute;
+                        bottom:0%;
+                        width: 650px;
+                        height:72px;
+                        background-color:#A9D1FB;
+                        border-bottom-left-radius:20px;
+                        border-bottom-right-radius:20px;
+                        z-index:4;
+                        display:flex;
+                        justify-content:center;
+                        transition:1s all;
+                        ul{
+                            display:flex;
+                            justify-content:center;
+                            height:100%;
+                            .food{
+                                display:inline-block;
+                                width: 10%;
+                                margin-left:auto;
+                                margin-right:auto;
+                                text-align:center;
+                                img {
+                                    width:100%; 
+                                     
+                                }
+                                #fries{
+                                    width:80%;
+                                }
+                                #fruit{
+                                    width:90%;
+                                }
+                                .hold {
+                                    border:solid #ccc 4px;
+                                    border-radius:50%;
+                                    
+                                }
+                                .hovered {
+                                    background-color: pink;
+                                    border:1px dashed black;
+                                    // border-style:dashed;
+                                }
+                        
+                                .invisible {
+                                    display:none;
+                                }
+                            }
+                            .animal_falling_down{
+                                filter:grayscale(100%);
+                                transform-origin:center bottom;
+                                transform:rotateZ(90deg);
+                                transition:0.5s all;
+                                
+                            }
+                        }
+                        // @keyframes animal_falling_down {
+                        //     0%{ transform:rotateX(15deg) translateX(-100px);}
+                        //     100% { transform:rotateX(90deg) ;}
+                        // }
+
+
+                    }
+                    @keyframes cloudsMove {
+                        0% {background-position: 0 200%;}
+                        50% {background-position: 0 150%;}
+                        100% {background-position: 0 100%;}
+                    }
+                        .cloud1 {
+                            position:absolute;
+                            top:-8%;
+                            right:-10%;
+                            width:207px;
+                            height: 65px;
+                            p{
+                                position:absolute;
+                                left:50%;
+                                top:50%;
+                                transform: translate(-50%,-50%);
+                                display:inline-block;
+                            }
+                        }
+                        .cloud2 {
+                            position:absolute;
+                            bottom:-15%;
+                            left:-10%;
+                        } 
+                        .role_pic{
+                            width:50%;
+                            .animalHello{
+                                animation: animalSayHello 5s  ;
+                            }
+                            
+                            @keyframes animalSayHello {
+                                    0% {
+                                        -webkit-transform: translate3d(-20%, 0%, 0) scaleX(1); }
+                                    5% {
+                                        -webkit-transform: translate3d(-10%, 10%, 0) scaleX(1); }
+                                    10% {
+                                        -webkit-transform: translate3d(-5%, 0%, 0) scaleX(1); }
+                                    15% {
+                                        -webkit-transform: translate3d(0%, 10%, 0) scaleX(1); }
+                                    20% {
+                                        -webkit-transform: translate3d(15%, 0%, 0) scaleX(1); }
+                                    25% {
+                                        -webkit-transform: translate3d(20%, 10%, 0) scaleX(1); }
+                                    30% {
+                                        -webkit-transform: translate3d(25%, 0%, 0) scaleX(1); }
+                                    35% {
+                                        -webkit-transform: translate3d(30%, 10%, 0) scaleX(1); }
+                                    40% {
+                                        -webkit-transform: translate3d(35%, 0%, 0) scaleX(1); }
+                                    45% {
+                                        -webkit-transform: translate3d(40%, 10%, 0) scaleX(1); }
+                                    50% {
+                                        -webkit-transform: translate3d(45%, 0%, 0) scaleX(1); }
+                                    50.01% {
+                                        -webkit-transform: translate3d(40%, 10%, 0) scaleX(-1); }
+                                    60% {
+                                        -webkit-transform: translate3d(35%, 0%, 0) scaleX(-1); }
+                                    65% {
+                                        -webkit-transform: translate3d(30%, 10%, 0) scaleX(-1); }
+                                    70% {
+                                        -webkit-transform: translate3d(25%, 0%, 0) scaleX(-1); }
+                                    75% {
+                                        -webkit-transform: translate3d(20%, 10%, 0) scaleX(-1); }
+                                    80% {
+                                        -webkit-transform: translate3d(15%, 0%, 0) scaleX(-1); }
+                                    85% {
+                                        -webkit-transform: translate3d(0%, 10%, 0) scaleX(-1); }
+                                    90% {
+                                        -webkit-transform: translate3d(-5%, 0%, 0) scaleX(-1); }
+                                    95% {
+                                        -webkit-transform: translate3d(-10%, 10%, 0) scaleX(-1); }
+                                    100% {
+                                        -webkit-transform: translate3d(-20%, 0%, 0) scaleX(-1); } 
+                                   
+                                  
+                            }
+                            
+                            .info_pic{
+                                width:50%;
+                                position:absolute;
+                                top:4%;
+                                left:5%;
+                                padding:5px;
+                                // cursor:pointer;
+                                transition:0.5s;
+                                .leftArrow{
+                                    position:absolute;
+                                    font-size: 32px;
+                                    top:50%;
+                                    left:0%;
+                                    transform:translateY(-50%);
+                                }
+                                .rightArrow{
+                                    position:absolute;
+                                    font-size: 32px;
+                                    top:50%;
+                                    right:15%;
+                                    transform:translateY(-50%);
+                                }
+
+                                img {
+                                    width:80%;
+                                }
+                                .animalBreathing {
+                                    animation:animalBreathing 5s infinite;
+                                }
+                                .animal_words{
+                                    text-align:center;
+                                    width: 200px;
+                                    height: 150px;
+                                    border-radius:15px;
+                                    background-image: url(../img/game/dialogue.png);
+                                    background-position: 0 0;
+                                    background-size: 100% 100%;
+                                    background-repeat: no-repeat;
+                                    opacity:0.9;
+                                    position:absolute;
+                                    z-index:9;
+                                    top:-40%;
+                                    left:10%;
+                                    filter: hue-rotate(-183deg);
+                                    p {
+                                        margin-top:50px;
+                                        display:inline-block;
+                                        
+                                    }
+                                }
+                                .animalSayWords {
+                                    animation:animalSayWords 5s ;
+                                }
+                                
+                            }
+                            @keyframes animalSayWords {
+                                0% {
+                                    -webkit-transform: translate3d(-20%, 0%, 0) ; }
+                                5% {
+                                    -webkit-transform: translate3d(-10%, 10%, 0) ; }
+                                10% {
+                                    -webkit-transform: translate3d(-5%, 0%, 0) ; }
+                                15% {
+                                    -webkit-transform: translate3d(0%, 10%, 0) ; }
+                                20% {
+                                    -webkit-transform: translate3d(15%, 0%, 0) ; }
+                                25% {
+                                    -webkit-transform: translate3d(20%, 10%, 0) ; }
+                                30% {
+                                    -webkit-transform: translate3d(25%, 0%, 0) }
+                                35% {
+                                    -webkit-transform: translate3d(30%, 10%, 0) }
+                                40% {
+                                    -webkit-transform: translate3d(35%, 0%, 0) ; }
+                                45% {
+                                    -webkit-transform: translate3d(40%, 10%, 0) ; }
+                                50% {
+                                    -webkit-transform: translate3d(45%, 0%, 0) ; }
+                                50.01% {
+                                    -webkit-transform: translate3d(35%, 10%, 0) }
+                                60% {
+                                    -webkit-transform: translate3d(30%, 0%, 0) }
+                                65% {
+                                    -webkit-transform: translate3d(25%, 10%, 0) }
+                                70% {
+                                    -webkit-transform: translate3d(20%, 0%, 0) }
+                                75% {
+                                    -webkit-transform: translate3d(15%, 10%, 0) }
+                                80% {
+                                    -webkit-transform: translate3d(10%, 0%, 0) }
+                                85% {
+                                    -webkit-transform: translate3d(-5%, 10%, 0) }
+                                90% {
+                                    -webkit-transform: translate3d(-10%, 0%, 0) }
+                                95% {
+                                    -webkit-transform: translate3d(-20%, 10%, 0) }
+                                100% {
+                                    -webkit-transform: translate3d(-30%, 0%, 0) } 
+                               
+                              
+                        }
+                            @keyframes animalBreathing{
+                                0%  { transform:translate3D(1%,0%,0);}
+                                25% { transform:translate3D(2%,2%,0);}
+                                50% { transform:translate3D(1%,1%,0);}
+                                75% { transform:translate3D(-1%,5%,0);}
+                                // 100% { top:20%;left:7%;}
+                                
+                            }
+                            
+                            .info_name{
+                                border-bottom:3px solid #d2d2d2;
+                                width: 200px;
+                                position:absolute;
+                                left:8%;
+                                bottom:12%;
+                                padding-bottom:10px;
+                                text-align:center;
+                            }
+                        }
+                        .role_value{
+                            width:50%;
+                            .info_wrap{
+                                width: 95%;
+                                box-sizing: border-box;
+                                margin:  auto;
+                                padding: 10px;
+                            
+                                h3{
+                                    font-size: $h3_fz;
+                                    padding: 10px;
+                                }
+                                .jump_ability{
+                                    display: flex;
+                                    padding: 10px 10px 10px 40px;
+                                    p{
+                                        width: 30%;
+                                        align-self: center;
+                                    }
+                                    .pic{
+                                        width: 70%;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+                                    .jump_bar{
+                                        width: 95%;
+                                        height: 20px;
+                                        background-color: #fff;
+                                        border-radius: 5px;
+                                        position: relative;
+                                
+                                        .bar_add{
+                                            width: 50%;
+                                            height: 20px;
+                                            border-radius: 5px;
+                                            background-color: #ef7b78;
+                                            position: absolute;
+                                            top: 0;
+                                            bottom: 0;
+                                            margin: auto;
+                                            transition: 0.7s;
+                                        }
+                                        .meter{
+                                            position: absolute;
+                                            top: 0;
+                                            bottom: 0;
+                                            right: 5px;
+                                            margin: auto;
+                                            font-size: 14px;
+                                            line-height: 20px;
+                                            color: $col_black;
+                                        }
+                                    }
+                                }
+                                .life_ability{
+                                    display: flex;
+                                    padding: 10px 10px 10px 40px;
+                                    p{
+                                        width: 30%;
+                                        align-self: center;
+                                    }
+                                    .pic{
+                                        width: 70%;
+                                        font-size: 0;
+                                        display: flex;
+                                        align-items: center;
+                                        img{
+                                            margin: 0px 5px;
+                                        }
+                                    }
+                                }
+                                .evemt_ability{
+                                    font-size: 0;
+                                }
+                            }
+                        }
+                }
+            }
+    }
+    
+    .pointer_shaking{
+        animation:pointerShaking 0.5s infinite linear;
+    }
+
+    @keyframes pointerShaking {
+        25%{ transform:translateY(-15px);}
+        75%{ transform:translateY(15px);}
+        // 100%{ transform:translateY(0px);}
+    }
+    .game_scene {
+        // background-color: #e4d18c;
+        padding-bottom: 0px;
+        position:relative;
+        .scene_title{
+            background-image: url(../img/game/game_reel.png);
+            height:100px;
+            width: 180px;
+            background-repeat: no-repeat;
+            text-align:center;
+            margin-left:50px;
+            h2 {
+                line-height: 100px;
+                font-size: $h2_fz;
+            }
+        }
+        .scene_map{
+            padding-top: 50px;
+            text-align:center;
+            perspective: 500px;
+            transform-style:preserve-3d;
+            .forest_pointer {
+                cursor:pointer;
+                position:absolute;
+                left:200px;
+                top:80px;
+                z-index:3;
+                transition:0.5s all;
+                &:hover ~ .game_full_map img:nth-of-type(1){
+                    filter:drop-shadow(0px 20px 20px white)
+                }
+                .forest_pointer_title{
+                    
+                    line-height: 30px;
+                    padding:5px;
+                    margin-bottom:15px;
+                    background-color: #e5e5e5;
+                    color:#967d7d;
+                    border:#967d7d solid 1px;
+                    border-radius:10%;
+                    width:80px;
+                }
+            }
+            .desert_pointer {
+                cursor:pointer;
+                position:absolute;
+                transition:0.5s all;
+                left:500px;
+                top:90px;
+                z-index:2;
+                &:hover ~ .game_full_map img:nth-of-type(2){
+                    filter:drop-shadow(0px 20px 20px white)
+                }
+                .desert_pointer_title{
+                    
+                    line-height: 30px;
+                    padding:5px;
+                    margin-bottom:15px;
+                    background-color: #e5e5e5;
+                    color:#967d7d;
+                    border:#967d7d solid 1px;
+                    border-radius:10%;
+                    width:80px;
+                }
+            }
+            .mountain_pointer {
+                cursor:pointer;
+                position:absolute;
+                transition:0.5s all;
+                left:860px;
+                top:20px;
+                z-index:2;
+                &:hover ~ .game_full_map img:nth-of-type(3){
+                    filter:drop-shadow(0px 20px 25px white)
+                }
+                .moutain_pointer_title
+                {
+                    line-height: 30px;
+                    padding:5px;
+                    margin-bottom:15px;
+                    background-color: #e5e5e5;
+                    color:#967d7d;
+                    border:#967d7d solid 1px;
+                    border-radius:10%;
+                    width:80px;
+                }
+            }
+            .game_full_map {
+                width: 1200px;
+                height: 280px;
+                display:flex;
+                justify-content: center;
+          
+                img {
+                    width:35%;
+                    position:absolute;
+                    
+                }
+                img:nth-of-type(1){
+                    top:9%;
+                    left:5%;
+                    z-index:2;
+
+                }
+
+                img:nth-of-type(2){
+                    top:-1%;
+                    left:28.5%;
+                    z-index:1;
+
+                }
+                img:nth-of-type(3){
+                    top:9%;
+                    right:4%;
+                    z-index:0;
+                }
+            }
+        }
+    }
+    
+    .game_playing {
+        
+        position:relative;
+        padding-bottom: 150px;
+        height:500px;
+        margin-top:-80px;
+
+        .game_intro_window{
+            display:flex;
+            justify-content: center;
+            align-items:top;
+            width: 900px;
+            height: 540px;
+            background-image: url(../img/game/game_intro_bg.png);
+            position:fixed;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            margin:auto;
+            z-index:10;
+            #game_control_title{
+                background-image: url(../img/game/game_reel.png);
+                height:100px;
+                width: 180px;
+                background-repeat: no-repeat;
+                background-position:center center;
+                text-align:center;
+                position:absolute;
+                left:2%;
+                top:2%;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+
+            }
+            img {
+                display:inline-block;
+                
+
+            }
+            #game_intro_content {
+                width:85%;
+                padding:20px;
+                position:absolute;
+                left:0;
+                right:0;
+                bottom:0;
+                margin:auto;
+            }
+            #game_closeBtn{
+                position:absolute;
+                top:1%;
+                right:1%;
+                width: 30px;
+                height: 30px;
+            }
+        }
+        .playing_container {
+            // border:red solid 1px;
+            perspective: 800px;
+            transform-style:preserve-3d;
+            width:1500px;
+            height: 800px; 
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+            position:absolute;
+            img {
+                width:787px;
+            }
+            .playing_intro {
+
+                position:absolute;
+                top:20%;
+                left:80%;
+                @include btn_cloudb(100px);
+        
+            }
+            .arrowLeft,.arrowRight {
+                display:none;
+            }
+
+            .playing_window{
+                cursor:pointer;    
+                // border:5px #99bf48 solid;
+                border-radius:5%;
+                position:absolute;
+                background-color: #fff;
+                text-align:center;
+                width:772px;
+                height: 430px;
+                top:25%;
+                transition:0.5s all;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 24px;
+                p {
+                    @include btn_cloudp(100px);
+
+
+                }
+            }
+    
+            .playing_forest{
+                transition:0.6s all;
+                background-color: #fa0;
+                background-image: url(../img/game/playing_forest.png);
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+        
+            .playing_desert{
+
+                transition:0.6s all;
+                background-color: #aca;
+                background-image: url(../img/game/playing_desert.png);
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+        
+            .playing_mountain{
+                transition:0.6s all;
+                background-color: #aa1;
+                background-image: url(../img/game/playing_mountain.png);
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+        }
+    }
+    
+    .game_rank{
+        // background-color: #e4d18c;
+        padding-bottom:150px;
+        .container{
+            .rank_title{
+                background-image: url(../img/game/game_reel.png);
+                height:100px;
+                width: 180px;
+                background-repeat: no-repeat;
+                background-position:center center;
+                text-align:center;
+                margin-left:50px;
+                h2 {
+                    line-height: 100px;
+                    font-size: $h2_fz;
+                }
+            }
+            .rank_chart{
+                // outline:1px solid red;
+                width: 570px;
+                height: 750px;
+                margin-left:auto;
+                margin-right:auto;
+                background-image: url(../img/game/rank_chart.png);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: center center;
+                .rank_top10_title{
+                    font-size: 16px;
+                    color:white;
+                    text-align:center;
+                    background-image: url(../img/game/rank_top10_title.png);
+                    height:60px;
+                    line-height: 60px;
+                    background-repeat: no-repeat;
+                    background-position: 50% 0;
+    
+                }
+                .chart_top{
+                    display:flex;
+                    justify-content: space-around;
+                    padding-top:20px;
+                    padding-bottom:10px;
+                    font-family:微軟正黑體;
+                    .topFadeIn{
+                        animation:topfadeIn 0.5s forwards;
+                    }
+                    @keyframes topfadeIn {
+                        0% {opacity:0; font-size:32px;}
+                        100% {opacity:1.0; font-size:16px;}
+                    }
+                    
+                    .chart_top1,.chart_top2,.chart_top3{
+                        background-image: url(../img/game/chart_topx.png);
+                        background-repeat: no-repeat;
+                        background-size: 100%;
+                        width: 120px;
+                        height: 195px;
+                        position:relative;
+                        font-size: 16px;
+                        line-height: 28px;
+                        padding-top:25px;
+                        padding-left:5px;
+                        padding-right:5px;
+                        text-align:center;
+                        img{
+                            width: 90px;
+                        
+                        }
+                        .top_score{
+                            color:#724848;
+                        }
+                    }
+                    .chart_top1{
+    
+                        &:before {
+                            content:"No. 1";
+                            position:absolute;
+                            top:-10px;
+                            left:0;
+                            right:0;
+                            margin:auto;
+                            text-align:center;
+                        }                    
+                    }
+                    .chart_top2{
+    
+                        &:before {
+                            content:"No. 2";
+                            position:absolute;
+                            top:-10px;
+                            left:0;
+                            right:0;
+                            margin:auto;
+                            text-align:center;
+                        }                    
+                    }
+                    .chart_top3{
+    
+                        &:before {
+                            content:"No. 3";
+                            position:absolute;
+                            top:-10px;
+                            left:0;
+                            right:0;
+                            margin:auto;
+                            text-align:center;
+                        }                        
+                    }
+                }
+                .chart_ranking{
+                    position:relative;
+                    height:450px;
+                    .ranking_table{
+                        margin-left:auto;
+                        margin-right:auto;
+                        width:430px;
+                        text-align:center;
+                        font-size: 16px;
+                        color:#724848;
+                        line-height: 40px;
+
+                        td {
+                            width:28%;
+                            border-bottom:1px solid #aaa;
+                        }
+
+                        .trFadeIn{
+                            animation:fadeIn 0.3s forwards;
+                        }
+                        @keyframes fadeIn {
+                            0% {opacity:0; font-size:32px;}
+                            100% {opacity:1.0; font-size:16px;}
+                        }
+         
+
+                    }
+                    img {
+                        position:absolute;
+                        bottom:-22%;
+                        left:-47px;
+                        margin:auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+

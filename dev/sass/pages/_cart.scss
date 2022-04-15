@@ -1,0 +1,276 @@
+$lblue:#d8ecea;
+.cart{
+    background-color:$lblue ;
+    @include msgalert(#fdf6e7,$col_btn_pink,$col_btn_pink);
+    @media screen and (min-width:992px){
+        .msg_alert .msg_alert_container{
+            width: 19%;
+        }
+    }
+    
+    .container{
+        max-width:1200px;
+        box-sizing:border-box;
+        padding: 10px;
+        margin: auto;
+        position:relative;
+        width: 100%;
+    }
+    
+    .banner{
+        // position:relative;
+        padding-top: 70px;
+        overflow: hidden;
+        @media screen and (min-width:1200px){
+            margin: auto;
+            padding-top: 120px;
+            padding-bottom: 30px; 
+        }
+    }
+
+    .banner_title{
+        font-size: 0;
+        width: 60%;
+        margin: auto;
+        position: relative;
+        background-image: url(../img/header/banner_cloud.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 40px 0px 30px 0px;
+        @media screen and (min-width:1200px){
+            width: 30%;
+            padding: 60px 0px 50px 0px;
+
+        }
+        .icon_l{
+            width: 25px;
+            height: 25px;
+        }
+        .icon_r{
+            width: 25px;
+            height: 25px;
+        }
+        .title{
+            margin: 0px 10px;
+            @media screen and (min-width:1200px){
+                margin: 0px 20px;
+            }
+        }
+    }
+}
+// 背景會飄的雲跟熱氣球
+.cart {
+    // overflow: hidden;
+    .cloud{
+        width: 150px;
+        position:absolute;
+        @include responds (small){
+            display:none;
+        }
+    }
+
+    .cloudl{
+        top: 42%;
+        left: 6%;
+    }
+    .cloudm{
+        top: 21%;
+        right: 12%;
+    }
+    .cloudr{
+        top: 60%;
+        right: 5%;
+    }
+
+    .balloon{
+        width: 100px;
+        position:absolute;
+        top: 27%;
+        left:3%;
+        animation: floating 3s linear infinite;
+        @include responds (small){
+            display:none;
+        }
+    }
+    @keyframes floating{
+        0%{top:27%}
+        50%{top:29%}
+        0%{top:27%}
+    }
+}
+
+.cart{
+//訂單區
+    .cart_list{
+        min-height: 80vh;
+        .wrap{
+        background-color:#fdf6e7;
+        border-radius:10px 10px 3px 3px;
+        
+        @include responds(small){
+            border-top:5px solid #d28058;
+            border-radius:3px 3px 3px 3px;
+        }
+        border-bottom:5px solid #d28058;
+        margin-bottom: 30px;
+        }
+        img{
+            width: 100%;
+        }
+    }
+
+    .list_header{
+        display:flex;
+        text-align: center;
+        background-color: #d28058;
+        color:white;
+        font-weight: bold;
+        border-radius:10px 10px 0 0;
+        @include responds(small){
+            display:none;
+          
+        }
+       
+    }
+//每一列資料
+    .list_row{
+        margin-bottom: 0px;
+        text-align: left;
+        border-bottom: 1px solid #000;
+        @include responds(medium){
+        display:flex;
+        text-align: center;
+        }
+    }
+//if 沒選商品
+    .empty{
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        width: 100%;
+        // font-size: $_fz;
+    }
+//商品圖片的外框
+    .pic_item{
+        position: relative;
+        @include responds(medium){
+            width: 40%;
+        }
+        
+        margin: auto;
+        img{
+            vertical-align: top;
+        }
+        .shop_animal_bg{
+            position: absolute;
+            width: 40%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+    }
+//商品資訊（name price number subtotal）
+    .prod_info{
+        font-family: Microsoft JhengHei;
+        letter-spacing: $ls;
+        line-height: $lh;
+        font-size: $base_fz;
+
+        @include responds(medium){
+            display: flex;
+        }
+        div{
+           
+            @include responds(medium){
+            width: 25%;
+            }
+        }
+    //手機版才出現的標題
+        .title_inline{
+            @include responds(medium){
+                display:none;
+            }
+        }
+    }
+//修改數量
+    .number{   
+        button{
+            color:#fff;
+            font-size: $lg_fz;
+            width: 25px;
+            height: 25px;
+            background-color:#5f4f23;
+            border:none;
+            border-radius: 5px;
+            outline:none;
+            line-height:1;
+        }
+        input{
+            @include responds(small){
+                width: 50%;
+            }
+            border:none;
+            width: 50px;
+            text-align: center;
+            outline:none;
+            padding: 5px ;
+        }
+
+        .number_input{
+            width: 100%;
+            display:flex;
+            justify-content: flex-start;
+            align-items: center;
+            @include responds(medium){
+                justify-content: center;
+            }
+        }
+    }
+//刪除button
+    .prod_delete{
+        @include btn_cloudb (80px);
+        @include responds(small){
+            position: relative;
+            left:73%;
+            padding: 0 0 10px;
+        }
+        .btn_cloudb{
+            margin-top: 10px;
+            @include responds(small){
+            padding: 5px 10px;
+            margin-top: 0;
+            }
+        }
+
+    }
+
+ //計算金額
+    .total{
+        text-align: right;
+        padding: 10px 10px;
+        @include responds(medium){
+            padding: 10px 50px;
+        }
+    }
+//總金額的紅字
+    .total_money{
+        font-size: $lg_fz;
+        color:red;
+    }
+//大的btn
+    .cart_btn{
+        text-align: center;
+        @include btn_cloudp (100px);
+        @include btn_cloudy (100px,$col_btn_orange);
+        a{
+            margin: 10px;
+        }
+    }
+   
+}

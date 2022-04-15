@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @@include('template/csslink.html')
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="js/plugin/ScrollMagic.min.js"></script>
+    <script src="js/plugin/animation.gsap.min.js"></script>
+    <script src="js/plugin/debug.addIndicators.min.js"></script>
+    <script src="js/plugin/TweenMax.min.js"></script>
+    <script src="js/plugin/parallax.min.js"></script>
+    <script src="js/home/CustomEase.min.js"></script>
+    <script src="js/home/EasePack.min.js"></script>
+    <title>怪奇動物園</title>
+</head>
+
+<body class="home_page">
+    @@include('template/header.html')
+
+
+    <!-- 首頁-->
+
+    <section class="home_header">
+        <div class="container">
+            <div class="home_title">
+                <img src="img/home/home_h1.png" alt="">
+                <p>快和我們一起拯救動物吧！</p>
+            </div>
+
+            <div class="home_header_pic">
+                <img src="img/home/hd_cloud_s.png" alt="hd_cloud_s_left">
+                <img src="img/home/hd_cloud_s.png" alt="hd_cloud_s_right">
+                <img src="img/home/pyramid.png" alt="pyramid">
+                <img src="img/home/hd_island_up.png" alt="island_up">
+                <img src="img/home/hd_island.png" alt="island">
+                <img src="img/home/hd_rail.png" alt="hd_rail_left">
+                <img src="img/home/hd_rail.png" alt="hd_rail_right">
+                <img src="img/home/hd_train.png" alt="hd_train_right">
+                @@include('template/home_animal.html')
+                @@include('template/home_water.html')
+            </div>
+  
+
+        </div>
+    </section>
+
+    <!-- 客製 -->
+
+    <section class="home_modify">
+        <div class="container">
+            <h2>改造動物</h2>
+            <p class="intro">快來改造屬於自己的動物吧！</p>
+            <!-- <div class="modify_bg1 modify_bg"><img src="img/home/grass-back.png" alt=""></div> -->
+            <!-- <div class="modify_bg2 modify_bg"><img src="img/home/grass-front.png" alt=""></div>
+            <div class="modify_bg3 modify_bg"><img src="img/home/grass-middle.png" alt=""></div>
+            <div class="modify_bg4 modify_bg"><img src="img/home/grass-right.png" alt=""></div>
+            <div class="modify_bg5 modify_bg"><img src="img/home/grass-up.png" alt=""></div> -->
+            <div class="modify_bg_ab">
+                <div class="sun"></div>
+                <img class="tree_r" src="img/home/2_tree_s.png" alt="tree_s_right">
+                <img src="img/home/2_tree_s.png" alt="tree_s_left">
+                <img src="img/home/2_tree_b.png" alt="tree_b_right">
+                <img src="img/home/2_tree_b.png" alt="tree_b_left">
+
+            </div>
+
+            <div class="modify_wrap">
+
+                <div class="modify_pic">
+                    <div class="head_box">
+                        <img class="tail_pic" src="img/modify/p_tail_giraffe.png" alt="">
+                        <img class="leg_pic" src="img/modify/p_leg_giraffe.png" alt="">
+                        <img class="body_pic" src="img/modify/p_body_giraffe.png" alt="">
+                        <img class="head_pic" src="img/modify/p_head_giraffe.png" alt="">
+                    </div>
+                </div>
+
+                <div class="modify_box">
+
+                    <div class="opt_btn">
+                        <p class="opt_btn_head">更換頭部</p>
+                    </div>
+
+                    <div class="modify_opt">
+
+                        <!-- <div class="opt_item">
+                            <img src="img/modify/head_giraffe.png" alt="">
+                            <p>大象頭</p>
+                        </div>
+                        <div class="opt_item">
+                            <img src="img/modify/head_elephant.png" alt="">
+                                <p>大象頭</p>
+                        </div>
+                        <div class="opt_item">
+                            <img src="img/modify/head_lion.png" alt="">
+                                <p>大象頭</p>
+                        </div>
+                        <div class="opt_item">
+                            <img src="img/modify/head_tiger.png" alt="">
+                                <p>大象頭</p>
+                        </div> -->
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="modify_txt">
+                <p>你可以任意選擇頭部、身體、腿部及尾巴，並變換背景圖片。</p>
+                <a href="modify.html" class="btn_cloud">
+                    立即改造 @@include('template/btn_sp.html')
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 遊戲 -->
+    <section class="home_game">
+
+        <img class="game_rail" src="img/home/3_rail.png" alt="game_rail">
+        <img class="game_train" src="img/home/train2.png" alt="game_train">
+
+
+        <div class="container">
+
+            <h2>生存遊戲</h2>
+            <p class="intro">快來玩遊戲，賺金幣！一起拯救動物吧！</p>
+
+
+            <div class="game_palyvideo">
+                <video width='100%' loop="true" autoplay="autoplay" muted>
+                    <source src="img/home/forest.mp4">
+                    </source>
+                </video>
+                <div class="btn_game">
+                    <a href="game.html" class="btn_cloud">進入遊戲@@include('template/btn_sp.html')</a>
+                </div>
+            </div>
+
+            <div class="game_palyrank">
+
+                <div class="title_bg">
+                    <h3>生存排行榜</h3>
+                </div>
+
+                <div class="topwrap">
+
+                    <div class="bg_top top1_title">
+                        <p>NO.1</p>
+                        <img class="top_animal_img" src="img/game/top_pic.png" alt="">
+
+                        <div class="top_info">
+                            <p class="top_animal_name">艾咪</p>
+                            <p class="top_score">168秒</p>
+                        </div>
+                    </div>
+
+                    <div class="bg_top top2_title">
+                        <p>NO.2</p>
+                        <img class="top_animal_img" src="img/game/top_pic.png" alt="">
+                        <div class="top_info">
+                            <p class="top_animal_name">艾咪</p>
+                            <p class="top_score">168秒</p>
+                        </div>
+                    </div>
+
+                    <div class="bg_top top3_title">
+                        <p>NO.3</p>
+                        <img class="top_animal_img" src="img/game/top_pic.png" alt="">
+                        <div class="top_info">
+                            <p class="top_animal_name">艾咪</p>
+                            <p class="top_score">168秒</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="btn_game">
+                    <a href="game.html" class="btn_cloud">看更多排行@@include('template/btn_sp.html')</a>
+                </div>
+
+            </div>
+
+
+            <div class="game_bg_ab">
+                <img src="img/home/desert_animal.png" alt="desert_animal">
+                <img src="img/home/chair.png" alt="chair">
+
+
+            </div>
+            <div class="game_bg_deco">
+                <!-- <img src="img/home/desert_deco.png" alt=""> -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 排行 -->
+
+    <section class="home_rank">
+        <div class="balloon">
+            <img src="img/shop/balloon.png" alt="">
+        </div>
+        <div class="clouds">
+            <img class="cloudtl cloud" src="img/shop/cloud.png" alt="">
+            <img class="cloudtm cloud" src="img/shop/cloud.png" alt="">
+            <img class="cloudtr cloud" src="img/shop/cloud.png" alt="">
+            <img class="cloudl cloud" src="img/shop/cloud.png" alt="">
+            <img class="cloudr cloud" src="img/shop/cloud.png" alt="">
+        </div>
+        <div class="container">
+            <h2>選怪排行</h2>
+            <p class="intro">快來看看大家的動物吧！</p>
+            <div class="wrap rank_trigger">
+                <div class="rank_col_msg">
+                    <div class="rank_msg">
+                        <h3>最新留言</h3>
+                        <div class="msg_row">
+                            <div class="msg_img">
+                                <img class="animal_bg" id="msg_animal_bg1"src="" alt="">
+                                <img class="animal" id="msg_animal1" src="" alt="">
+                            </div>
+                            <div class="msg_content">
+                                <p class="msg_id" id="msg_id1"></p>
+                                <p class="msg_text" id="msg_text1"></p>
+                                <p class="msg_date" id="msg_date1"></p>
+                                <a href="frank.html"class="btn_cloud">查看@@include('template/btn_sp.html')</a>
+                            </div>
+                        </div>
+                        <div class="msg_row">
+                            <div class="msg_img">
+                                <img class="animal_bg" id="msg_animal_bg2"src="" alt="">
+                                <img class="animal" id="msg_animal2" src="" alt="">
+                            </div>
+                            <div class="msg_content">
+                                <p class="msg_id" id="msg_id2"></p>
+                                <p class="msg_text" id="msg_text2"></p>
+                                <p class="msg_date" id="msg_date2"></p>
+                                <a href="frank.html"class="btn_cloud">查看@@include('template/btn_sp.html')</a>
+                            </div>
+                        </div>
+                        <div class="msg_row">
+                            <div class="msg_img">
+                                <img class="animal_bg" id="msg_animal_bg3"src="" alt="">
+                                <img class="animal" id="msg_animal3" src="" alt="">
+                            </div>
+                            <div class="msg_content">
+                                <p class="msg_id" id="msg_id3"></p>
+                                <p class="msg_text" id="msg_text3"></p>
+                                <p class="msg_date" id="msg_date3"></p>
+                                <a href="frank.html"class="btn_cloud">查看@@include('template/btn_sp.html')</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rank_col_top">
+                    <!-- <div class="title_bg">
+                         <h3>排行榜</h3> -
+                    </div> -->
+                    <div class="top_item top_one" >
+                        <div class="top_rank_title">
+                            <input type="hidden"  name="work_no">
+                            <h3>第一名</h3>
+                        </div>
+                        <div class="top_content">
+                            <div class="top_img" id="top_one">
+                                <div class="top_info">
+                                    <p class="top_animalName">動物名稱：<span id="top_animalName1"></p>
+                                    <p class="top_memId">會員名稱：<span id="top_memId1"></p>
+                                    <p class="vote_num">票數：<span id="vote_num1"></p>
+                                </div>
+                                <img class="animal_bg" id="aml_bg1"src="" alt="">
+                    
+                            </div>
+                            <div class="top_btn">
+                                <a href="frank.html" class="btn_cloud">投票@@include('template/btn_sp.html')
+                                    <input type="hidden" name="work_no3"></input>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="top_rock"></div>
+                    </div>
+                    <div class="top_row">
+                        <div class="top_item top_two">
+                            <div class="top_rank_title">
+                                <input type="hidden"  name="work_no">
+                                <h3>第二名</h3>
+                            </div>
+                            <div class="top_content">
+                                <div class="top_img" id="top_two">
+                                    <div class="top_info">
+                                        <p class="top_animalName">動物名稱：<span id="top_animalName2"></p>
+                                        <p class="top_memId">會員名稱：<span id="top_memId2"></p>
+                                        <p class="vote_num">票數：<span id="vote_num2"></p>
+                                    </div>
+                                    <img class="animal_bg" id="aml_bg2"src="" alt="">
+                                </div>
+                                <div class="top_btn">
+                                    <a href="frank.html" class="btn_cloud">投票@@include('template/btn_sp.html')
+                                        <input type="hidden" name="work_no3"></input>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="top_rock"> </div>
+                        </div>
+                        <div class="top_item top_three">
+                            <div class="top_rank_title">
+                                <input type="hidden"  name="work_no">
+                                <h3>第三名</h3>
+                            </div>
+                            <div class="top_content">
+                                <div class="top_img" id="top_three">
+                                    <div class="top_info">
+                                        <p class="top_animalName">動物名稱：<span id="top_animalName3"></p>
+                                        <p class="top_memId">會員名稱：<span id="top_memId3"></span></p>
+                                        <p class="vote_num">票數：<span id="vote_num3"></span></p>
+                                    </div>
+                                    <img class="animal_bg" id="aml_bg3"src="" alt="">
+                                </div>
+                                <div class="top_btn">
+                                    <a href="frank.html" class="btn_cloud">投票@@include('template/btn_sp.html')
+                                        <input type="hidden" name="work_no3"></input>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="top_rock"></div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    <section class="home_resv">
+        <div class="balloon">
+            <img src="img/shop/balloon.png" alt="">
+        </div>
+        <div class="clouds">
+            <img class="cloudtl cloud" src="img/shop/cloud.png" alt="">
+            <img class="cloudtm cloud" src="img/shop/cloud.png" alt="">
+            <img class="cloudtr cloud" src="img/shop/cloud.png" alt="">
+            <img class="cloudl cloud" src="img/shop/cloud.png" alt="">
+            <img class="cloudm cloud" src="img/shop/cloud.png" alt="">
+            <img class="cloudr cloud" src="img/shop/cloud.png" alt="">
+        </div>
+        <div class="container">
+            <h2>預約導覽</h2>
+            <p class="intro">快來預約導覽，看看園區吧！</p>
+            <p class="guide_word">本園區提供免費「定時導覽解說」服務。可供預約時段為：10:30及13：30。預約解說時間大約為40分鐘</p>
+
+            <div class="wrap">
+                <div class="col_calendar">
+                    <div class="resv_calendargroup">
+                        <div class="resv_calendar">
+                            <div class="sunglasses"><img src="img/home/sunglass.png" alt=""></div>
+                            <!-- <img src="img/resv/calendar_bg.png" alt="calendbg"> -->
+                            <div class="calendarbox">
+                                <div class="calendar_title">
+                                    <span id="prev"> 
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span id="calendar_year">Year</span>
+                                    <span>/</span>
+                                    <span id="calendar_month">Month</span>
+                                    <span id="next">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </div>
+                                <div class="calendar_body">
+                                    <div class="week_group">
+                                        <ul>
+                                            <li>日</li>
+                                            <li>一</li>
+                                            <li>二</li>
+                                            <li>三</li>
+                                            <li>四</li>
+                                            <li>五</li>
+                                            <li>六</li>
+                                        </ul>
+                                    </div>
+                                    <div class="day_group">
+                                        <ul id="days">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="calendar_text">
+                                <ul>
+                                    <li class="aviable"></li>
+                                    <li>可預約</li>
+                                    <li class="unaviable"></li>
+                                    <li>不可預約</li>
+                                    <li class="today_date"></li>
+                                    <li>今日日期</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col_info">
+                    <div class="info_text">
+                        <h3>8/28日預約導覽時段資訊如下：</h3>
+                        <div class="show_data_table">
+
+                        </div>
+                        <!-- <div class='text_row'>
+                            <p>場次1</p>
+                            <p>10:00</p>
+                            <p>剩餘20人</p>
+                        </div>
+                        <div class='text_row'>
+                            <p>場次1</p>
+                            <p>10:00</p>
+                            <p>剩餘20人</p>
+                        </div> -->
+                        <div class="main_title">
+                            <a href="resv.html" class="btn_cloud">去預約@@include('template/btn_sp.html')</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="background">
+                <div class="train">
+                    <img class="hand" src="img/home/hand.png" alt="">
+                    <img src="img/home/resv_train.png" alt="">
+                </div>
+                <div class="gate">
+                    <img src="img/home/zooGate-1.png" alt="">
+                    <img class="gate_top" src="img/home/zooGate_top.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="home_shop">
+        <div class="balloon">
+            <img src="img/shop/balloon.png" alt="">
+        </div>
+        <div class="clouds">
+            <img class="cloudtl cloud" src="img/shop/cloud.png" alt="">
+            <img class="cloudtr cloud" src="img/shop/cloud.png" alt="">
+            <img class="cloudl cloud" src="img/shop/cloud.png" alt="">
+            <img class="cloudr cloud" src="img/shop/cloud.png" alt="">
+        </div>
+        <div class="container">
+            <h2>動物商城</h2>
+            <p class="intro">可以將自己的動物和選怪排行榜前三名的動物印製在商品上喔！</p>
+
+            <div class="wrap">
+                    
+                <div class="col_shop shop_rank">
+                    <div class="p_bg">
+                        <p>選怪前三名</p>
+                    </div>
+                    <div class="shop_rank_img">
+                        <!-- <div class="rank_img_item">
+                            <img  class="shop_animal_bg" alt="">
+                        </div>-->
+                    </div>
+                    <div class="main_btn">
+                        <a class="btn_cloud" href="shop.php">去逛逛@@include('template/btn_sp.html')</a>
+                    </div>
+                </div>
+                
+               
+                <div class="col_shop shop_product">
+                    <div class="item">
+                        <div class="deco deco_top"></div>
+                        <div class="prod_wrap">
+                            <div class="prod_img">
+                                <img class="prod_plain"  alt="">
+                                <div class="pic_chosen">
+                                    <div class="pic_chosen_flex">
+                                        <!-- <div class="pic_chosen_one">
+                                            <img class="shop_animal_bg" src="img/shop/animal_bg1.png" alt="">
+                                        </div> -->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="prod_info">
+                                <h3></h3>
+                                <p class="price"></p>
+                            </div> 
+                        </div>
+                        <div class="deco deco_bottom"></div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    @@include('template/footer.html')
+
+</body>
+
+<script src="js/home/home.js"></script>
+<script src="js/home/home_rank.js"></script>
+<script src="js/home/home_resv.js"></script>
+<script src="js/home/home_shop.js"></script>
+
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @@include('template/csslink.html')
+    <script src="js/shop/checkOrder.js"></script>
+    <title>結帳</title>
+</head>
+
+<body class="checkOrder">
+    @@include('template/header.html')
+    <section class="cart_list">
+        <div class="container">
+            <h2>訂單明細</h2>
+            <div class="wrap" id="wrap">
+                <div class="list_header">
+                    <div>
+                        <p>商品圖片</p>
+                    </div>
+                    <div>
+                        <p>單價</p>
+                    </div>
+                    <div>
+                        <p>數量</p>
+                    </div>
+                    <div>
+                        <p>小計</p>
+                    </div>
+                </div>
+                <!-- {"prodInfo":["Tshirt","馬克杯","img/shop/Tshirt.png","500"],"num":"1","img":"http://localhost/G3/img/collections/work_amlbg_5.png","name":"Tshirt|work_amlbg_5"} -->
+                <!-- 動物圖片img  商品圖片prodInfo[2] 單價prodInfo[3] 數量num-->
+                <div class="list_row">
+                    <div class="prod_pic col-6">
+                        <div class="pic_item">
+                            <img class="shop_animal_bg" src="img/shop/aml.png" alt="">
+                            <img class="prod_plain" src="img/shop/cup.png" alt="">
+                        </div>
+                    </div>
+                    <div class="prod_info col-6">
+                        <div class="price"><span class="title_inline">商品單價：</span>$600</div>
+                        <div>
+                            <span class="title_inline">商品數量：</span>
+                            <span class="number">1</span>
+                        </div>
+                        <div class="subTotal"><span class="title_inline">商品小計：</span>$600</div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                
+                <!-- 點數折抵 -->
+                <div class="discount">
+                    <h3>金幣折抵</h3>
+                    <div class="discount_info">
+                        <p>您目前持有金幣：$ <span>0</span></p>
+                        <a href="game.html">玩遊戲賺金幣</a>
+                    </div>
+                    <div class="discount_input">
+                        <p> $ <input type="number" id="enter_discount" min="0" value="0"></p>
+                        <span>金幣$1可折抵現金1元</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="total">
+                    <p></p>
+                    <p>+運費：$60</p>
+                    <p>-點數折抵：$<span id="show_discount">0</span></p>
+                    <p>總金額為：$<span class="total_money"></span></p>
+                </div>
+            </div>
+    </section>
+    <!-- 填寫資料 -->
+    <div id="app">
+<!-- vue開始 -->
+    <section class="write_info">
+        <div class="container">
+            <h2>填寫資料</h2>
+           
+            <form class="wrap" >
+                <div class="write_info_col">
+                    <h3>收件人資訊</h3>
+                    <p>姓名： <input id="name" type="text" v-model="name"></p>
+                    <p>電話： <input type="text" v-model="phone"><br><span class="msg">{{phoneErrMsg}}</span></p>
+                    <p>地址： <input type="text" v-model="addr"></p>
+                </div>
+                <div class="write_info_col creditCard">
+                    <h3>信用卡付款資訊</h3>
+                    <p>信用卡帳號：
+                        <input type="text" v-model="card1" >-
+                        <input type="text" v-model="card2" >-
+                        <input type="text" v-model="card3" >-
+                        <input type="text" v-model="card4" >
+                        <span class="msg">{{cardErrMsg}}</span>
+                    </p>
+                    <p>
+                        有效期限：
+                        <input type="text" v-model="month"> 月
+                        <input type="text" v-model="year" > 年
+                        <span class="msg">{{dateErrMsg}}</span>
+                    </p>
+                    <p>
+                        背面安全碼
+                        <input type="text" v-model="code">
+                        <span class="msg">{{codeErrMsg}}</span>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <div class="cart_btn">
+        <a class="btn_cloudy" href="cart.php">上一步@@include('template/btn_sp.html')</a>
+        <a class="btn_cloudp confirm" href="checkOder.html" @click="confirm">送出訂單@@include('template/btn_sp.html')</a>
+    
+    </div>
+
+
+
+    <!-- ====================再次確認資料的彈窗==================== -->
+    <!-- vue開始 -->
+    <div class="order_confirm">
+        <div class="confirm_container">
+            <p class="confirm_title">請確認您的資料：</p>
+            <p class="confirm_title">收件人資訊：</p>
+            <!-- <p>姓名：</p> -->
+            <name :inname="name"></name>
+            <phone :inphone="phone"></phone>
+            <addr :inaddr="addr"></addr>
+            <p class="confirm_title">信用卡資訊：</p>
+            <p>信用卡帳號：{{card1}}-{{card2}}-{{card3}}-{{card4}}</p>
+            <p>有效期限：{{month}}月{{year}}年</p>
+            <div class="btn">
+                <a class="btn_cloudy writeAgain">重新填寫@@include('template/btn_sp.html')</a>
+                <a class="btn_cloudp submit" @click="submit">確認送出@@include('template/btn_sp.html')</a>
+            </div>
+        </div>
+    </div>
+    <!-- vue結束 -->
+</div>
+    <!-- ==================送出訂單後，訂單資訊的彈窗============== -->
+    <div class="order_info">
+        <div class="order_info_container">
+            <p class="order_info_title">訂單已成立</p>
+            <p>請至會員中心查看訂單詳情。</p>
+            <p class="order_no">訂單編號：</p>
+            <p>訂單狀態：已付款</p>
+            <button class="btn_cloudb close">關閉@@include('template/btn_sp.html')</button>
+        </div>
+    </div>
+
+    @@include('template/footer.html')
+
+</body>
+
+</html>

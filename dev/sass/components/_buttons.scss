@@ -1,0 +1,216 @@
+
+
+
+@mixin btn_cloudp ($width){
+    .btn_cloudp{
+        width: $width;
+        color: $col_white;//$col_black
+        font-size: 16px;
+        background-color:  $col_btn_pink;//
+        border: 2px solid $col_btn_pink;//$col_btn_pink
+        border-radius: 20px;
+        font-weight: bold;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        z-index: 1;
+        transition: 0.3s;
+        box-sizing: border-box;
+        cursor: pointer;
+        .btn_cloudeffect{
+            position: absolute;
+            width: 25%;
+            height: 100%;
+            background-color: $col_white;//$col_btn_pink
+            transform: translateY(150%);
+            border-radius: 50%;
+            transition: 0.3s;
+            z-index: -1;
+            &:nth-child(1){
+                left: calc((1 - 1) * 25%);
+                transition-delay: calc((1 - 1) * 0.1s);
+            }
+            &:nth-child(2){
+                left: calc((2 - 1) * 25%);
+                transition-delay: calc((2 - 1) * 0.1s);
+            }
+            &:nth-child(3){
+                left: calc((3 - 1) * 25%);
+                transition-delay: calc((3 - 1) * 0.1s);
+            }
+            &:nth-child(4){
+                left: calc((4 - 1) * 25%);
+                transition-delay: calc((4 - 1) * 0.1s);
+            }
+        }
+        &:hover{
+            color: $col_btn_pink;//$col_white
+        }
+        &:hover .btn_cloudeffect{
+            transform: translateY(30%) scale(2.2);
+        }
+    }
+}
+
+
+
+@mixin btn_cloudb ($width){
+    .btn_cloudb{
+        width: $width;
+        color: $col_white;//$col_black
+        background-color: $col_btn_blue;//
+        font-size: 16px;
+        border: 2px solid $col_btn_blue; //$col_btn_blue
+        border-radius: 20px;
+        font-weight: bold;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        z-index: 1;
+        transition: 0.3s;
+        box-sizing: border-box;
+        cursor: pointer;
+        .btn_cloudeffect{
+            position: absolute;
+            width: 25%;
+            height: 100%;
+            background-color: $col_white;//$col_btn_blue
+            transform: translateY(150%);
+            border-radius: 50%;
+            transition: 0.3s;
+            z-index: -1;
+            &:nth-child(1){
+                left: calc((1 - 1) * 25%);
+                transition-delay: calc((1 - 1) * 0.1s);
+            }
+            &:nth-child(2){
+                left: calc((2 - 1) * 25%);
+                transition-delay: calc((2 - 1) * 0.1s);
+            }
+            &:nth-child(3){
+                left: calc((3 - 1) * 25%);
+                transition-delay: calc((3 - 1) * 0.1s);
+            }
+            &:nth-child(4){
+                left: calc((4 - 1) * 25%);
+                transition-delay: calc((4 - 1) * 0.1s);
+            }
+        }
+        &:hover{
+            color: $col_btn_blue;//$col_white
+        }
+        &:hover .btn_cloudeffect{
+            transform: translateY(30%) scale(2.2);
+        }
+    }
+}
+
+
+
+@mixin btn_cloudy ($width,$color){
+    .btn_cloudy{
+        width: $width;
+        color: $col_white;
+        background-color: $col_btn_orange;
+        font-size: 16px;
+        border: 2px solid $col_btn_orange;
+        border-radius: 20px;
+        font-weight: bold;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        z-index: 1;
+        transition: 0.3s;
+        box-sizing: border-box;
+        cursor: pointer;
+        .btn_cloudeffect{
+            position: absolute;
+            width: 25%;
+            height: 100%;
+            background-color: $col_white;
+            transform: translateY(150%);
+            border-radius: 50%;
+            transition: 0.3s;
+            z-index: -1;
+            &:nth-child(1){
+                left: calc((1 - 1) * 25%);
+                transition-delay: calc((1 - 1) * 0.1s);
+            }
+            &:nth-child(2){
+                left: calc((2 - 1) * 25%);
+                transition-delay: calc((2 - 1) * 0.1s);
+            }
+            &:nth-child(3){
+                left: calc((3 - 1) * 25%);
+                transition-delay: calc((3 - 1) * 0.1s);
+            }
+            &:nth-child(4){
+                left: calc((4 - 1) * 25%);
+                transition-delay: calc((4 - 1) * 0.1s);
+            }
+        }
+        &:hover{
+            color: $color;
+        }
+        &:hover .btn_cloudeffect{
+            transform: translateY(30%) scale(2.2);
+        }
+    }
+}
+
+
+
+@mixin btn_cloud ($width,$color){
+    .btn_cloud{
+        width: $width;
+        color: $col_white;//$col_black
+        font-size: 16px;
+        border: 2px solid $color;
+        background-color:  $color;//
+        border-radius: 20px;
+        font-weight: bold;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        z-index: 1;
+        transition: 0.3s;
+        box-sizing: border-box;
+        cursor: pointer;
+        .btn_cloudeffect{
+            position: absolute;
+            width: 25%;
+            height: 100%;
+            background-color: #efefef;//$color
+            transform: translateY(150%);
+            border-radius: 50%;
+            transition: 0.3s;
+            z-index: -1;
+            &:nth-child(1){
+                left: calc((1 - 1) * 25%);
+                transition-delay: calc((1 - 1) * 0.1s);
+            }
+            &:nth-child(2){
+                left: calc((2 - 1) * 25%);
+                transition-delay: calc((2 - 1) * 0.1s);
+            }
+            &:nth-child(3){
+                left: calc((3 - 1) * 25%);
+                transition-delay: calc((3 - 1) * 0.1s);
+            }
+            &:nth-child(4){
+                left: calc((4 - 1) * 25%);
+                transition-delay: calc((4 - 1) * 0.1s);
+            }
+        }
+        &:hover{
+            color: $color;//#efefef
+        }
+        &:hover .btn_cloudeffect{
+            transform: translateY(30%) scale(2.2);
+        }
+    }
+}

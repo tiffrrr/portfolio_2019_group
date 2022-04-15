@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <title>CoreUI Pro Bootstrap Admin Template</title>
+
+    @@include('layout/inputcss.html')
+
+    <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-118965717-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body class="app flex-row align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card-group">
+                    <div class="card p-4">
+                        <div class="card-body">
+                            <h1>Login</h1>
+                            <p class="text-muted">Sign In to your account</p>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="icon-user"></i>
+                                    </span>
+                                </div>
+                                <input class="form-control" type="text" placeholder="Username" id="memId">
+                            </div>
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="icon-lock"></i>
+                                    </span>
+                                </div>
+                                <input class="form-control" type="password" placeholder="Password" id="memPsw">
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <!-- <button class="btn btn-primary px-4" type="button">Login</button> -->
+                                    <p  class="btn btn-primary px-4" id="loginBtn">Login</p>
+
+                                </div>
+                                <div class="col-6 text-right">
+                                    <button class="btn btn-link px-0" type="button">Forgot password?</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @@include('layout/inputjs.html')
+    <script>
+        $('#ui-view').ajaxLoad();
+        $(document).ajaxComplete(function () {
+            Pace.restart()
+        });
+    </script>
+
+<script>
+function $id(id){
+  return document.getElementById(id);
+} 
+
+
+function sendForm(e){
+
+    var memId = $id("memId").value;
+    var memPsw = $id("memPsw").value;
+
+  //使用Ajax回server端檢查是否已登入
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function(){
+        if(xhr.status == 200){
+            
+            if(xhr.responseText.indexOf("查無此人")!=-1){
+                alert("帳號密碼錯誤!");
+            }else{ 
+                console.log(xhr.responseText);
+                sessionStorage['admin_name'] = xhr.responseText;
+                // document.getElementById("spanLogin").innerText = "登出";
+                // document.getElementById("lightBox").style.display="none";
+                window.location.assign("animalHead.php");
+            }
+
+        }else{                                  
+            alert(xhr.status);
+        }
+    }
+
+    xhr.open("post", "adminLogin.php",true);
+    xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+
+    var data_info = `memId=${memId}&memPsw=${memPsw}`;
+    xhr.send(data_info);
+
+    
+}
+
+
+
+function cancelLogin(){
+  //將登入表單上的資料清空，並將燈箱隱藏起來
+  $id("memId").value="";
+  $id("memPsw").value="";
+  $id("lightBox").style.display = "none";
+}
+
+function getLoginInfo(){
+  //----------------------------檢查使用者是否已登入
+  var xhr = new XMLHttpRequest();
+  xhr.onload = function(){
+    if(xhr.status == 200){
+      if( xhr.responseText.indexOf("notLogin") == -1 ){ //已登入
+        document.getElementById("memName").innerText = xhr.responseText;
+        document.getElementById("spanLogin").innerText = "登出";
+      }
+    }else{
+      alert(xhr.status);
+    }
+  }
+  xhr.open("get", "getLoginInfo.php", true);
+  xhr.send(null);  
+}
+
+window.addEventListener("load", function(){
+
+$id("loginBtn").onclick = sendForm;
+  //===設定btnLoginCancel.onclick 事件處理程序是 cancelLogin
+// $id("btnLoginCancel").onclick = cancelLogin;  
+}, false);     
+    
+</script>
+</body>
+
+</html>

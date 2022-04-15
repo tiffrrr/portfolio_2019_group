@@ -1,0 +1,43 @@
+@import "base/reset";
+@import "base/var";
+@import "base/color";
+@import "base/setfont";
+@import "base/base";
+
+
+// ===
+// @import "plugin/bootstrap/bootstrap.scss";
+// @import "plugin/jquery-ui.min.css";
+// ===
+@import "mixins/mixin";
+@import "components/buttons";
+@import "components/radar";
+@import "components/alert";
+
+// ===
+// ===
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/login";
+@import "layout/registerd";
+@import "layout/forgetPsw";
+
+// ====
+// @import "pages/enter";
+@import "pages/frank";
+@import "pages/game";
+@import "pages/gaming";
+@import "pages/home";
+@import "pages/member";
+@import "pages/modify";
+@import "pages/resv";
+@import "pages/shop";
+@import "pages/cart";
+@import "pages/checkOrder";
+@import "pages/home_animal";
+@import "pages/home_water";
+@import "pages/home_water";
+@import "pages/member_qrcode";
+
+// =====

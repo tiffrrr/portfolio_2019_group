@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bd_member">
+
+
+  @@include('template/header.html')
+
+
+
+  <div class="member_tab">
+
+
+    <div class="banner_cloud">
+      <img class="icon_l" src="img/header/banner_icon_l.png" alt="">
+      <h1 class="title">會員中心</h1>
+      <img class="icon_r" src="img/header/banner_icon_r.png" alt="">
+    </div>
+
+    <div class="tab_item">
+        <a href="javascript:void(0)" id="default_open" class="btn_cloud tablink">基本資料
+            @@include('template/btn_sp.html')</a>
+          <a href="javascript:void(0)" class="btn_cloud tablink">訂單明細
+            @@include('template/btn_sp.html')</a>
+      
+          <a href="javascript:void(0)" class="btn_cloud tablink">我的預約
+            @@include('template/btn_sp.html')</a>
+      
+          <a href="javascript:void(0)" class="btn_cloud tablink">我的收藏
+            @@include('template/btn_sp.html')</a>
+    </div>
+
+  </div>
+
+
+  <section id="member_basic" class="member_basic tabcontent">
+
+    <div class="container">
+
+      <div class="my_baic">
+
+        <h2>基本資料</h2>
+
+
+        <div class="col-12 col-md-6">
+          <div class="baic_pic">
+            <img  id="upfile_pic" src="img/member/member_pic.png">
+          </div>
+
+          <div class="upfile">
+            <input type="file" name="upFile" id="upFile" accept="image/*"><br>
+          </div>
+        </div>
+
+
+        <div class="col-12 col-md-6">
+          <table class="baic_txt">
+
+            <tr>
+              <td>帳號</td>
+              <td>aaaAAA</td>
+            </tr>
+            <tr>
+              <td>姓名</td>
+              <td>王小明</td>
+            </tr>
+            <tr>
+              <td>密碼</td>
+              <td>****</td>
+            </tr>
+            <tr>
+              <td>信箱</td>
+              <td>aaaaaaa</td>
+            </tr>
+            <tr>
+              <td>電話</td>
+              <td>0987987387</td>
+            </tr>
+            <tr>
+              <td>密碼提示答案</td>
+              <td>**************</td>
+            </tr>
+            <tr>
+              <td>目前金幣</td>
+              <td>666</td>
+            </tr>
+            <tr>
+              <td>當日剩餘票數</td>
+              <td>3</td>
+            </tr>
+          </table>
+
+          <div class="baic_btn">
+            <a href="" class="btn_cloud">修改
+              @@include('template/btn_sp.html')</a>
+            <a href="" class="btn_cloud">儲存
+              @@include('template/btn_sp.html')
+            </a>
+          </div>
+
+        </div>
+
+        <div class="clearfix"></div>
+      </div>
+
+      <div class="my_gamerecord">
+        <h2>遊戲紀錄</h2>
+
+
+        <div class="col-12 col-md-6">
+
+          <div class="gamerecord_pic">
+            <img src="img/member/m_game_pic.png">
+          </div>
+
+        </div>
+
+        <div class="col-12 col-md-6">
+
+          <table class="gamerecord_txt">
+
+            <tr>
+              <td>最高分數</td>
+              <td>0987987387</td>
+            </tr>
+            <tr>
+              <td>存活時間</td>
+              <td>**************</td>
+            </tr>
+
+            <tr>
+              <td>日期</td>
+              <td>**************</td>
+            </tr>
+
+          </table>
+
+          <div class="baic_btn">
+            <a href="" class="btn_cloud">重新挑戰
+              @@include('template/btn_sp.html')</a>
+          </div>
+
+        </div>
+        <div class="clearfix"></div>
+
+      </div>
+
+
+      <div class="my_animal">
+
+        <h2>我的動物</h2>
+
+        <div class="col-12 col-md-6">
+
+          <div class="myanimal_pic">
+            <img src="img/member/m_myanimal_pic.png">
+          </div>
+
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="myanimal_txt">
+
+            <p>動物名稱</p>
+            <p>生存能力</p>
+            <p>跳躍力</p>
+            <p>*****</p>
+            <p>生命力</p>
+            <p>*****</p>
+            <p>適應環境</p>
+            <p>*****</p>
+            <p>提醒：你所選擇的動物會跟牠的適應力有關。</p>
+          </div>
+
+          <div class="baic_btn">
+            <a href="" class="btn_cloud">參加選怪
+              @@include('template/btn_sp.html')
+            </a>
+            <a href="" class="btn_cloud">參加遊戲
+              @@include('template/btn_sp.html')
+            </a>
+            <a href="" class="btn_cloud">修改動物
+              @@include('template/btn_sp.html')
+            </a>
+          </div>
+
+        </div>
+
+        <div class="clearfix"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+
+  <section id="member_order" class="member_order tabcontent">
+    <div class="container">
+
+      <div class="my_order">
+        <h2>訂單紀錄</h2>
+
+        <!-- 未來動態新增 -->
+        <div class="myorder_item">
+
+
+          <div class="item_title">
+              <p class="col-md-1">訂單編號</p>
+              <p class="col-md-3">訂購日期</p>
+              <p class="col-md-2">訂單狀態</p>
+              <p class="col-md-2">總金額</p>
+              <p class="col-md-2">取消訂單</p>
+              <p class="col-md-2">備註</p>
+              <div class="clearfix"></div>
+          </div>
+
+
+          <div class="item_list">
+            <p class="col-6 s_show">訂單編號:</p>
+            <p class="col-6 col-md-1">266</p>
+            <p class="col-6 s_show">訂購日期:</p>
+            <p class="col-6 col-md-3">2019-08-26 22:06:39</p>
+            <p class="col-6 s_show">訂單狀態:</p>
+            <p class="col-6 col-md-2">處理中</p>
+            <p class="col-6 s_show">總金額:</p>
+            <p class="col-6 col-md-2">3100元</p>
+
+            <p class="col-6 s_show">取消訂單:</p>
+            <div class="col-6 col-md-2 baic_btn">
+              <a href="" class="btn_cloud">取消訂單
+                @@include('template/btn_sp.html')
+              </a>
+            </div>
+
+            <p class="col-6 s_show">備註:</p>
+            <div class="col-6 col-md-2 baic_btn">
+              <a href="javascript:void(0)" class="btn_cloud js_order_show">訂單明細
+                @@include('template/btn_sp.html')
+              </a>
+            </div>
+
+            <div class="clearfix"></div>
+
+          </div>
+        </div>
+      
+
+
+        <div class="myorder_item_detail">
+
+          <!--   
+          <div class="item_content">
+            <p class="col-6 col-md-2">收件人:</p>
+            <p class="col-6 col-md-10">怪奇小怪獸</p>
+            <p class="col-6 col-md-2">連絡電話:</p>
+            <p class="col-6 col-md-10">03-333-3333</p>
+            <p class="col-6 col-md-2">收件地址:</p>
+            <p class="col-6 col-md-10">桃園市中央路1000號</p>
+          </div> -->
+
+          <div class="item_title">
+            <p class="col-md-3">商品名稱</p>
+            <p class="col-md-3">單價</p>
+            <p class="col-md-3">數量</p>
+            <p class="col-md-3">小計</p>
+            <div class="clearfix"></div>
+          </div>
+
+          <div class="item_list">
+            <p class="col-6 s_show">商品名稱:</p>
+            <p class="col-6 col-md-3">怪奇馬克杯</p>
+            <p class="col-6 s_show">單價:</p>
+            <p class="col-6 col-md-3">$300</p>
+            <p class="col-6 s_show">數量:</p>
+            <p class="col-6 col-md-3">1</p>
+            <p class="col-6 s_show">小計</p>
+            <p class="col-6 col-md-3">$300</p>
+            <div class="clearfix"></div>
+          </div>
+
+          <div class="item_list">
+            <p class="col-6 s_show">商品名稱:</p>
+            <p class="col-6 col-md-3">怪奇馬克杯</p>
+            <p class="col-6 s_show">單價:</p>
+            <p class="col-6 col-md-3">$300</p>
+            <p class="col-6 s_show">數量:</p>
+            <p class="col-6 col-md-3">1</p>
+            <p class="col-6 s_show">小計</p>
+            <p class="col-6 col-md-3">$300</p>
+            <div class="clearfix"></div>
+          </div>
+
+
+        </div>
+        <!-- 未來動態新增 -->
+
+
+        
+        <!-- 未來動態新增 -->
+        <div class="myorder_item">
+
+
+            <div class="item_title">
+                <p class="col-md-1">訂單編號</p>
+                <p class="col-md-3">訂購日期</p>
+                <p class="col-md-2">訂單狀態</p>
+                <p class="col-md-2">總金額</p>
+                <p class="col-md-2">取消訂單</p>
+                <p class="col-md-2">備註</p>
+                <div class="clearfix"></div>
+            </div>
+  
+  
+            <div class="item_list">
+              <p class="col-6 s_show">訂單編號:</p>
+              <p class="col-6 col-md-1" id="orderNo">266</p>
+              <p class="col-6 s_show">訂購日期:</p>
+              <p class="col-6 col-md-3">2019-08-26 22:06:39</p>
+              <p class="col-6 s_show">訂單狀態:</p>
+              <p class="col-6 col-md-2">處理中</p>
+              <p class="col-6 s_show">總金額:</p>
+              <p class="col-6 col-md-2">3100元</p>
+  
+              <p class="col-6 s_show">取消訂單:</p>
+              <div class="col-6 col-md-2 baic_btn">
+                <a href="" class="btn_cloud">取消訂單
+                  @@include('template/btn_sp.html')
+                </a>
+              </div>
+  
+              <p class="col-6 s_show">備註:</p>
+              <div class="col-6 col-md-2 baic_btn">
+                <a href="javascript:void(0)" class="btn_cloud js_order_show">訂單明細
+                  @@include('template/btn_sp.html')
+                </a>
+              </div>
+  
+              <div class="clearfix"></div>
+  
+            </div>
+        </div>
+        
+  
+        <div class="myorder_item_detail">
+  
+            <!--   
+            <div class="item_content">
+              <p class="col-6 col-md-2">收件人:</p>
+              <p class="col-6 col-md-10">怪奇小怪獸</p>
+              <p class="col-6 col-md-2">連絡電話:</p>
+              <p class="col-6 col-md-10">03-333-3333</p>
+              <p class="col-6 col-md-2">收件地址:</p>
+              <p class="col-6 col-md-10">桃園市中央路1000號</p>
+            </div> -->
+  
+            <div class="item_title">
+              <p class="col-md-3">商品名稱</p>
+              <p class="col-md-3">單價</p>
+              <p class="col-md-3">數量</p>
+              <p class="col-md-3">小計</p>
+              <div class="clearfix"></div>
+            </div>
+  
+            <div class="item_list">
+              <p class="col-6 s_show">商品名稱:</p>
+              <p class="col-6 col-md-3">怪奇馬克杯</p>
+              <p class="col-6 s_show">單價:</p>
+              <p class="col-6 col-md-3">$300</p>
+              <p class="col-6 s_show">數量:</p>
+              <p class="col-6 col-md-3">1</p>
+              <p class="col-6 s_show">小計</p>
+              <p class="col-6 col-md-3">$300</p>
+              <div class="clearfix"></div>
+            </div>
+  
+            <div class="item_list">
+              <p class="col-6 s_show">商品名稱:</p>
+              <p class="col-6 col-md-3">怪奇馬克杯</p>
+              <p class="col-6 s_show">單價:</p>
+              <p class="col-6 col-md-3">$300</p>
+              <p class="col-6 s_show">數量:</p>
+              <p class="col-6 col-md-3">1</p>
+              <p class="col-6 s_show">小計</p>
+              <p class="col-6 col-md-3">$300</p>
+              <div class="clearfix"></div>
+            </div>
+  
+  
+        </div>
+          <!-- 未來動態新增 -->
+
+      </div>
+
+
+
+    </div>
+  </section>
+
+
+  <section id="member_receive" class="member_receive tabcontent">
+    <div class="container">
+
+
+      <div class="my_receive">
+
+        <h2>我的預約</h2>
+
+        <!-- 未來動態新增 -->
+
+        <div class="myreceive_item">
+
+            <div class="item_title">
+                <p class="col-md-2">預約編號</p>
+                <p class="col-md-2">預約日期</p>
+                <p class="col-md-2">預約時段</p>
+                <p class="col-md-2">預約狀態</p>
+                <p class="col-md-2">取消訂單</p>
+                <p class="col-md-2">顯示</p>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="item_list">
+                <p class="col-6 s_show">預約編號:</p>
+                <p class="col-6 col-md-2">266</p>
+                <p class="col-6 s_show">預約日期:</p>
+                <p class="col-6 col-md-2">2019-08-26</p>
+                <p class="col-6 s_show">預約時段:</p>
+                <p class="col-6 col-md-2">10:30</p>
+                <p class="col-6 s_show">預約狀態:</p>
+                <p class="col-6 col-md-2">已到場</p>
+    
+                <p class="col-6 s_show">取消訂單:</p>
+                <div class="col-6 col-md-2 baic_btn">
+                  <a href="" class="btn_cloud">取消訂單
+                    @@include('template/btn_sp.html')
+                  </a>
+                </div>
+    
+                <p class="col-6 s_show">備註:</p>
+                <div class="col-6 col-md-2 baic_btn">
+                  <a href="javascript:void(0)" class="btn_cloud js_qr_show">QR-code
+                    @@include('template/btn_sp.html')
+                  </a>
+                </div>
+    
+                <div class="clearfix"></div>
+    
+              </div>
+        </div>
+
+
+        <div class="qrcode_wrap">
+          <div class="qrcode_pic">
+              <button class="btn_close">X</button>
+              <img src="img/member/QR-Code.png">
+          </div>
+        </div>
+
+        <!-- 未來動態新增 -->
+
+          <!-- 未來動態新增 -->
+
+          <div class="myreceive_item">
+
+              <div class="item_title">
+                  <p class="col-md-2">預約編號</p>
+                  <p class="col-md-2">預約日期</p>
+                  <p class="col-md-2">預約時段</p>
+                  <p class="col-md-2">預約狀態</p>
+                  <p class="col-md-2">取消訂單</p>
+                  <p class="col-md-2">顯示</p>
+                  <div class="clearfix"></div>
+              </div>
+  
+  
+              <div class="item_list">
+                  <p class="col-6 s_show">預約編號:</p>
+                  <p class="col-6 col-md-2">266</p>
+                  <p class="col-6 s_show">預約日期:</p>
+                  <p class="col-6 col-md-2">2019-08-26</p>
+                  <p class="col-6 s_show">預約時段:</p>
+                  <p class="col-6 col-md-2">10:30</p>
+                  <p class="col-6 s_show">預約狀態:</p>
+                  <p class="col-6 col-md-2">已到場</p>
+      
+                  <p class="col-6 s_show">取消訂單:</p>
+                  <div class="col-6 col-md-2 baic_btn">
+                    <a href="" class="btn_cloud">取消訂單
+                      @@include('template/btn_sp.html')
+                    </a>
+                  </div>
+      
+                  <p class="col-6 s_show">備註:</p>
+                  <div class="col-6 col-md-2 baic_btn">
+                    <a href="javascript:void(0)" class="btn_cloud js_qr_show">QR-code
+                      @@include('template/btn_sp.html')
+                    </a>
+                  </div>
+      
+                  <div class="clearfix"></div>
+      
+                </div>
+  
+          </div>
+
+          <div class="qrcode_wrap">
+              <div class="qrcode_pic">
+                  <button class="btn_close">X</button>
+                  <img src="img/member/member_pic.png" alt="">
+              </div>
+          </div>
+  
+          <!-- 未來動態新增 -->
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <section id="member_love" class="member_love tabcontent">
+    <div class="container">
+
+      <div class="my_love">
+        <h2>我的收藏</h2>
+
+        <div class="col-6 col-md-3 baic_btn">
+          <div><img src="img/member/member_pic.png">
+            <p>動物背包</p>
+          </div>
+          <a href="" class="btn_cloud">取消收藏
+            @@include('template/btn_sp.html')
+          </a>
+        </div>
+
+        <div class="col-6 col-md-3 baic_btn">
+          <div><img src="img/member/member_pic.png">
+            <p>動物背包</p>
+          </div>
+          <a href="" class="btn_cloud">取消收藏
+            @@include('template/btn_sp.html')
+          </a>
+        </div>
+
+        <div class="col-6 col-md-3 baic_btn">
+          <div><img src="img/member/member_pic.png">
+            <p>動物背包</p>
+          </div>
+          <a href="" class="btn_cloud">取消收藏
+            @@include('template/btn_sp.html')
+          </a>
+        </div>
+
+        <div class="col-6 col-md-3 baic_btn">
+          <div><img src="img/member/member_pic.png">
+            <p>動物背包</p>
+          </div>
+          <a href="" class="btn_cloud">取消收藏
+            @@include('template/btn_sp.html')
+          </a>
+        </div>
+        <div class="clearfix"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  @@include('template/footer.html')
+
+  <script src="js/member/member.js"></script>
+
+</body>
+
+</html>

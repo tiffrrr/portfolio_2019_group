@@ -1,0 +1,333 @@
+$lblue:#d8ecea;
+$orange:#d28058;
+$lyellow:#fdf6e7;
+.checkOrder{
+    background-color:$lblue ;
+    @include msgalert(#fdf6e7,$col_btn_pink,$col_btn_pink);
+    @media screen and (min-width:992px){
+        .msg_alert .msg_alert_container{
+            width: 19%;
+        }
+    }
+    
+    .container{
+        max-width:1200px;
+        box-sizing:border-box;
+        padding: 10px;
+        margin: auto;
+        position:relative;
+        width: 100%;
+    }
+    h2{
+        text-align: center;
+        background-color: $orange;
+        color:#fff;
+        border-radius: 10px 10px 0 0;
+    }
+    section{
+        margin-bottom: 50px;
+    }
+
+     //黃底
+     .wrap{
+        background-color:$lyellow;
+        border-radius: 0 0 10px 10px;
+    }
+
+    
+
+//訂單區
+    .cart_list{
+        margin-top: 120px;
+        img{
+            width: 100%;
+        }
+    }
+//標題
+    .list_header{
+        display:flex;
+        justify-content: center;
+        text-align: center;
+        background-color: $orange;
+        color:white;
+        font-weight: bold;
+        // border-radius:10px 10px 0 0;
+        @include responds(small){
+            display:none;
+          
+        }
+        div{
+        //    padding: 10px; 
+           width: 20%;
+        }
+    }
+//每一列資料
+    .list_row{
+        text-align: left;
+        border-bottom: 1px solid #000;
+        @include responds(medium){
+        display:flex;
+        justify-content: center;
+        text-align: center;
+        }
+    }
+//商品圖
+    .prod_pic{
+        @include responds(medium){
+            float: none;
+            width: 20%;
+            padding: 0px;
+        }
+    }
+//商品圖片的外框
+    .pic_item{
+        position:relative;
+        @include responds(medium){
+            width: 25%;
+        }
+        
+        margin: auto;
+        img{
+            vertical-align: top;
+        }
+
+        .shop_animal_bg{
+            position:absolute;
+            width: 40%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+//商品資訊（name price number subtotal）
+    .prod_info{
+        font-family: Microsoft JhengHei;
+        letter-spacing: $ls;
+        line-height: $lh;
+        font-size: $base_fz;
+        @include responds(medium){
+            display: flex;
+            float: none;
+            width: 60%;
+        }
+        div{
+            @include responds(medium){
+            width: 34%;
+            }
+        }
+    //手機版才出現的標題
+        .title_inline{
+            @include responds(medium){
+                display:none;
+            }
+        }
+    }
+//設定所有input樣式
+    input{
+        padding: 3px;
+        border-radius:5px;
+        outline:none;
+        border:2px solid $orange;
+     
+    }
+//折扣
+    .discount{
+        border-bottom: 2px solid $orange;
+        border-top: 2px solid $orange;
+
+        h3{
+            text-align: center;
+            padding: 10px;
+        }
+    }
+    .discount_info{
+        width: 50%;
+        float: left;
+        box-sizing:border-box;
+        padding: 10px;
+        a{
+            font-size: $xs_fz;
+        }
+    }
+    .discount_input{
+        width: 50%;
+        float: left;
+        text-align: right;
+        box-sizing:border-box;
+        padding: 10px;
+
+        input{
+            width: 80px;
+        }
+    }
+//計算金額
+    .total{
+        text-align: right;
+        padding: 10px;
+    }
+//總金額的紅字
+    .total_money{
+        font-size: $lg_fz;
+        color:red;
+    }
+//填寫資料=====================================
+    .write_info{
+        .wrap{
+            @include responds(medium){
+                display: flex;
+                justify-content: center;
+            }
+            padding: 10px;
+           
+        }
+        .write_info_col{
+            width: 100%;
+            @include responds(medium){
+                width: 40%;
+            }
+            p{
+                padding: 5px 0;
+            }
+            .msg{
+                color: #f00;
+                font-size: $xs_fz;
+            }
+        }
+
+    
+    }
+
+//信用卡付費
+    .creditCard{
+        input{
+            width: 34px;
+        }
+       
+    }
+   
+//大的btn
+    .cart_btn{
+        text-align: center;
+        @include btn_cloudp (100px);
+        @include btn_cloudy (100px,$col_btn_orange);
+        a{
+            margin: 10px;
+        }
+    }
+//按下送出訂單後跳出的確定框==========================
+
+//黑色的底
+.order_confirm{
+    display:none;
+    position:fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    background-color:rgba(0,0,0,0.5);
+    z-index: 2;
+} 
+
+//黃色那塊
+   .confirm_container{
+       width: 90%;
+       position:fixed;
+       @include responds(medium){
+            width: 50%;
+       }
+       @include responds(large){
+        width:30%;
+        }
+        background-color: $lyellow;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        margin:auto;
+        border-radius:50px 50px 10px 10px;
+        box-sizing:border-box;
+        padding: 10px;
+
+//tent
+        @include pseudo(before,"",111%,0){
+            background-image: url(../img/shop/tent_small.png);
+            background-repeat:no-repeat;
+            background-size:contain;
+            position:relative;
+            top:-50px;
+            left: -5%;
+            padding-bottom: 37%;
+            margin-bottom: -60px;
+        }
+
+        .btn{
+            text-align: center;
+        }
+        @include btn_cloudp (100px);
+        @include btn_cloudy (100px,$col_btn_orange);
+        .btn_cloudy{
+            margin: 10px;
+        }
+        .btn_cloudp{
+            margin: 10px;
+        }
+   }
+//粗體字
+    .confirm_title{
+        padding-top:14px;
+    }
+
+
+//送出訂單後，訂單資訊的彈窗
+//黑色的底
+    .order_info{
+        display:none;
+        position:fixed;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin:auto;
+        background-color:rgba(0,0,0,0.6);
+        z-index: 2;
+    } 
+
+//黃的那塊
+    .order_info_container{
+        width: 90%;
+        position:fixed;
+        @include responds(medium){
+            width: 50%;
+        }
+        @include responds(large){
+        width:30%;
+        }
+        background-color: $lyellow;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        margin:auto;
+        border-radius:10px;
+        box-sizing:border-box;
+        padding: 10px;
+     
+
+    }
+
+    .order_info_title{
+        font-size: $lg_fz;
+        text-align: center;
+        border-bottom: 3px dashed $orange;
+        // font-weight: bold;
+    }
+
+    @include btn_cloudb (100px);
+    .btn_cloudb{
+        margin: auto;
+        display: block;
+    }
+
+}
+

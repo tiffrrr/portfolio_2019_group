@@ -1,0 +1,1667 @@
+$lblue:#d8ecea;
+$dblue:#7DC7C5;
+
+*{
+    // outline: 1px solid #f00;
+} 
+
+//頁面共用屬性
+.home_page{
+    background: linear-gradient(120deg, #cdeaf5 0%, #c2e9fb 100%);
+    @include msgalert(#fdf6e7,$col_btn_pink,$col_btn_pink);
+    h2{
+        background-image: url(../img/home/title.png);
+        background-repeat: no-repeat;
+        font-size: $h2_fz;
+        color:#fff;
+        font-weight: bold;
+        padding: 20px;
+        width: 215px;
+        box-sizing:border-box;
+        text-align: center;
+        margin: 20px 0;
+        //margin-bottom:50px;
+        transform:rotate(-10deg);
+    }
+
+    .intro{
+        color:cadetblue;
+        font-size: $lg_fz;
+        font-weight: bold;
+        text-align: center;
+        padding:60px 0px 60px;
+       
+        
+    }
+
+    .container{
+        max-width:1200px;
+        margin: auto;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+}
+
+//==================================第一屏
+
+.home_header,.home_game{
+    img{
+        width: 100%;
+    }
+}
+
+.home_header{
+    overflow: hidden;
+    padding-top: 100px;
+    background-image: url('../img/home/hd_cloud_b.png');
+    background-repeat: no-repeat; 
+    background-position:center 80%; 
+    background-size: contain;
+    padding-bottom: 200px;
+    .container{
+        padding-top: 130px;
+       
+    }
+    .home_title{
+        width: 80%;
+        margin: auto;
+        position: relative;
+        z-index: 1;
+        @include responds(xlarge){
+            width: 37%;
+            margin: 0;
+        }
+        p{
+            color:cadetblue;
+            font-size: $lg_fz;
+            text-align: right;
+            font-weight: bold;
+            padding: 5px;
+        }
+
+    }
+    .home_header_pic{
+        position: relative;
+        margin-top: 100px; 
+        animation: beachWave 8s infinite linear;
+
+        img[alt*="hd_cloud_s_left"]{
+            position:absolute;
+            top: -35%;
+            left: -5%;
+            // z-index: 2;
+            width: 30%;
+        }
+
+        img[alt*="hd_cloud_s_right"]{
+            position:absolute;
+            top: -40%;
+            right: 0%;
+            // z-index: 2;
+            width: 21%;
+        }
+    
+    
+        img[alt*="pyramid"]{
+            position:absolute;
+            top: -3%;
+            left:38%;
+            z-index: 4;
+            width: 22%;
+        }
+        img[alt*="island_up"]{
+            position: absolute;
+            width: 85%;
+            top: -2%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 3;
+        }
+    
+        // img[alt*="hd_water"]{
+        //     position: absolute;
+        //     width: 30%;
+        //     right: 9%;
+        //     bottom:18%;
+        //     z-index: 1;
+        // }
+        
+            
+        img[alt*="hd_rail_left"]{
+            
+            display: none;
+            @include responds(xlarge){
+                display: block;
+                position: absolute;
+                width: 50%;
+                left: -47%;
+                top: 37%;
+                z-index: -1;
+    
+            }
+        
+        }
+    
+        img[alt*="hd_rail_right"]{
+            
+            display: none;
+            @include responds(medium){
+                display: block;
+                position: absolute;
+                width: 50%;
+                // left: -33%;
+                // top: 40%;
+                right: -37%;
+                bottom: 27%;
+                
+            }
+        
+        }
+
+        img[alt*="hd_train_right"]{
+    
+            display: none;
+            @include responds(medium){
+                
+                display: block;
+                position: absolute;
+    
+                width: 15%;
+                right: 11%;
+                bottom: 29%;
+    
+                // width: 15%;
+                // left: -25%;
+                // top: 35%;
+                animation:trainMove 5s infinite;
+            }
+        
+        }
+    }
+    
+
+    @keyframes trainMove{
+        0%{right: 11%}
+        100%{right:-50%;}
+    };
+
+
+}
+//==================================客製
+
+.home_modify{
+    background-image: url('../img/home/grass.png');
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    padding-bottom: 200px; 
+    overflow: hidden;
+    @include responds(medium){
+        flex-direction:row;
+   
+      background-position: center bottom;
+    }
+    @include responds(xlarge){
+        background-size: contain; 
+    }
+    .modify_bg {
+        transition:0.5s;
+        position:absolute;
+        // display:none;
+        // filter:drop-shadow(1px -5px 3px red);
+        
+        // border:1px solid red;
+    }
+  
+    .container{
+        position: relative;
+        
+        .intro{
+            color:cadetblue;
+            font-size: $lg_fz;
+            font-weight: bold;
+            text-align: center;
+            padding:60px 0px 60px;
+            @include responds(small){
+                color: #eee;
+            
+            }
+        }
+        .modify_bg_ab{
+            display: none;
+            img{
+                transform:scale(0.1);
+            }
+            .treeGrow{
+                animation:treeGrow 1s forwards;
+            }
+            @keyframes treeGrow {
+                0% { transform:scale(0.1) translateY(3%)}
+                45% {transform:translateY(3%)}
+                100% { transform:scale(1)}
+             
+            }
+        }
+
+        @include responds(medium){
+            flex-direction:row;
+
+    .modify_bg_ab{
+                display: block;
+
+.sun{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: 15%;
+    right: 0%;
+    z-index: -1;
+    position: absolute;
+    background: linear-gradient(rgb(243, 193, 146), #F6AD56);
+    box-shadow: 0 0 40px 6px rgb(255, 254, 254), 0 0 150px 10px rgb(246, 246, 246);
+    animation: rise 4s linear ;
+} 
+
+  
+  @keyframes rise {
+    0% {
+      top: 80%;
+      transform: scale(1);
+    }
+    50% {
+        top: 45%;
+        transform: scale(1.2);
+      }
+    100% {
+      top: 15%;
+      transform: scale(1);
+    }
+  }
+
+  
+        
+        img[alt*="tree_b_right"]{
+            position: absolute;
+            width: 15%;
+            right: -14%;
+            bottom: -9%;
+        }
+                
+        img[alt*="tree_b_left"]{
+            position: absolute;
+            width: 15%;
+            left: -22%;
+            bottom: 1%;
+        }
+
+        .tree_r{
+            position: absolute;
+            width: 10%;
+            right: 0%;
+            bottom: 0%;
+        }
+        img[alt*="tree_s_left"]{
+            position: absolute;
+            width: 10%;
+            left: -8%;
+            bottom: 11%;
+        }
+        img[alt*="grass-up"]{
+            position: absolute;
+            width: 100%;
+            left: -8%;
+            bottom: 11%;
+        }
+
+        img[alt*="sun"]{
+            position: absolute;
+            width: 10%;
+            right: -8%;
+            top: 0%;
+            filter: drop-shadow(20px 20px 10px  rgba(0, 0, 0, 0.7));
+        }
+        img[alt*="m_cloud"]{
+            position: absolute;
+            width: 20%;
+            right: 25%;
+            top: 10%;
+            filter: drop-shadow(20px 20px 10px  rgba(243, 234, 184, 0.7));
+        }
+
+
+
+            }
+
+        }
+
+        
+    }
+    
+        .modify_wrap{
+
+            display: flex;
+            width: 100%;
+            flex-direction:column;
+
+            @include responds(medium){
+                flex-direction:row;
+            }
+
+             
+            .modify_pic{
+                // width: 100%;   
+                @include responds(small){
+                    padding-bottom: 10%;
+                }
+
+                .home_jump {
+                    animation:home_jump 1.0s 3;
+                    position:absolute;
+                }
+
+                @keyframes home_jump {
+                    0%{ transform:translateY(0%) }
+                    25%{ transform:translateY(-15%) }
+                    50%{ transform:translateY(0%) }
+                    75%{ transform:translateY(-15%) }
+                    100%{ transform:translateY(0%) }
+                }
+                // @include responds(medium){
+                //     width: 50%;
+                //     // background-size: 50%;
+                //     padding-bottom: 0px;
+                // }
+                width: 100%;    
+               text-align: center;
+            //    background-image: url(../img/home/home_modify_b.png);
+            //    background-repeat: no-repeat;
+            //    background-position:bottom;
+            //    background-size: 80%;
+               position: relative;
+
+                    @include responds(medium){
+                    width: 50%;
+                    }
+                .head_box{
+                    width: 80%;
+                    height:0;
+                    padding-bottom: 80%;
+                    // background-color: #ccc;
+                    position: relative;
+                    margin: auto;
+                    background-image: url(../img/home/home_modify_b.png);
+                    background-repeat: no-repeat;
+                    background-position:bottom;
+                    background-size: 100%;
+
+                }
+                img{
+                    width: 100%;
+                    // height: 100%;
+                 
+                     position: absolute;
+                     top:0;
+                     left:0;
+                     right: 0;
+                     bottom: 0;
+                     margin: auto;                      
+                }
+            }
+    
+            .modify_box{
+                width: 100%;
+                
+                @include responds(medium){
+                    width: 30%;
+                    margin: auto;
+                }
+ 
+    
+                .opt_btn{
+                    // margin: 10px 0px;
+                    text-align: center;
+
+                    .opt_btn_head{
+                        display: inline-block;
+                        vertical-align: middle;
+                        // margin: 0 10px;
+                        padding: 5px 20px;
+                        // width: 80%;
+                        border-radius: 15px 15px 0px 0px;
+                        border-top: 3px solid #639b9f;
+                        border-left: 3px solid #639b9f;
+                        border-right: 3px solid #639b9f;
+                        border-bottom: 0x solid #639b9f;
+
+                        background-color: $col_modify_box;
+                        position: relative;
+                        text-align: center;
+                        color: #333333;
+                        text-decoration: none;
+                        // box-shadow: 0px 2px 0px 1px $col_modify_boxshadow;
+        
+                        // &:before{
+                        //     content: '';
+                        //     border-top: 20px solid $col_modify_box;
+                        //     border-right: 8px solid transparent;
+                        //     border-left: 8px solid transparent;
+                        //     border-bottom: 0px solid $col_modify_box;
+                        //     position: absolute;
+                        //     left: 13px;
+                        //     top: 30px;
+                        // }
+                    }
+              
+                }
+                
+                
+                .modify_opt{
+                    width: 100%;
+                    box-sizing: border-box;
+                    border: 5px solid $col_modify_box;
+                    background-color: #efefef;
+                    border-radius: 30px;
+                    box-shadow: 2px 2px 0px 3px $col_modify_boxshadow;
+        
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin: auto;
+                    
+                    .opt_item{
+                        box-sizing: border-box;
+                        width: 50%;
+                        // height: calc(20vh);
+                        text-align: center;
+                        padding: 20px 0px;
+                        img{
+                            cursor: pointer;
+                            width:50%;
+                            // height: 100%;
+                            &:hover {
+                                filter: drop-shadow(0px 0px 10px $col_btn_pink);
+                            }
+                        }
+                    }
+    
+                }
+
+            }
+
+  
+
+        }
+
+        .modify_txt{
+            text-align: center;
+            padding: 10px 0 0 0;
+            p{
+                font-size: 18px;
+                font-weight: bold;
+            }
+            @include btn_cloud(110px,$col_btn_pink);
+            .btn_cloud{
+                margin: 15px 0;
+            }
+        }
+
+}
+//==================================遊戲
+.home_game{
+    background-image: url('../img/home/desert2.jpg');
+    background-repeat: no-repeat; 
+    background-size: cover;
+    position: relative;
+    background-position: center bottom;
+    // overflow:hidden;
+
+    @include responds(medium){
+        padding-bottom: 200px;
+    }
+
+
+    .game_rail{
+        display: none;
+        @include responds(xlarge){
+            display: block;
+            width: 10%;
+            position: absolute;
+            left: -2.4%;
+            top: 11%;
+            // transform: rotate(0deg);
+        }
+    }
+
+    .game_train{
+        display: none;
+        @include responds(xlarge){
+            display: block;
+            width: 9.8%;
+            position: absolute;
+            left: 0%;
+            top: 9%;
+            z-index: 2;
+            transform: rotate(-4deg);
+            // transform-origin: left 100%;
+            // animation: spin 5s 3;
+        }
+
+    }
+
+    @keyframes spin {
+    to{transform: rotate(1turn);} 
+    }
+           
+
+    &:before{
+        content: '';
+        width: 100%;
+        height: 22%;
+        position: absolute;
+        top: -19%;
+        background-image: url(../img/home/beach.png);
+        background-size: cotain;
+        animation: beachWave 8s infinite linear;
+        // background-position: 0 100px;
+    }
+
+    .container{
+        position: relative;
+        padding-bottom: 100px;
+
+        .game_palyvideo{
+        //    visibility:hidden;
+            width: 100%;
+            text-align: center;
+            @include btn_cloud(110px,$col_btn_pink);
+            .btn_cloud{
+                margin-top: 15px;
+            }
+            @include responds(medium){
+                width: 70%;
+                // margin-left:9%;
+                margin: auto;
+            }
+        }
+    
+        .game_palyrank{
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            transition:0.5s all;
+            @include btn_cloud(110px,$col_btn_pink);
+            .btn_cloud{
+                margin-top: 15px;
+            }
+
+            @include responds(medium){
+                width: 40%;
+                position: absolute;
+                bottom: 0;
+                right:0%;
+            }
+
+
+            .title_bg{
+                background-image: url(../img/home/titleCloud.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 202px;
+                height: 100px;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                position:relative;
+                top: 30px;
+                margin: auto;
+                @include responds(small){
+                    margin: auto;
+                }
+
+                h3{
+                    font-weight: bold;
+                    color: cadetblue;  
+                    font-size: $h3_fz;
+                }
+             
+            }
+        
+    
+            .topwrap{
+                display: flex;
+                justify-content: center;
+                background-image: url(../img/game/rank_chart.png);
+                background-repeat: no-repeat;
+                // background-size: contain;
+                background-size: 100%;
+                background-position: center center;
+                padding: 20px;
+                // .chartSlide{
+                //     animation:chart_slide 2s forwards;
+                //     position:absolute;
+                    
+                // }
+                // @keyframes chart_slide{
+                //     0%{ transform:translateX(-5%);color:red;}
+                //     100%{ transform:translateX(-100%);}
+                // }
+                .bg_top{
+                    background-image: url('../img/game/chart_topx.png');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center center;
+                    // background-size: 100%;
+                    padding: 10px;
+                    margin: 10px;
+                    flex-grow: 1;
+
+                    @include responds(medium){
+                        // background-size: 100%;
+                   
+                        padding: 20px;
+                    }
+                        
+                    img{
+                        width: 100%;
+                    }
+                 
+                }
+            }
+            
+    
+        }
+
+
+
+
+        .game_bg_ab{
+       
+            img[alt*="desert_animal"]{
+                position: absolute;
+                width: 15%;
+                bottom: 0;
+                display:none;
+                @include responds (medium){
+                    display: block;
+                }
+            }
+            .camelWalk {
+                // position:absolute;
+                animation:camel_walk 9s infinite;
+            }
+            @keyframes camel_walk {
+
+                0% {
+                    -webkit-transform: translate3d(-20%, 0%, 0) scaleX(1); }
+                3% {
+                    -webkit-transform: translate3d(-10%, 5%, 0) scaleX(1); }
+                6% {
+                    -webkit-transform: translate3d(-5%, 0%, 0) scaleX(1); }
+                9% {
+                    -webkit-transform: translate3d(0%, 5%, 0) scaleX(1); }
+                12% {
+                    -webkit-transform: translate3d(15%, 0%, 0) scaleX(1); }
+                15% {
+                    -webkit-transform: translate3d(20%, 5%, 0) scaleX(1); }
+                18% {
+                    -webkit-transform: translate3d(25%, 0%, 0) scaleX(1); }
+                21% {
+                    -webkit-transform: translate3d(30%, 5%, 0) scaleX(1); }
+                24% {
+                    -webkit-transform: translate3d(35%, 0%, 0) scaleX(1); }
+                27% {
+                    -webkit-transform: translate3d(40%, 5%, 0) scaleX(1); }
+                30% {
+                    -webkit-transform: translate3d(45%, 0%, 0) scaleX(1); }
+     
+                33% {
+                    -webkit-transform: translate3d(55%, 0%, 0) scaleX(1); }
+                36% {
+                    -webkit-transform: translate3d(60%, 5%, 0) scaleX(1); }
+                
+                37% {
+                    -webkit-transform: translate3d(65%, 0%, 0) scaleX(-1); }
+                42% {
+                    -webkit-transform: translate3d(55%, 5%, 0) scaleX(-1); }
+                45% {
+                    -webkit-transform: translate3d(50%, 0%, 0) scaleX(-1); }
+                48% {
+                    -webkit-transform: translate3d(45%, 5%, 0) scaleX(-1); }
+                51% {
+                    -webkit-transform: translate3d(40%, 0%, 0) scaleX(-1); }
+                54% {
+                    -webkit-transform: translate3d(35%, 5%, 0) scaleX(-1); }
+                57% {
+                    -webkit-transform: translate3d(30%, 0%, 0) scaleX(-1); } 
+                60% {
+                    -webkit-transform: translate3d(25%, 5%, 0) scaleX(-1); } 
+                63% {
+                    -webkit-transform: translate3d(20%, 0%, 0) scaleX(-1); } 
+                66% {
+                    -webkit-transform: translate3d(15%, 5%, 0) scaleX(-1); } 
+                69% {
+                    -webkit-transform: translate3d(10%, 0%, 0) scaleX(-1); } 
+                72% {
+                    -webkit-transform: translate3d(5%, 5%, 0) scaleX(-1); }
+                75% {
+                    -webkit-transform: translate3d(0%, 0%, 0) scaleX(-1); }  
+                99% {
+                    -webkit-transform: translate3d(0%, 0%, 0) scaleX(-1); } 
+            }
+
+            img[alt*="chair"]{
+                position: absolute;
+                display:none;
+                transition:0.5s all;
+                @include responds (medium){
+                    display: block;
+                    width: 10%;
+                    bottom: -15%;
+                    right:0%;
+                    // animation: rotatedesert 2s infinite linear;
+                }
+            }
+           
+
+
+
+        }
+
+        .game_bg_deco{
+            position: absolute;
+            display:none;
+            @include responds (medium){
+                display: block;
+                bottom:-10%;
+                left: 22%;
+            }
+        }
+    }
+
+
+    
+}
+
+
+@keyframes rotatedesert{
+    0%  {transform: rotate(0deg) ;}
+    100%{transform: rotate(5deg);}
+}
+
+	@keyframes beachWave{
+		0%  {transform: translateY(0%) ;}
+		25% {transform: translateY(-10px);}
+		50% {transform: translateY(0%);}
+		75% {transform: translateY(-10px);}
+		100%{transform: translateY(0%);}
+	}
+
+
+///////////////////////////////
+
+//==================================排行榜
+.home_rank{
+    background-color: $lblue;
+    background-image: url(../img/home/mountain.png);
+    background-size: 300%;
+    background-repeat: no-repeat;
+    background-position: 0 -100px;
+    padding-bottom: 50px;
+    position:relative;
+    @include responds(medium){
+        background-size: 105%;
+        background-position: center 0;
+    }
+    @include responds(large){
+        background-size: contain;
+        background-position: 0 -100px;
+    }
+    .container{
+        padding-top: 100px;
+    }
+    .wrap{
+        display:flex;
+        flex-wrap:wrap;
+        position:relative;
+    }
+    .rank_col_msg{
+        width: 100%;
+        @include responds(medium){
+            width: 50%;
+        }
+        @include responds(large){
+            width: 40%;
+        }
+    }
+    .rank_col_top{
+        width: 100%;
+        @include responds(medium){
+            width: 50%;
+            box-sizing:border-box;
+            padding-top: 100px;
+        }
+        @include responds(large){
+            width: 60%;
+            padding-top: 80px;
+        }
+    }
+//留言區底圖
+    .rank_msg {
+        margin: auto;
+        background-image: url(../img/home/msg.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        box-sizing:border-box;
+        background-position:center;    
+        position:relative;   
+        height: 100%;
+        padding:40px 0px;
+       
+        @include responds(medium){
+            padding:130px 10px;
+        }
+        @include responds(large){
+            padding:190px 30px;
+        }
+    }
+   
+    // =====================detail
+    .rank_msg{
+        h3{
+            text-align: center;
+            font-weight: bold;
+            color: cadetblue;
+            padding-top:30px ;
+            font-size: $h3_fz;
+            @include responds(medium){
+                padding-top: 90px;
+            }
+        }
+    }
+
+//一條留言
+    .msg_row{
+        display:flex;
+        justify-content: center;
+        width: 90%;
+        margin:15px auto;
+        @include responds(medium){
+            width: 100%;
+        }
+    }
+//留言區圖片
+    .msg_img{
+        position:relative;
+        display: flex;
+        align-items: center;
+        img{
+            width:100%;
+        }
+        width: 70px;
+        margin-right:10px;
+        .animal{
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%,0);
+            width: 50%;
+        }
+    }
+//中間的字們
+    .msg_content{
+        text-align: right;
+        p{
+            padding: 3px;
+            text-align: left;
+        }
+        .msg_more{
+            font-size: $xs_fz;
+        }
+        .msg_date{
+            font-size: $xs_fz;
+            display:inline-block;
+            vertical-align: top;
+        }
+         @include btn_cloud(62px,$col_btn_blue);
+    }
+
+//前三名的每一個
+    .top_item{
+        width:90%;
+        margin:100px auto 0;
+       
+        
+        @include responds(medium){
+            margin: 0 auto 0;
+        }
+    }
+
+//包第二名第三名的框
+    .top_row{
+        @include responds(medium){
+            display:flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        
+        }
+        @include responds(large){
+            display:flex;
+            margin-top:-40px;
+            // padding-left: 50px;
+        }
+    }
+    .top_rank_title{
+        width:45%;
+        height: 70px;
+        background-image: url(../img/frank/items_title.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        text-align: center;
+        padding: 5px 5px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        position: absolute;
+        top: -65px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 1;
+        
+        @include responds(medium){
+            height: 80px;
+        }
+        h3{
+            width: 100%;
+            font-weight: 800;
+            color:#fff;
+        }
+    }    
+    .top_one{
+        animation: beachWave 6s infinite linear;
+        @include responds(medium){
+            width: 50%;  
+        }
+    }
+    .top_two{
+        animation: beachWave 6s  1s infinite linear;
+        @include responds(medium){
+            width: 50%;
+        }
+        @include responds(large){
+            width: 48%;
+            margin: 0px;
+        }
+    }
+    .top_three{
+        animation: beachWave 6s 1.5s infinite linear;
+        @include responds(medium){
+            width: 50%;
+        }
+        @include responds(large){
+            width: 48%;
+            margin: 0px;
+        }
+    }
+//石頭上面的所有東西
+    .top_content{
+        position:relative;
+        display:flex;
+        justify-content: center;
+        &:hover .top_info{
+            opacity:1;
+            transition:opacity 1s ;
+        }
+    }
+//對話框
+    .top_info{
+        text-align: center;
+        z-index: 1;
+        position:absolute;
+        bottom: 0%;
+        left: 50%;
+        transform: translate(-50%,0%);
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: rgba(0,0,0,0.5);
+        color:#fff;
+        opacity:0;
+        @include responds(small){
+            opacity:1;
+        }
+    }
+//圖片
+    .top_img{
+        width: 60%;
+        margin:0 5px;
+        position:relative;
+        cursor: pointer;
+        img{
+            width:100%;
+        }
+        .animal{
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%,0);
+            width: 50%;
+        }
+    }
+//btn
+    .top_btn{
+        position: absolute;
+        right: 2.5%;
+        bottom: 0;
+        @include responds(small){
+            right: 1%;
+        }
+        @include btn_cloud(53px,$col_btn_blue);
+        .btn_cloud{
+            display: block;
+            margin: 5px 0;
+            font-size: 14px;
+            
+        }
+    }
+//石頭那塊
+    .top_rock{
+        background-image: url(../img/home/rock.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position:center;
+        padding-bottom: 65%;
+        margin-top: -50px;
+        @include responds(medium){
+            margin-top: -40px;
+        }
+    }
+
+//大button
+    .main_btn{
+        position:absolute;
+        bottom: 0;
+        right: 0%;
+        @include btn_cloud(80px,$col_btn_pink);
+    }
+
+//背景的熱氣球跟雲
+
+    .cloud{
+        display:none;
+        @include responds (large){
+            width: 150px;
+            position:absolute;
+            display: block;
+            
+        }
+    }
+
+    .cloudl{
+        top: 90%;
+        left:5%;
+        animation: cloudFloat 12s 0s infinite linear;
+    }
+
+    .cloudr{
+        top:90%;
+        right: 4%;
+    }
+
+    .cloudtl{
+        top: 55%;
+        left: 10%;
+        animation: cloudFloat 12s 0s infinite linear;
+    }
+    .cloudtm{
+        top: 41%;
+        right: 17%;
+    }
+    .cloudtr{
+        top: 65%;
+        right: 10%;
+        animation: cloudFloat 12s 0.7s infinite linear;
+    }
+
+    .balloon{
+        width: 100px;
+        display:none;
+        img{
+            width: 100%;
+        }
+        position:absolute;
+        @include responds (xlarge){
+            display:block;
+        }
+    }
+
+}
+
+
+// ==========================================================預約導覽
+.home_resv {
+    overflow: hidden;
+    background-color: $lblue;
+    background-image: url(../img/home/sky.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position:bottom;
+    width: 100%;
+    padding-bottom: 200px;
+    position:relative;
+    //土地那條線
+    @include pseudo(after,'' ,100%,44px ){
+        // background-color: #000;
+        background-image:url("../img/home/resv_rail.png");
+        margin-top:-40px;
+        @include responds(small){
+            display:none;
+        }
+    }
+    //說明文字
+    .guide_word{
+        padding: 10px;
+        text-align: center;
+        @include responds(medium){
+            width: 40%;
+            position:relative;
+            left: 55%;
+            top: 50px;
+            box-sizing:border-box;
+        }
+    }
+
+//包日曆和資訊，flex用
+    .wrap{
+        display:flex;
+        flex-wrap:wrap;
+        @include responds(medium){
+            margin-top: -95px;
+        } 
+    }
+
+
+    .col_calendar{
+        @include responds(medium){
+            width: 50%;
+        }
+        .calendar_title{
+            span #prev, #next{
+                cursor: pointer;
+            }
+        } 
+        .calendar_body{
+            position:relative;
+            z-index: 2;
+        }
+    }
+    .sunglasses{
+        width:255px;
+        position:absolute;
+        top:28%;
+        left:15%;
+        transform: rotateX(30deg);
+        // transition:1 1s all;
+        @include responds(small){
+            width: 50%;
+            top: 40.5%;
+            left: 24%;
+        }
+
+        img {
+            width:100%;
+            // @include responds(small){
+            //     width: 75%;
+            // }
+            
+        }
+    }
+}
+   
+//顯示資訊的文字區
+    .col_info{
+        width: 100%;
+        display:flex;
+        align-items: center;
+        margin-top: 50px;
+        @include responds(medium){
+            width: 50%;
+            margin-top: 0px;
+        } 
+    }
+//顯示資訊那塊
+    .info_text{
+        background-color: rgba(255,255,255,0.5);
+        padding: 15px;
+        border-radius: 20px;
+        font-family: Microsoft JhengHei;
+        margin: auto;
+        width: 80%;
+    
+        @include responds(large){
+            width: 50%;
+        }   
+    }
+//每一列資訊
+    .text_row{
+        display:flex;
+        justify-content: space-around;
+        padding:5px 10px;
+        p{
+            // padding:0 10px;
+            width: 68px;
+        }
+    }
+//button
+@include btn_cloud(80px,$col_btn_pink);
+.main_title{
+    text-align: center;
+    margin: 20px 0 5px;
+}
+
+//火車+門
+    .background{
+        display:none;
+        @include responds(medium){
+            margin-top: -200px;
+            display:flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            transform:scale(0.7);
+        }
+        @include responds(xlarge){
+            transform:scale(1);
+        }
+    }
+
+    .train{
+        position:relative;
+        animation:train 13s infinite;
+        z-index: 1;
+       .hand{
+           position:absolute;
+           top: 32%;
+           left:50%;
+           transform: rotate(-24deg);
+           animation:hand 1s linear infinite;
+       }
+    }
+    .gate{
+        position:relative;
+        .gate_top{
+            position:absolute;
+            right: 0%;
+            z-index: 2;
+        }
+    }
+//背景的熱氣球跟雲
+// overflow: hidden;
+    .cloud{
+        display:none;
+        @include responds (large){
+            width: 150px;
+            position:absolute;
+            display: block;
+        }
+    }
+
+    .cloudl{
+        top: 90%;
+        right: 40%;
+        animation: cloudFloat 12s 0s infinite linear;
+    }
+    .cloudm{
+        top: 35%;
+        right: 10%;
+        animation: cloudFloat 12s 0.3s infinite linear;
+    }
+    .cloudr{
+        top:65%;
+        right: 4%;
+        animation: cloudFloat 12s 0.8s infinite linear;
+    }
+
+    .cloudtl{
+        top: 25%;
+        left: 10%;
+        animation: cloudFloat 12s  1.2s infinite linear;
+    }
+    .cloudtm{
+        top: 0%;
+        right: 45%;
+        // animation: cloudFloat 12s  1.6s infinite linear;
+    }
+    .cloudtr{
+        top: 10%;
+        right: 20%;
+        // animation: cloudFloat 12s  1.8s infinite linear;
+    }
+
+   
+
+    .balloon{
+        width: 100px;
+        display:none;
+        img{
+            width: 100%;
+        }
+        position:absolute;
+        @include responds (xlarge){
+            display:block;
+        }
+    }
+
+
+@keyframes train{
+    0%{right:100%}
+    50%{right:0}
+    100%{right:-100%}
+};
+
+@keyframes hand{
+    0%{transform: rotate(-24deg);top: 32%;}
+    50%{transform: rotate(-33deg);top: 29%;}
+    100%{transform: rotate(-24deg);top: 32%;}
+}
+
+
+
+// =====================================商城
+.home_shop{
+    background-color: #bbe0e7;
+    position:relative;
+    .wrap{
+        
+        @include responds(medium){
+            flex-direction:row-reverse;
+            display:flex;
+        justify-content: center;
+        }
+//選怪前三名的圖 區
+        .shop_rank{
+            width: 100%;
+            align-self: center;
+            @include responds(medium){
+                width: 40%;
+            }
+        }
+
+//商品 區
+        .shop_product{
+            width: 100%;
+            @include responds(medium){
+                width: 50%;
+            }
+        }
+    }
+
+//選怪圖區 細節
+    //標題背景
+    .p_bg{
+        background-image: url(../img/home/titleCloud.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 202px;
+        height: 100px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        @include responds(small){
+            margin: auto;
+        }
+        p{
+            font-weight: bold;
+            color: cadetblue;  
+            font-size: $h3_fz;
+        }
+    }
+    .shop_rank_img{
+        margin: auto;
+        width: 85%;
+        display:flex;
+        justify-content: center;
+        margin-top: 35px;
+
+        img{
+            width:100%;
+            border: 5px solid#fff;
+            margin: 5px;
+            box-shadow: 2px 3px 3px #999;
+        }
+        .rank_img_item{
+            transform:rotate(15deg);
+            position:relative;
+            margin: 1px;
+        }
+    }
+//商品那個框框 
+    .item{
+        width: 90%;
+        text-align: center;
+        border:2px solid saddlebrown;
+        background-color: #fff;
+        position:relative;
+        margin: 30px auto;
+//hover出來的樹懶   
+        @include pseudo(before,null,100%,32px){
+            background-image: url(../img/shop/sloth.png);
+            background-repeat: no-repeat;
+            position:absolute;
+            top: 0px;
+            transition:top 0.5s;   
+        }
+        &:hover {
+            &:before{
+                top:-35px;
+            }
+        }
+        h3{
+            font-size: $h3_fz;
+            padding: 10px;
+        }
+    }
+//拿來flex的外框
+    .prod_wrap{
+        @include responds(medium){
+            display:flex;
+            justify-content: space-around; 
+        }
+       
+    }
+//商品資訊
+    .prod_info{
+        align-self: center;
+        margin: auto;
+        @include responds(medium){
+            margin: 0px;
+        }
+//商品標題
+        h3{
+            font-weight: bold;
+        }
+//價格
+        .price{
+            margin-bottom: 10px;
+        }
+
+//btns  
+    @include btn_cloud(110px,$col_btn_blue);
+    .btn_cloud{
+        display:block;
+        @include responds(small){
+            margin: auto;
+        }
+        
+    }
+    }
+
+    
+//修改數量
+    .number{
+        display:flex;
+        justify-content: center;
+        -webkit-appearance: none;
+        button{
+            color:#fff;
+            font-weight: bold;
+            font-size: $lg_fz;
+            width: 25px;
+            height: 25px;
+            background-color:#5f4f23;
+            border:none;
+            border-radius: 5px;
+            line-height: 1;
+        }
+        input{
+            padding:5px 5px;  border:0 none;
+            width: 30px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    }
+
+//上下的彩色邊框
+    .deco{
+        width: 100%;
+        height: 24px;
+    
+    }
+    .deco_top{
+        background-image: url('../img/shop/prod_deco_top.jpg');
+        position:relative;
+        background-repeat: repeat-x;
+        padding-bottom: 10px;
+        background-color: #fff;
+    }
+    
+    .deco_bottom{
+        background-image: url('../img/shop/prod_deco.jpg');
+    }
+    
+//商品圖片的外框    
+    .prod_img{
+        position:relative;
+        width: 70%;
+        margin: auto;
+        @include responds(medium){
+            margin: 0px;
+        }
+//商品本人
+        .prod_plain{
+            width: 100%;
+        }
+//選的動物圖案
+        .pic_chosen{
+            position:absolute;
+            width: 41%;
+            overflow:hidden;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+//做動畫用，包三張圖的
+            .pic_chosen_flex{
+                display:flex;
+                width: 400%;
+                position:relative;
+                animation:pic_chosen 7s linear infinite;
+            }
+            .pic_chosen_one{
+                position:relative;
+                width: 100%;
+            }
+            .shop_animal_bg{
+                width: 100%;
+            }
+            .shop_animal{
+                position:absolute;
+                top: 50%;
+                left: 50%;
+                transform:translate(-50%,0);
+                width: 50%;
+            }
+        }
+    }
+    @keyframes pic_chosen{
+        0%{right:0%}
+        16.6667%{right:0%}
+        33.3334%{right:100%}
+        50%{right:100%}
+        66.6667%{right:200%}
+        83.3334%{right:200%}
+        100%{right:300%}
+
+    }
+    
+    .main_btn{
+        text-align:center;
+       
+        padding-top: 40px; 
+        @include responds (large){
+            text-align: right;
+         padding-top: 80px;           
+        }
+        @include btn_cloud(75px,$col_btn_pink);
+    }
+
+
+//背景的熱氣球跟雲
+    // overflow: hidden;
+    .cloud{
+        display:none;
+        @include responds (large){
+            width: 150px;
+            position:absolute;
+            display: block;
+        }
+    }
+
+    .cloudl{
+        top: 80%;
+        left: 10%;
+        // animation: cloudFloat 12s infinite linear;
+    }
+   
+    .cloudr{
+        top: 57%;
+        right: 4%;
+        animation: cloudFloat 12s 1s infinite linear;
+    }
+
+    .cloudtl{
+        top: 25%;
+        left: 10%;
+        animation: cloudFloat 12s 1.3s infinite linear;
+    }
+    
+    .cloudtr{
+        top: 25%;
+        right: 10%;
+        // animation: cloudFloat 12s  1.6s infinite linear;
+    }
+
+   
+
+    .balloon{
+        width: 100px;
+        display:none;
+        img{
+            width: 100%;
+        }
+        position:absolute;
+        @include responds (xlarge){
+            display:block;
+        }
+    }
+}
+
+@keyframes cloudFloat{
+    0%  {transform: translateX(0%) ;}
+    25% {transform: translateX(-70px);}
+    50% {transform: translateX(0%);}
+    75% {transform: translateX(-70px);}
+    100%{transform: translateX(0%);}
+}

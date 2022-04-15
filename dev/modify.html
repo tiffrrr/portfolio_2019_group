@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/swiper.css">
+    @@include('template/csslink.html')
+    <script src="js/plugin/swiper-4.5.1.min.js"></script>
+    <script src="js/plugin/Chart.js"></script>
+    <title>動物改造</title>
+</head>
+<body class="modify_body">
+    
+    @@include('template/header.html')
+
+    <section class="modify_banner" id="banner_M1">
+        <div class="container">
+            <div class="banner_cloud">
+                <img class="icon_l" src="img/header/banner_icon_l.png" alt="">
+                <h1 class="title">動物改造</h1>
+                <img class="icon_r" src="img/header/banner_icon_r.png" alt="">
+            </div>
+            <div class="about">
+                <img src="img/modify/guide_animal.png" alt="">
+                <p>請創造出自己的動物</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="modify" id="section_M1">
+        <div class="container">
+
+            <div class="part_box">
+                <div class="text">
+                    <h2>第一步：選擇動物身體部件</h2>
+                    
+                    <!-- <input type="text" name="" id="animal_name"> -->
+                </div>
+
+                <div hidden>
+                    <img class="tail_pic" src="img/modify/p_tail_giraffe.png" alt="">
+                    <img class="leg_pic" src="img/modify/p_leg_giraffe.png" alt="">
+                    <img class="body_pic" src="img/modify/p_body_giraffe.png" alt="">
+                    <img class="head_pic" src="img/modify/p_head_giraffe.png" alt="">
+                    <img class="bg_pic" src="img/modify/bg_blank.png" alt="">
+                    <img class="tempbg_pic" src="img/modify/bg_blank.png" alt="">
+                    <img class="amlbg_pic" src="" alt="">
+                </div>
+
+                <div id="voice_box">
+                    <!-- <audio id="voice_tiger">
+                        <source src="img/voice/tiger.mp3" type="audio/mpeg">
+                    </audio>
+                    <audio id="voice_lion">
+                        <source src="img/voice/lion.mp3" type="audio/mpeg">
+                    </audio>
+                    <audio id="voice_giraffe">
+                        <source src="img/voice/dog.mp3" type="audio/mpeg">
+                    </audio>
+                    <audio id="voice_elephant">
+                        <source src="img/voice/elephant.mp3" type="audio/mpeg">
+                    </audio> -->
+                </div>
+
+
+                <canvas id="aml_canvas"></canvas>
+                <form class="btn_box" method="post" accept-charset="utf-8" id="form1" enctype="multipart/form-data">
+                    
+                    <!-- 動物圖檔 -->
+                    <input name="aml_data" id='aml_data' type="hidden"/>
+                    <!-- 動物背景 -->
+                    <input name="bg_data" id='bg_data' type="hidden"/>
+                    <!-- 動物圖加背景合併 -->
+                    <input name="amlbg_data" id='amlbg_data' type="hidden"/>
+                    <!-- 動物的叫聲 -->
+                    <input name="voice_data" id='voice_data' type="hidden"/>
+                    <!-- 環境雷達圖 -->
+                    <input name="chart_data" id="chart_data" type="hidden">
+
+                    <!-- 使用者名稱、動物名稱、3個環境參數、動物生命力、動物跳躍力 -->
+                    <input name="user_no" id='user_no' type="hidden"/>
+                    <input name="myanimal_name" id='myanimal_name' type="hidden"/>
+                    <input name="environ_adapt_1" id='environ_adapt_1' type="hidden"/>
+                    <input name="environ_adapt_2" id='environ_adapt_2' type="hidden"/>
+                    <input name="environ_adapt_3" id='environ_adapt_3' type="hidden"/>
+                    <input name="animal_life" id='animal_life' type="hidden"/>
+                    <input name="animal_jump" id='animal_jump' type="hidden"/>
+                    
+
+
+                    <a href="javascript: random_part()" class="btn_cloudb btn_random">
+                        隨機
+                        @@include('template/btn_sp.html')
+                    </a>
+                    <!-- javascript: nextstep() -->
+                    <a href="#section_M2" class="btn_cloudp" id="next_btn">
+                        下一步
+                        @@include('template/btn_sp.html')
+                    </a>
+                </form>
+            </div>
+
+            <!-- pointa=森林，pointb=高山，pointc=沙漠 -->
+
+            <div class="select_box">
+                <ul class="button_ul">
+                    <li class="part_button head_button now_page">
+                        <label for="btn_head">頭部</label>
+                        <input type="radio" name="partlist" id="btn_head" checked>
+                        <ul class="part_wrap swiper-container swiper1" >
+                            <div class="swiper-wrapper head_list">
+                                <!-- <div class="swiper-slide slide_p0">
+                                    <li>
+                                        <img class="picon" class="picon" src="img/modify/head_giraffe.png" alt="">
+                                        <input type="text" data-pointa="3" data-pointb="1" data-pointc="0" style="display: none">
+                                        <p>長頸鹿頭</p>
+                                    </li>
+                                    <li>
+                                        <img class="picon" src="img/modify/head_elephant.png" alt="">
+                                        <input type="text" data-pointa="1" data-pointb="0" data-pointc="3" style="display: none">
+                                        <p>大象頭</p>
+                                    </li>
+                                    <li>
+                                        <img class="picon" src="img/modify/head_lion.png" alt="">
+                                        <input type="text" data-pointa="3" data-pointb="1" data-pointc="3" style="display: none">
+                                        <p>獅子頭</p>
+                                    </li>
+                                    <li>
+                                        <img class="picon" src="img/modify/head_tiger.png" alt="">
+                                        <input type="text" data-pointa="1" data-pointb="3" data-pointc="1" style="display: none">
+                                        <p>老虎頭</p>
+                                    </li>
+                                </div>
+                                <div class="swiper-slide  slide_p1">
+                                    <li>
+                                        <img class="picon" class="picon" src="img/modify/head_giraffe.png" alt="">
+                                        <input type="text" data-pointa="3" data-pointb="1" data-pointc="0" style="display: none">
+                                        <p>長頸鹿頭</p>
+                                    </li>
+                                    <li>
+                                        <img class="picon" src="img/modify/head_elephant.png" alt="">
+                                        <input type="text" data-pointa="1" data-pointb="0" data-pointc="3" style="display: none">
+                                        <p>大象頭</p>
+                                    </li>
+                                    <li>
+                                        <img class="picon" src="img/modify/head_lion.png" alt="">
+                                        <input type="text" data-pointa="3" data-pointb="1" data-pointc="3" style="display: none">
+                                        <p>獅子頭</p>
+                                    </li>
+                                    <li>
+                                        <img class="picon" src="img/modify/head_tiger.png" alt="">
+                                        <input type="text" data-pointa="1" data-pointb="3" data-pointc="1" style="display: none">
+                                        <p>老虎頭</p>
+                                    </li>
+                                </div> -->
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"><img src="img/modify/icon_arrow_left.png" alt=""></div>
+                            <div class="swiper-button-next"><img src="img/modify/icon_arrow_right.png" alt=""></div>
+                        </ul>
+                    </li>
+                    <li class="part_button body_button">
+                        <label for="btn_body">身體</label>
+                        <input type="radio" name="partlist" id="btn_body">
+                        <ul class="part_wrap swiper-container swiper2">
+                            <div class="swiper-wrapper body_list">
+                                <!-- <li>
+                                    <img class="picon" src="img/modify/body_giraffe.png" alt="">
+                                    <input type="text" data-pointa="1" data-pointb="2" data-pointc="3" data-health="4" style="display: none">
+                                    <p>長頸鹿身體</p>
+                                </li>
+                                <li>
+                                    <img class="picon" src="img/modify/body_elephant.png" alt="">
+                                    <input type="text" data-pointa="2" data-pointb="2" data-pointc="1" data-health="5" style="display: none">
+                                    <p>大象身體</p>
+                                </li>
+                                <li>
+                                    <img class="picon" src="img/modify/body_zebar.png" alt="">
+                                    <input type="text" data-pointa="3" data-pointb="1" data-pointc="0" data-health="2" style="display: none">
+                                    <p>斑馬身體</p>
+                                </li>
+                                <li>
+                                    <img class="picon" src="img/modify/body_tiger.png" alt="">
+                                    <input type="text" data-pointa="2" data-pointb="0" data-pointc="1" data-health="3" style="display: none">
+                                    <p>老虎身體</p>
+                                </li> -->
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"><img src="img/modify/icon_arrow_left.png" alt=""></div>
+                            <div class="swiper-button-next"><img src="img/modify/icon_arrow_right.png" alt=""></div>
+                        </ul>
+                    </li>
+                    <li class="part_button leg_button">
+                        <label for="btn_leg">腳部</label>
+                        <input type="radio" name="partlist" id="btn_leg">
+                        <ul class="part_wrap swiper-container swiper3">
+                            <div class="swiper-wrapper leg_list">
+                                <!-- <li>
+                                    <img class="picon" src="img/modify/leg_giraffe.png" alt="">
+                                    <input type="text" data-pointa="2" data-pointb="1" data-pointc="0" data-jump="2" style="display: none">
+                                    <p>長頸鹿腳</p>
+                                </li>
+                                <li>
+                                    <img class="picon" src="img/modify/leg_elephant.png" alt="">
+                                    <input type="text" data-pointa="1" data-pointb="0" data-pointc="2" data-jump="1" style="display: none">
+                                    <p>大象腳</p>
+                                </li>
+                                <li>
+                                    <img class="picon" src="img/modify/leg_bird.png" alt="">
+                                    <input type="text" data-pointa="0" data-pointb="3" data-pointc="1" data-jump="5" style="display: none">
+                                    <p>鳥腳</p>
+                                </li>
+                                <li>
+                                    <img class="picon" src="img/modify/leg_cmel.png" alt="">
+                                    <input type="text" data-pointa="1" data-pointb="0" data-pointc="2" data-jump="3" style="display: none">
+                                    <p>駱駝腳</p>
+                                </li> -->
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"><img src="img/modify/icon_arrow_left.png" alt=""></div>
+                            <div class="swiper-button-next"><img src="img/modify/icon_arrow_right.png" alt=""></div>
+                        </ul>
+                    </li>
+                    <li class="part_button tail_button">
+                        <label for="btn_parts">尾巴</label>
+                        <input type="radio" name="partlist" id="btn_parts">
+                        <ul class="part_wrap swiper-container swiper4">
+                            <div  class="swiper-wrapper tail_list">
+                                <!-- <div class="swiper-slide slide_p0">
+                                    <li>
+                                        <img class="picon" src="img/modify/tail_giraffe.png" alt="">
+                                        <p>長頸鹿尾巴</p>
+                                    </li>
+                                    <li>
+                                        <img class="picon" src="img/modify/tail_elephant.png" alt="">
+                                        <p>大象尾巴</p>
+                                    </li>
+                                    <li>
+                                        <img class="picon" src="img/modify/tail_skunk.png" alt="">
+                                        <p>臭鼬尾巴</p>
+                                    </li>
+                                    <li>
+                                        <img class="picon" src="img/modify/tail_tiger.png" alt="">
+                                        <p>老虎尾巴</p>
+                                    </li>
+                                </div> -->
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"><img src="img/modify/icon_arrow_left.png" alt=""></div>
+                            <div class="swiper-button-next"><img src="img/modify/icon_arrow_right.png" alt=""></div>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="info_box">
+                @@include('template/radar.html')
+                <p class="hit">提醒: 選擇的不同的部位會有不同的能力</p>
+            </div>
+        </div>
+    </section>  
+
+    <section class="modify_inputbg" id="section_M2">
+        <div class="container">
+
+            <div class="showbg_wrap">
+                <div class="text">
+                    <h2>第二步：選擇背景圖</h2>
+                    <span>請為動物取個名字：</span><input type="text" name="" id="input_amlname">
+                </div>
+
+                <div class="bgimg_box">
+                    <div class="geth"></div>
+                    <canvas id="bg_canvas" class=""></canvas>
+                    <img class="temp_aml_pic" src="" alt="">
+                    <!-- <img src="img/customize/user2_aml.png" alt="" class="cloneimg"> -->
+                </div>
+
+                <div class="btn_box">
+                        <a href="#banner_M1" class="btn_cloudb">
+                                返回
+                            @@include('template/btn_sp.html')
+                        </a>
+
+                        <a href="javascript: dopic()" class="btn_cloudp">
+                            確認完成
+                            @@include('template/btn_sp.html')
+                        </a>
+                </div>
+            </div>
+
+            <div class="selectbg_wrap">
+                <ul class="button_ul">
+                    <li class="part_button bg_button now_page">
+                        <label for="bglist">選擇背景</label>
+                        <input type="radio" name="setbg" id="bglist" checked>
+                        <ul class="part_wrap">
+                            <!-- <li>
+                                <div class="img_box">
+                                    <img class="picon" src="img/modify/bg_blank.png" alt="">
+                                </div>
+                                <p>空白背景</p>
+                            </li>
+                            <li>
+                                <div class="img_box">
+                                    <img class="picon" src="img/modify/bg_grassland1.jpg" alt="">
+                                </div>
+                                <p>背景1</p>
+                            </li>
+                            <li>
+                                <div class="img_box">
+                                    <img class="picon" src="img/modify/bg_book1.jpg" alt="">
+                                </div>
+                                <p>背景2</p>
+                            </li>
+                            <li>
+                                <div class="img_box">
+                                    <img class="picon" src="img/modify/bg_bridge1.jpg" alt="">
+                                </div>
+                                <p>背景3</p>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li class="part_button draw_button">
+                        <label for="mdbg">自訂背景</label>
+                        <input type="radio" name="setbg" id="mdbg">
+                        <ul class="part_wrap">
+                            <li class="upfile_box">
+                                <label>
+                                    <input type="file" name="up_bg_file" id="up_bg_file" accept="image/*">
+                                    <a class="btn_cloudy upfile">
+                                        上傳圖片
+                                        @@include('template/btn_sp.html')
+                                    </a>
+                                </label>
+                            </li>
+                            <li class="aml_off">
+                                <p class="title">預覽模式</p>
+                                <input type="checkbox" name="btn_cir" id="cir_check">
+                                <label for="cir_check" class="btn_bar">
+                                    <div class="btn_cir"></div>
+                                </label>
+                            </li>
+                            <li class="pen_box">
+                                <p class="stitle">手動畫圖_OFF</p>
+                                <img class="pen_icon" src="img/modify/pen_cancel.png" alt="">
+                                <p class="">畫筆顏色:</p>
+                                <div class="pen_white"></div>
+                                <input type="range" name="" id="" class="createColorBar" min="0" max="360" step="1" value="0">
+                                <div class="pen_black"></div>
+                                <p class="text_size">畫筆大小:</p>
+                                <span>小</span><input type="range" name="" id="drawsize" min="1" max="10" step="1" value="5"><span>大</span>
+                                <div class="sample_title"><p>畫筆預覽:</p><img class="icon_eraser" src="img/modify/icon_eraser.png" alt="橡皮擦圖片遺失""></div>
+                                <div class="sample_box">
+                                    <div class="sample_point" style="width: 10px; height: 10px;"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <img src="" alt="" id="testimg"> -->
+    <!-- <img src="" alt="" id="testimg2"> -->
+
+    <canvas id="amlbg_canvas"></canvas>
+
+    @@include('template/footer.html')
+
+    <script src="js/modify/radar.js"></script>
+    <script src="js/modify/modify.js"></script>
+
+</body>
+</html>

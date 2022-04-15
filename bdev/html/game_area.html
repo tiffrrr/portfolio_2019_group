@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>CoreUI Free Bootstrap Admin Template</title>
+  <!-- Icons-->
+  @@include('layout/inputcss.html')
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+  <!-- top_header -->
+  @@include('layout/top_header.html')
+  <div class="app-body">
+    <div class="sidebar">
+      <!-- sidebar menu-->
+      @@include('layout/sidebar_nav.html')
+      <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+    </div>
+    <main class="main">
+      <!-- Breadcrumb-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">遊戲管理</li>
+        <li class="breadcrumb-item active">地區管理</li>
+
+      </ol>
+      <div class="container-fluid">
+        <!-- 中間內容 -->
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">地區管理</div>
+      
+              <div class="card-body">
+                <table class="table table-responsive-sm table-bordered">
+                  <thead>
+                    <tr>
+                      <th>編號</th>
+                      <th>名稱</th>
+                      <th>圖片</th>
+                      <th>說明</th>
+                      <th>狀態</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+      
+                      </td>
+                      <td>
+                        <input type="text" name="" id="">
+                      </td>
+                      <td>
+                        <input type="file" name="" id="">
+                      </td>
+                      <td>
+                        <input type="text" name="" id="">
+                      </td>
+                      <td>
+                        <label class="switch switch-label switch-pill switch-primary">
+                          <input class="switch-input" type="checkbox" checked="">
+                          <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                        </label>
+                      </td>
+                      <td>
+                        <button class="btn btn-block btn-outline-primary" type="button">新增</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>000001</td>
+                      <td>草原</td>
+                      <td><img src="https://picsum.photos/100/100/?random=1"></td>
+                      <td>Lorem ipsum dolor sit amet.</td>
+                      <td>
+                        <label class="switch switch-label switch-pill switch-primary">
+                          <input class="switch-input" type="checkbox" checked="">
+                          <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                        </label>
+                      <td>
+                        <!-- <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0"> -->
+                        <button class="btn btn-block btn-outline-primary" type="button">修改</button>
+                        <!-- </div> -->
+                      </td>
+                    </tr>
+      
+      
+                  </tbody>
+                </table>
+                <!-- 切換頁數 -->
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#">Prev</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">4</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+      
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- end -->
+      </div>
+      
+    </main>
+
+  </div>
+  @@include('layout/footer.html')
+  <!-- CoreUI and necessary plugins-->
+  @@include('layout/inputjs.html')
+</body>
+
+</html>

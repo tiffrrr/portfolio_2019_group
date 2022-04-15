@@ -1,0 +1,77 @@
+// Here you can add other styles
+
+input[name="head_img"] {
+    width: 200px;
+}
+input[name="head_img_combination"] {
+    width: 180px;
+}
+input[name="body_img"] {
+    width: 200px;
+}
+input[name="body_img_combination"] {
+    width: 180px;
+}
+input[name="head_howl"] {
+    width: 180px;
+}
+
+.image{
+    display:block;
+    margin:auto;
+    text-align:center;
+}
+
+// 頭部選單圖input的padding
+.btnimg{
+    padding-top:25px;
+}
+// 尾巴選單圖input的padding
+.tail_btnimg{
+    padding-top:13px;
+}
+
+//新增列的border樣式
+.tr_title{
+    border: 2px solid #ccc;
+}
+
+//取消input預設樣式
+.dissinputstyle{
+    -webkit-appearance:none;
+    -moz-appearance: none;
+    outline:0;
+    border: 1px solid transparent;
+}
+
+.productimg_width{
+    width:200px;
+}
+.tr_center{
+    text-align: center;
+    vertical-align: middle;
+}
+// #aaa{
+//     width: 30px;
+// }
+
+// 選怪作品的td寬度設定
+.collections_tr td{
+    width:12.5%;
+}
+.sidebar-nav{
+    background: #439bb7;
+}
+.sidebar .nav-link.active{
+    background: #e6b575;
+}
+.sidebar .nav-link:hover{
+    background:#64c7e6;
+}
+.sidebar .nav-link .nav-icon{
+    color:#fff;
+}
+.sidebar .nav-dropdown.open{
+    background: rgba(0, 0, 0, 0.2);
+}
+

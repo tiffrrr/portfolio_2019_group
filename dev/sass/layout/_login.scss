@@ -1,0 +1,131 @@
+
+
+
+    .login_gary.login_show {
+        display:block;
+    }
+    .login_box_title{
+        font-size: $lg_fz;
+    }
+.login_gary {
+  
+    .msg_alert{
+        z-index: 12;
+        background-color: transparent;
+    }
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+    
+    .login_box {
+        @include btn_cloud(30%, $col_btn_pink);
+        position: absolute;
+        top: 0%;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        border-radius: 30px;
+        background: url(../img/login/login1.0.jpg) no-repeat bottom center, ;
+        background-size: cover;
+        padding-top: 25px;
+        padding-bottom: 225px;
+        text-align: center;
+        width: 300px;
+        height: 300px;
+        box-shadow: 12px 12px 7px rgba(0, 0, 0, 0.7);
+       
+        .btn_cloud {
+            display: block;
+            margin: auto;
+            width: 120px;
+            margin-top: 25px;
+            // font-size: $s_fz;
+            font-family: Microsoft JhengHei;
+            padding: 5px;
+        }
+        .login_del {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            border-radius: 50%;
+            position: absolute;
+            right: 7%;
+            top: 3%;
+            background: url(../img/login/del.png) no-repeat center center;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        p {
+            position: relative;
+            margin-top: 25px;
+
+            input {
+                // background: #f9f6d2;
+                cursor: text;
+                border-radius: 10px;
+                padding: 8px;
+                padding-left: 15px;
+                font-weight: 800;
+                width: 120px;
+                outline:none;
+            }
+        }
+        
+        a { 
+            line-height: 70px;
+            color: #7c7676;
+            font-weight: 800;
+           
+            text-decoration: underline;
+        }
+        a~a{
+            margin-left: 20px;
+        }
+    }
+
+
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .login_gary {
+        .login_box {
+            width: 360px;
+            height: 500px;
+            padding-top: 20px;
+            padding-bottom: 40px;
+
+            p {
+                input {
+                    width: 150px;
+                }
+
+         
+            }
+            a {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            .btn_cloud {
+
+        
+                margin-top: 20px;
+                // font-size: $m_fz;
+            }
+        }
+    }
+
+}

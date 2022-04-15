@@ -1,0 +1,592 @@
+$lblue:#d8ecea;
+
+
+// ====================================
+.shop{
+    background-color:$lblue ;
+    @include msgalert(#fdf6e7,$col_btn_pink,$col_btn_pink);
+    @media screen and (min-width:992px){
+        .msg_alert .msg_alert_container{
+            width: 19%;
+        }
+    }
+    
+    .container{
+        max-width:1200px;
+        box-sizing:border-box;
+        padding: 10px;
+        margin: auto;
+        position:relative;
+    }
+    
+    .banner{
+        position:relative;
+        padding-top: 70px;
+        // overflow: hidden;
+        @media screen and (min-width:1200px){
+            margin: auto;
+            padding-top: 120px;
+            padding-bottom: 30px; 
+        }
+    }
+
+    .banner_title{
+        font-size: 0;
+        width: 60%;
+        margin: auto;
+        position: relative;
+        background-image: url(../img/header/banner_cloud.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 40px 0px 30px 0px;
+        @media screen and (min-width:1200px){
+            width: 30%;
+            padding: 60px 0px 50px 0px;
+
+        }
+        .icon_l{
+            width: 25px;
+            height: 25px;
+        }
+        .icon_r{
+            width: 25px;
+            height: 25px;
+        }
+        .title{
+            margin: 0px 10px;
+            @media screen and (min-width:1200px){
+                margin: 0px 20px;
+            }
+        }
+    }
+    
+
+//動物跟那句話
+    .banner_text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .guide_animal{
+            width: 20%;
+            position:relative;
+            margin: 30px;
+            animation:guide_animal 2s linear infinite;
+            img{
+                width: 100%;
+            }
+            @include responds (small){
+                display:none;
+            }
+        }
+        @keyframes guide_animal{
+            0%{top:10px};
+            50%{top: 0px}
+            100%{top:10px};
+        }
+        .guide_animal_animal{
+            position:absolute;
+            width: 40%;
+            left: 50%;
+            transform: translate(-50%,0);
+            bottom: 50%;
+        }
+    }
+
+}
+
+
+
+// 背景會飄的雲跟熱氣球
+.shop {
+    // overflow: hidden;
+    .cloud{
+        width: 150px;
+        position:absolute;
+        @include responds (small){
+            display:none;
+        }
+    }
+
+    .cloudl{
+        top: 60%;
+        left: 10%;
+    }
+    .cloudm{
+        top: 80%;
+        right: 25%;
+    }
+    .cloudr{
+        top: 40%;
+        right: 10%;
+    }
+
+    .cloudbl{
+        top: 13%;
+        left: 3%;
+    }
+
+    .cloudbr{
+        top: 21%;
+        right: 4%;
+    }
+
+    .balloon{
+        width: 100px;
+        position:absolute;
+        top: 50%;
+        left:5%;
+        animation: floating 10s linear infinite;
+        @include responds (small){
+            display:none;
+        }
+    }
+    @keyframes floating{
+        0%{left:5%}
+        50%{left:8%}
+        0%{left:5%}
+    }
+}
+
+// ===========================
+
+//整個大區塊 全屏
+.shop_area{
+    width: 100%;
+    background-image: url('../img/shop/shop_bg.png');
+    background-position:center bottom;
+    background-repeat: no-repeat;
+    padding-bottom: 100px;
+    position:relative;
+    background-size: 100%;
+
+    //tent        
+    .tent{
+        position:relative;
+        top: 45px;
+        z-index: 1;
+        width:100%;
+        max-width:1200px;
+        margin: auto;
+        img{
+            width: 100%;
+        }
+    }
+
+
+    .container{
+        @include responds(medium){
+            padding: 0 20px;
+        }
+        @include responds(xlarge){
+            padding: 0 50px;
+        }
+    }
+
+//房子裡面那塊黃色
+    .wrap{
+        background-color: #fdf6e7;
+        position:relative;
+        left: 0;
+        border-radius:40px 52px 40px 40px;
+        padding: 50px 10px 10px 10px;
+        @include responds(medium){
+            padding:100px 10px 10px 10px;
+            border-radius:0 40px 40px 40px;
+            box-shadow: 7px 7px 0 1px #777;
+        }
+
+        @include responds(large){
+            padding-top: 120px;
+        }
+    }
+
+    
+}
+
+//lights
+.shop_area{
+    .lights{
+        display: none;
+        @include responds(medium){
+            top: 30px;
+            display:flex;
+            position:absolute;
+            left: 0;
+            top: 28px;
+        }
+        
+        img{
+            width: (100% / 3);
+        }
+    }
+}
+
+//選圖案
+.shop{
+    .choose_pic{
+        h2{
+            display:none;
+        }
+        .intro{
+            padding: 10px;
+            @include responds(small){
+                text-align: center;
+                padding-top: 30px;
+            }
+        }
+    }
+
+    .choose_pic_wrap{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: space-around;
+        border-bottom:3px solid brown;
+        min-height:450px;
+
+        @include responds(medium){
+            min-height:252px;
+            justify-content: center;
+
+        }
+        @include responds(large){
+            min-height:339px;
+        }
+
+        .item{
+            width: 40%;
+            box-sizing:border-box;
+            padding: 5px;
+            cursor: pointer;
+            text-align: center;
+            &:hover{
+                img{
+                    transform: scale(1.1);
+                }
+                
+            }
+            @include responds(medium){
+                width: 20%;
+                padding: 20px;
+            }
+            p{
+                padding-top: 10px;
+                text-align: center;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                
+                @include responds(medium){
+                    margin: auto;
+                    width: 80%;
+                }
+                
+            }
+            a[href='modify.html']{
+                text-decoration: underline;
+                font-size: 14px
+            }
+            .check{
+                &:before{
+                    content:"";
+                    height:5px;
+                    width: 20px;
+                    background-color: #FEB01C;
+                    border-radius:5px;
+                    margin-right: 5px;
+                }
+                &:after{
+                    content:"";
+                    height:5px;
+                    width: 20px;
+                    background-color: #FEB01C;
+                    border-radius:5px;
+                    margin-left: 5px;
+                }
+            }
+    }
+
+        
+    //包背景&動物圖的外框
+        .pic{
+            overflow: hidden;
+            img{
+                transition: all 0.5s;
+            }
+        }
+    }
+
+    .shop_animal_bg{
+        width: 100%;
+    }
+
+//選擇背景圖片
+.choose_bgpic{
+    margin: 30px 0;
+    .intro{
+        padding: 10px;
+        input{
+            cursor: pointer;
+        }
+        @include responds(small){
+            text-align: center;
+        }
+    }
+}
+
+//選擇商品
+.choose_product{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    img{
+        width: 100%;
+    }
+    .item{
+        width: 100%;
+        text-align: center;
+        border:2px solid saddlebrown;
+        background-color: #fff;
+        position:relative;
+        margin: 30px 0;
+        @include responds(medium){
+            width: 22%;
+        }
+        @include pseudo(before,null,100%,32px){
+            background-image: url(../img/shop/sloth.png);
+            background-repeat: no-repeat;
+            position:absolute;
+            top: 0px;
+            transition:top 0.5s;
+            
+        }
+        &:hover {
+            &:before{
+                top:-35px;
+            }
+        }
+        h3{
+            font-size: $h3_fz;
+            padding: 10px;
+        }
+    }
+  
+}
+//修改數量
+.choose_product{
+    .number{
+        display:flex;
+        justify-content: center;
+        -webkit-appearance: none;
+        button{
+            color:#fff;
+            font-weight: bold;
+            font-size: $lg_fz;
+            width: 25px;
+            height: 25px;
+            background-color:#5f4f23;
+            border:none;
+            border-radius: 5px;
+            outline:none;
+            line-height: 1;
+            cursor: pointer;
+        }
+        input{
+            padding:5px 5px;  border:0 none;
+            width: 70px;
+            text-align: center;
+        }
+    }
+    
+}
+
+.deco{
+    width: 100%;
+    height: 24px;
+
+}
+.deco_top{
+    background-image: url('../img/shop/prod_deco_top.jpg');
+    position:relative;
+    background-repeat: repeat-x;
+    padding-bottom: 10px;
+    background-color: #fff;
+}
+
+.deco_bottom{
+    background-image: url('../img/shop/prod_deco.jpg');
+}
+
+
+.prod_img{
+    position:relative;
+    width: 80%;
+    margin: auto;
+    @include responds(medium){
+        width: 100%;
+    }
+
+    .shop_animal{
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform:translate(-50%,-34%);
+        width: 100%;
+    }
+}
+
+
+.pic_chosen{
+    position:absolute;
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+.btn{
+    padding-top: 20px;
+    @include btn_cloudp (50%);
+    @include btn_cloudb (50%);
+    .btn_cloudp,.btn_cloudb{
+        margin-bottom:7px ;
+        padding: 6px 0;
+        @include responds(medium){
+            padding: 1px 0;
+            margin-bottom: 5px;
+
+        }
+        @include responds(xlarge){
+            padding: 2px 0;
+            width: 40%;
+            margin: 0 5px;
+
+        }
+    }
+}
+}
+// =====================================
+// 商品詳情
+
+.prod_detail{
+    display:none;
+    position:fixed;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-30%);
+    background-color:rgba(0,0,0,0.5);
+    z-index: 10;
+   .detail_container{
+       width: 90%;
+       position:fixed;
+       @include responds(medium){
+            width: 50%;
+       }
+       @include responds(large){
+        width:30%;
+   }
+        background-color: $lblue;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        margin:auto;
+        border-radius:10px;
+        box-sizing:border-box;
+        padding: 10px;
+   }
+} 
+.back_button{
+    display:block;
+    border-radius:50%;
+    background-color: $col_btn_pink;
+    // box-shadow:2px 2px 0 1px #333;
+    border:none;
+    width: 30px;
+    height: 30px;
+    position:absolute;
+    top: 20px;
+    right: 10px;
+    line-height: 2;
+    text-align: center;
+    cursor: pointer;
+}
+.prod_detail{
+    img{
+        width: 100%;
+    }
+    .wrap{
+        width: 95%;
+        margin: auto;
+        @include responds(medium){
+            width: 80%;
+        }
+    }
+    .title{
+        background-image: url(../img/shop/tent_small.png);
+        // background-color:#fff;
+        background-repeat:no-repeat;
+        background-size: contain;
+        position:relative;
+        top: 50px;
+        z-index: 1;
+        height: 0;
+        padding-bottom: 33%;
+        p{
+            position:absolute;
+            top: 15%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+            color:#fff;
+            font-size: $lg_fz;
+        }
+        img{
+            width: 40%;
+            display: block;
+            margin: auto;
+            position:relative;
+            top:-30px;
+        }
+    }
+    .prod_img{
+        background-color: #fff;
+        box-sizing:border-box;
+        border-left:10px solid #a08d7c;
+        border-right:10px solid #a08d7c;
+        width: 90%;
+        margin: 50px auto auto;
+        position:relative;
+    }
+    .prod_text{
+        background-color: #f7d5b3;
+        margin-bottom: 20px;
+        position:relative;
+        background-image: url(../img/shop/wood_pattern.png);
+        p{
+            padding:10px 10px ;
+            @include responds(medium){
+                padding:30px 10px ;
+            }
+        }
+    }
+}
+//裝飾的那個標誌
+.shop_area{
+    @media screen and (min-width:1720px){
+        @include pseudo(after,null ,222px ,367px ){
+            background-image: url(../img/shop/signBoard.png);
+            position:absolute;
+            bottom: 0;
+            right: 5%;
+        }
+    }
+       
+
+    
+}
+

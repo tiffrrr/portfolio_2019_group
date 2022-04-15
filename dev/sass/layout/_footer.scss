@@ -1,0 +1,26 @@
+
+footer{
+    text-align: center;
+    background-color: #06743a;
+    img{
+        display: inline-block;
+        vertical-align: middle;
+        margin: 10px;
+    }
+    p{
+        display: inline-block;
+        vertical-align: middle;
+        color: #efefef;
+        font-size: $s_fz;
+    }
+}
+
+@media all and (min-width:1200px){
+    
+    footer{
+        p{
+            font-size: $base_fz;
+        }
+    }
+
+}

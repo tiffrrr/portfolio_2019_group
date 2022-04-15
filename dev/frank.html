@@ -1,0 +1,370 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  @@include('template/csslink.html')
+  <script src="js/plugin/owl.carousel.min.js"></script>
+  <script src="js/frank/frank.js"></script>
+  <script src="js/plugin/Chart.js"></script>
+
+ 
+
+  <title>怪奇排行</title>
+</head>
+<body class="frank_body">
+        <canvas class="world" id="world" width="1920" height="227"></canvas>
+    @@include('template/header.html')
+    <section class="frank_message" id="frank_message">
+        <div class="frank_message_container">   
+            <div class="frank_message_title">
+                <h3>留言板</h3> 
+                <img src="img/frank/close-button.png" alt="close" class="frank_closs_btn">
+            </div>
+            <div id="frank_message_content" class="frank_message_content">
+              <div class="frank_message_wrap" id="message_wrap">
+                     <figure class="frank_mem_pic" id="frank_bg_pic">
+                    </figure>
+                    <div id="frank_mem_text" class="frank_mem_text">
+                        <div class="frank_megsage_memname">
+                            <p id="frank_message_memId"></p>
+                            <p class="frank_message_date" id="frank_message_date"></p> 
+                        </div>
+                        <div class="frank_message_box">
+                            <p class="frank_message_text" id="frank_message_text">
+                            </p>  
+                        </div> 
+                        <div class="frank_message_btn">
+                            <span class="btn_cloudb">檢舉
+                                @@include('template/btn_sp.html')
+                            </span>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <form class="message_wrap_input">
+                <input type="hidden" id="msg_btn_no">
+                <input type="text" id="input_text" name="msg" placeholder="最多輸入10字數" maxlength="10">
+                <div class="message_input_btn">
+                    <input type="button" id="msg_btn" value="留言"class="btn_cloudb">
+                        @@include('template/btn_sp.html')
+                </div>
+            </form> 
+    </section>
+  
+  
+    <section class="franks_banner">
+        <div class="container">
+            <div class="banner_cloud">
+                <img class="icon_l" src="img/header/banner_icon_l.png" alt="icon">
+                <h1 class="title">怪奇排行</h1>
+                <img class="icon_r" src="img/header/banner_icon_r.png" alt="icon">
+            </div>
+            <div class="frank_banner">
+                <div class="frank_banner_pic">
+                    <img src="img/frank/Koala.png" alt="koala">
+                    <div class="frank_wing">
+                        <img src="img/frank/koala_wing.png" alt="wing"></div>
+                </div>
+                <div class="frank_banner_text">
+                    <h3>歡迎來到怪奇排行榜～一起來看看誰的動物最特別吧！</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="frank">
+        <div class="frank_container" id="frank_container">
+            <div class="frank_top_wrap">
+                <div class="frank_top_title">
+                    <h2>每月前三名</h2>
+                </div>
+                <!-- <div class="frank_top_content">
+                    <select class="frank_search_month">
+                        <option value="2019_9" selected>2019年9月</option>
+                        <option value="2019_8">2019年8月</option>
+                    </select>
+                </div> -->
+            </div>
+            <div class="frank_top_three owl-theme" id="owl-demo">
+                <div class="frank_top_left item" id="frank_top_left">
+                    <div class="frank_top_wraps">
+                        <div class="frank_items_title">
+                            <input type="hidden"  name="work_no">
+                            <h3>第一名</h3>
+                            <span>投票數<span id="vote0"></span></span>
+                        </div>
+                        <div class="frank_top_background">
+                            <img src="" alt="" id="bg0">
+                            <div class="frank_items_text">
+                                <div class="frank_items_animal">
+                                    <img src="" alt="pinkbird" id="ag0">
+                                </div>
+                                <div class="frank_items_name">
+                                    <h3>動物：<sapn id="aid0"></sapn></h3>
+                                    <h3>會員：<sapn id="id0"></sapn></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="frank_top_btn">
+                            <div class="frank_Collection_btn">
+                                <img src="img/frank/wlike.png"  alt="collection" title="加入收藏"class="heart"  id="">
+                            </div>
+                            <div class="frank_message_btn">
+                                <span class="btn_cloudp" id="frank_message_btn">留言
+                                    @@include('template/btn_sp.html')
+                                    <input type="hidden" name="work_no2"></input>
+                                </span>
+                            </div>
+                            <div class="frank_vote_btn">
+                                <span href="#" class="btn_cloudb">投票
+                                    @@include('template/btn_sp.html')
+                                    <input type="hidden" name="work_no3"></input>
+                                </span>
+                            </div>
+                        </div>      
+                        <div class="frank_top_pic">
+                            <img src="img/frank/NO.2island.png" alt="island">
+                        </div>
+                    </div>
+                    <div class="frank_pic_shadow"></div>
+                </div>
+                <div class="frank_top_middle item" id="frank_top_middle" >
+                <div class="frank_top_wraps">
+                    <div class="frank_items_title">
+                        <input type="hidden"  name="work_no">
+                        <h3>第二名</h3>
+                        <span>投票數<span id="vote1"></span></span>
+                    </div>
+                    <div class="frank_top_background">
+                        <img src="" alt="" id="bg1">
+                        <div class="frank_items_text">
+                            <div class="frank_items_animal">
+                                <img src="" alt="pinkbird"
+                                id="ag1">
+                            </div>
+                            <div class="frank_items_name">
+                                <h3>動物：<sapn id="aid1"></sapn></h3>
+                                <h3>會員：<sapn id="id1"></sapn></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="frank_top_btn">
+                        <div class="frank_Collection_btn">
+                            <img src="img/frank/wlike.png" alt="collection"title="加入收藏" class="heart" >
+                        </div>
+                        <div class="frank_message_btn">
+                            <span href="#" class="btn_cloudp" >留言
+                                @@include('template/btn_sp.html')
+                                <input type="hidden" name="work_no2"></input>
+                            </span>
+                        </div>
+                        <div class="frank_vote_btn">
+                            <span href="#"  class="btn_cloudb">投票
+                                @@include('template/btn_sp.html')
+                                <input type="hidden" name="work_no3"></input>
+                            </span>
+                        </div>                                                  
+                    </div>
+                    <div class="frank_top_pic">
+                        <img src="img/frank/NO.2island.png" alt="island">
+                    </div>
+                </div>
+                <div class="frank_pic_shadow"></div>
+                </div>
+                <div class="frank_top_right item" id="frank_top_right" >
+                 <div class="frank_top_wraps">
+                        <div class="frank_items_title">
+                            <input type="hidden"  name="work_no">
+                            <h3>第三名</h3>
+                            <span>投票數<span id="vote2"></span></span>
+                        </div>
+                        <div class="frank_top_background">
+                        <img src="" alt="" id="bg2">
+                        <div class="frank_items_text">
+                            <div class="frank_items_animal">
+                                <img src="" alt="pinkbird" id="ag2">
+                            </div>
+                            <div class="frank_items_name">
+                                <h3>動物：<sapn id="aid2"></sapn></h3>
+                                <h3>會員：<sapn id="id2"></sapn></h3>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="frank_top_btn">
+                            <div class="frank_Collection_btn">
+                                <img src="img/frank/wlike.png" alt="collection"title="加入收藏" class="heart" >
+                            </div>
+                            <div class="frank_message_btn">
+                                <span href="#" class="btn_cloudp">留言
+                                    @@include('template/btn_sp.html')
+                                    <input type="hidden" name="work_no2"></input>
+                                </span>
+                            </div>
+                            <div class="frank_vote_btn">
+                                <span href="#" class="btn_cloudb">投票
+                                    @@include('template/btn_sp.html')
+                                    <input type="hidden" name="work_no3"></input>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="frank_top_pic">
+                            <img src="img/frank/NO.2island.png" alt="island">
+                        </div>
+                    </div>
+                    <div class="frank_pic_shadow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="frank">
+        <div class="frank_container">
+            <div class="frank_activity_wrap">
+                <div class="frank_activity_title">
+                    <h2>活動說明</h2>
+                </div>
+            </div>
+                <div class="frank_activity_content">
+                    <div class="frank_activity_cactus">
+                        <img src="img/frank/cactus.png" alt="cactus">
+                    </div>
+                        <div class="frank_activity_description">
+                            <div class="frank_description_text">
+                                <h3>參賽條件</h3>
+                                <p>特製自己的動物並且是會員。</p>
+                                <p>會員每日三票。</h3>
+                                <p>前三名將會在商城裡上架販售。</p>
+                                <div class="frank_activity_data">
+                                    <h3>活動日期</h3>
+                                    <p>2019年07月</p>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="frank_activity_btn">
+                        <div class="frank_activity_frog">
+                            <img src="img/frank/frog.png" alt="frog"> 
+                            <div class="frank_frog_shadow"></div>
+                        </div>
+                        <div class="frank_activity_participate">
+                            <span id="activity_join" href="#" class="btn_cloudp">參加選怪
+                                @@include('template/btn_sp.html') 
+                            </span>
+                        </div>
+                        <div class="frank_activity_buy">
+                            <a href="shop.php" class="btn_cloudp">購買前三名商品
+                                @@include('template/btn_sp.html')   
+                            </a>
+                        </div>
+                        <div class="frank_activity_customization">
+                            <a href="modify.html" class="btn_cloudp">前往客製動物
+                                @@include('template/btn_sp.html') 
+                            </a>
+                        </div>
+                    </div>          
+                </div>
+             </div>
+    </section>
+    <section class="frank_player">
+        <div class="frank_container">
+            <div class="frank_player_wrap">
+                <div class="frank_player_title">
+                    <h2>更多參賽者</h2>
+                </div>
+                <!-- <div class="frank_player_content">    
+                    <select class="frank_player_search">
+                        <option value="" selected>參賽日期</option>
+                        <option value="2019_9" >2019年9月</option>
+                        <option value="2019_8">2019年8月</option>
+                    </select> 
+                </div> -->
+            </div>
+                    <div class="frank_player_more" id="frank_player_more">
+                       <div class="frank_player_items" id="frank_player_items">   
+                                <div class="frank_players_title">
+                                        <input type="hidden"  >
+                                        <span>動物：</span>
+                                        <span id="aid"></span>
+                                    </div>
+                                    <div class="frank_player_card ">
+                                        <div class="frank_player_front">
+                                            <div class="frank_player_pic">
+                                                <img src="" alt="" id="bg">
+                                                <div class="frank_player_animal">
+                                                    <img src="" alt="pinkbird" id="ag">
+                                                </div>
+                                            </div>
+                                            <div class="frank_player_text">
+                                                <h3>會員：<span id="id"></span></h3>
+                                                <span>目前投票數<span id="vote"></span></span>
+                                               
+                                            </div>
+                                            <div class="frank_expand_arrow">
+                                                <img src="img/frank/expand-arrow.png" alt="expand-arrow">
+                                            </div>
+                                        </div>
+                                        <div class="frank_player_back">
+                                            <div class="info_wrap">
+                                                <h3>體質能力</h3>
+                                                <div class="life_ability">
+                                                    <p>生命力:</p>
+                                                    <div class="life" id="life">
+                                                        <img src="" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="jump_ability">
+                                                    <p>跳躍力:</p>
+                                                    <div class="pic jump">
+                                                        <div class="jump_bar">
+                                                            <div class="bar_add"></div>
+                                                            <span class="meter" id="meter"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <h3 class="surroundings">環境適應力</h3>
+                                                <div class="evemt_ability" id="">
+                                                    <img id="evemt_ability" src="" alt="">
+                                                </div>
+                                            </div>
+                                          <div class="frank_back_btn">
+                                             
+                                              <a href="game.html" class="btn_cloudp"> 去玩遊戲
+                                                   @@include('template/btn_sp.html')</a>
+                                           
+                                          </div>
+                                          <div class="frank_expand_button">
+                                                <img src="img/frank/expand-button.png" alt="expand-button">
+                                            </div>  
+                                        </div>
+                                    </div>
+                                    <div class="frank_player_btn">
+                                            <div class="frank_message_btn">
+                                                <span class="btn_cloudp">留言
+                                                    @@include('template/btn_sp.html')
+                                                </span>
+                                            </div>
+                                            <div class="frank_vote_btn">
+                                                <span class="btn_cloudb">投票
+                                                    @@include('template/btn_sp.html')
+                                                </span>
+                                            </div>
+                                            <div class="frank_Collection_btn">
+                                                <span>
+                                                    <img src="img/frank/wlike.png" alt="collection" title="加入收藏">
+                                                </span>
+                                            </div>
+                                        </div>
+                                </div> 
+                  
+                     </div>
+            </div>
+        </div>
+    </section>
+     @@include('template/footer.html')
+</body>
+</html>

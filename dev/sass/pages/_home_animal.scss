@@ -1,0 +1,76 @@
+
+
+
+.home_header{
+    .container{
+        .home_animal{
+            position: absolute;
+            z-index: 3;
+            display: none;
+        }
+        .home_animal_01{
+            left: 8%;
+            top: 0%;
+           
+         }
+         .home_animal_02{
+            left: 15%;
+            top: -2%;
+          
+         }
+         .home_animal_03{
+            left: 25%;
+            top: 0%;
+         }
+         .home_animal_04{
+            left: 55%;
+            top: 8%;
+            display: none;
+         }
+         .home_animal_05{
+            left: 75%;
+            top: 4%;
+         }
+    }  
+}  
+@media screen and (min-width: 1200px){
+
+}
+@media screen and (min-width: 992px){
+
+}
+@media screen and (min-width: 768px){
+
+}
+@media screen and (max-width: 767px){
+   .home_header{
+      .container{
+          .home_animal{
+              position: absolute;
+           
+          }
+          .home_animal_01{
+              left: 12%;
+              top: 0%;
+             
+           }
+           .home_animal_02{
+              left: 15%;
+              top: 15%;
+            
+           }
+           .home_animal_03{
+              left: 25%;
+              top: 0%;
+           }
+           .home_animal_04{
+              left: 55%;
+              top: 8%;
+           }
+           .home_animal_05{
+              left: 78%;
+              top: 10%;
+           }
+      }  
+  }  
+}

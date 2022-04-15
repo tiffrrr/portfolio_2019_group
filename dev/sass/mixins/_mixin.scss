@@ -1,0 +1,71 @@
+
+
+
+  $viewpoints:(
+    xlarge:1200px,
+    large:992px,
+    medium:768px,
+    small:767px
+);
+
+@mixin responds($respond){
+    @each $breakpoint,$width in $viewpoints{
+        @if $respond == $breakpoint{
+            @if $respond ==small{
+                @media all and (max-width:$width){
+                    @content;
+                }
+            }@else{
+                @media all and (min-width:$width){
+                    @content;
+                }
+            }
+        }
+    }
+}
+
+
+@mixin pseudo ($name,$content,$w,$h,$display:block){
+    &:#{$name}{
+      content:'#{$content}';
+      width: $w;
+      height:$h ;
+      display:$display;
+      @content
+    }  
+  }
+
+
+
+// =====rwd
+
+  div[class*="col-"]{
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  
+
+  @mixin grid($m-size,$num) {
+    @for $i from 1 through $num {
+        .col#{$m-size}-#{$i} {
+            width: ($i / $num) * 100%
+        }
+    }
+  }
+  @media screen and (max-width: 767px){
+    @include grid("",12);
+  }
+  
+  @media screen and (min-width: 768px){
+    @include grid(-md,12);
+  }
+  
+  @media screen and (min-width: 992px){
+    @include grid(-lg,12);
+  }
+  
+  @media screen and (min-width: 1200px){
+    @include grid(-xl,12);
+  }
+  

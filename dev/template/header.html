@@ -1,0 +1,106 @@
+
+<input type="checkbox" name="" id="menu_check">
+<label for="menu_check" class="hb_cover"></label>
+
+<header class="main_menu">
+
+    <div class="header_top"></div>
+
+    <div class="header">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave"
+                    d="M-177,9l352,2.5v16.9c-30,0-58,12.4-88,12.4S29,29.6-1,29.6S-59,41-89,41s-58-11.4-88-11.4V9z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(255,255,255,0.1)" />
+            </g>
+        </svg>
+    </div>
+
+
+
+
+
+    <div class="hcontainer">
+
+        <a href="home.html" class="logo_s"><img src="img/header/logo.png" alt="logo-sm.png loss"></a>
+        <a href="home.html" class="head_title_s">
+            <h1>怪奇動物園</h1>
+        </a>
+
+        <nav class="menu_nav">
+
+            <div class="logo_box">
+                <a href="home.html" class="logo"><img src="img/header/logo.png" alt="logo-sm.png loss"></a>
+                <a href="home.html" class="head_title">
+                    <h1 class="home_title">怪奇動物園</h1>
+                </a>
+            </div>
+
+            <ul class="menu_list">
+                <li class="li_btn">
+                    <a href="modify.html" class="menu_icon"><img src="img/header/hicon_koala.png" alt=""></a>
+                    <a href="modify.html" class="text modify_a">動物改造</a>
+                </li>
+                <li class="li_btn">
+                    <a href="game.html" class="menu_icon"><img src="img/header/hicon_lion.png" alt=""></a>
+                    <a href="game.html" class="text game_a">生存遊戲</a>
+                </li>
+                <li class="li_btn">
+                    <a href="frank.html" class="menu_icon"><img src="img/header/hicon_tiger.png" alt=""></a>
+                    <a href="frank.html" class="text frank_a">怪奇排行</a>
+                </li>
+                <li class="li_btn">
+                    <a href="shop.php" class="menu_icon"><img src="img/header/hicon_sloth.png" alt=""></a>
+                    <a href="shop.php" class="text shop_a">動物商城</a>
+                </li>
+                <li class="li_btn">
+                    <a href="resv.html" class="menu_icon"><img src="img/header/hicon_elephant.png" alt=""></a>
+                    <a href="resv.html" class="text resv_a">預約導覽</a>
+                </li>
+            </ul>
+            <!-- js開始 -->
+            <ul class="member_box">
+                <li class='text'>
+                    <span id="show_user_name"></span>
+                    <a href="#" id='login_text'></a>
+                </li>
+                <li class="li_btn">
+                    <a href="member.php" class="member_icon">
+                        <img src="img/header/icon_member.png" alt="">
+                        <p class="member_a">會員區</p>
+                    </a>
+                </li>
+                <li class="li_btn">
+                    <a href="cart.php" class="member_icon cart_icon">
+                        <img src="img/header/icon_cart.png" alt="">
+                        <p id='cart_num' class='cart_num'>1</p>
+                        <p class="cart_a">購物車</p>
+                    </a>
+                </li>
+            </ul>
+            <!-- <img class="page_now" src="img/header/head_cloud_icon.png" alt=""> -->
+        </nav>
+
+        <label for="menu_check" class="hb">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar4"></div>
+        </label>
+    </div>
+</header>
+
+@@include('login.html')
+
+
+<script src="js/loginAndRegister/alert.js"></script>
+<script src="js/loginAndRegister/register.js"></script>
+<script src="js/loginAndRegister/forgetPsw.js"></script>
+<script src="js/loginAndRegister/login.js"></script>
+<script src="js/header/header.js"></script>

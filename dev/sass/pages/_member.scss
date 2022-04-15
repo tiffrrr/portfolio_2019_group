@@ -1,0 +1,684 @@
+*{
+  // outline: 1px solid #f00; 
+}
+
+.bd_member{
+  font-family: Microsoft JhengHei;
+  padding-top:90px;
+  background-image:url('../img/member/member_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+
+  @include msgalert(#fdf6e7,$col_btn_pink,$col_btn_pink);
+
+  h2{
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color:$col_btn_blue;
+  }
+
+  .p_title{
+    font-weight: bold;
+    color: $col_black;
+  }
+
+  section{
+    min-height: calc(70vh);
+    padding-bottom: 20px;
+
+    img{
+      vertical-align: middle;
+      // width: 100%;
+      // max-width: 300px;
+    }
+
+    p[class*="col-"]{
+      float: left;
+      box-sizing: border-box;
+      padding: 10px;
+    }
+
+  }
+
+}
+
+//主畫面切換
+.member_tab{
+  @include btn_cloud(100px,$col_btn_blue);
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+
+  .banner_cloud{
+    font-size: 0;
+    width: 60%;
+    margin: auto;
+    position: relative;
+    background-image: url(../img/header/banner_cloud.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 40px 0px 30px 0px;
+    .icon_l{
+        width: 25px;
+        height: 25px;
+    }
+    .icon_r{
+        width: 25px;
+        height: 25px;
+    }
+    .title{
+        margin: 0px 10px;
+    }
+    @include responds(medium){
+
+        width: 30%;
+        padding: 60px 0px 50px 0px;
+
+        .title{
+            margin: 0px 20px;
+        }
+    }
+
+  }
+
+  .tab_item{
+    display: flex;
+
+    @include responds(small){
+      justify-content: space-around;
+    }
+    .btn_cloud{
+      margin-right: 10px; 
+    }
+
+  }
+  .tablink_color{
+    background:$col_white;
+    color: $col_btn_blue;
+  }
+
+}
+
+//所有的btn
+.baic_btn{
+  @include btn_cloud(100px,$col_btn_pink);
+}
+
+//與tab攔隔10px
+.my_baic,.my_love , .my_receive ,.my_order{
+  margin: 10px 0 0 0px;
+}
+//與上方間格20px
+.my_gamerecord,.my_animal{
+  margin: 20px 0;
+}
+
+//外框
+.my_baic,.my_gamerecord,.my_animal,.my_love , .my_receive ,.my_order{
+  border: 5px solid $col_btn_blue;//#fff
+  // background-color: $col_white;//#fde5a4
+  background-color: rgba($color: #fff, $alpha: 0.8);
+  padding: 10px 0px 30px 0;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+//字體&btn置中
+.baic_pic,.gamerecord_pic,.myanimal_pic,.upfile_wrap{
+  text-align: center;
+}
+
+//基本資料
+.member_basic{
+
+  //==資料==
+  .baic_pic{
+    @include responds(medium){
+      line-height: 300px;
+    }
+
+    img{
+      // width: 100%;
+      max-width: 300px;
+      max-height: 400px;
+    }
+  }
+  .upfile_wrap{
+    margin-top: 10px;
+  }
+
+  #upFile{
+    display: none;
+  }
+ 
+
+  .baic_btn{
+    margin-top: 10px;
+    text-align: center;
+  }
+  .baic_txt{
+    input{
+      outline: none;
+      // border: 2px solid transparent;
+      border: 2px solid $col_btn_blue;
+      border-radius: 5px;
+      // margin: 10px auto 10px auto;
+      padding: 0px 0px 0 5px;
+      font-size: 16px;
+      font-family: Microsoft JhengHei;
+    }
+
+    input:focus{
+      border: 2px solid $col_btn_pink;   
+     }
+
+  }
+
+// input[type="submit"]{
+//   // background:none;  
+//   outline:none;  
+//   // border:0px;
+// }
+ 
+//遊戲
+
+.gamerecord_pic{
+  img{
+    max-width: 300px;
+
+      @include responds(medium){
+        max-width: 400px;
+        cursor: pointer;
+        transition: 2s transform;
+      }
+    }
+
+
+  
+ 
+  &:hover .user_game{
+    @include responds(medium){
+      transform: scale(1.4);
+    }
+  }
+}
+  //==我的動物==
+  .my_animal{
+    .myanimal_pic{
+      position: relative;
+      width: 90%;
+      height: 0;
+      padding-bottom: 120%;
+      margin: auto;
+      box-sizing: border-box;
+
+      // width: 100%;
+      // min-height: 300px;
+
+      @include responds(medium){
+        width: 50%;
+        padding-bottom: 66.66%;
+      }
+
+    
+      .animalbg_re{
+        position: relative;
+        width: 100%;
+      }
+
+      .animalpic_ab{
+        position: absolute;
+        width: 100%;
+        // top: 0;
+        left: 0;
+        right:0;
+        bottom: 0%;
+        margin: auto;
+      }
+      .ifnull{
+        img{
+          width: 100%;
+        }
+       
+      }
+    }
+    .animal_basic{
+      padding-top:20px;
+      @include radarinfo_member();
+      
+    .baic_btn{
+      margin-top: 30px;
+    }
+    }
+
+
+
+  }
+
+}
+
+
+
+
+
+
+//我的訂單
+
+.member_order{
+  //整筆訂單
+
+  .myorder_item{
+    margin-bottom: 10px;
+    border-top: 2px dotted #157E8F;
+
+    .item_title{
+      // display: none;
+        @include responds(small){
+          display: none;
+        }
+    }
+
+    .item_list{
+      .s_show{
+        display: inline-block;
+
+          @include responds(medium){
+            display: none;
+          }
+
+      }
+
+      p:nth-child(2){
+
+  
+            @include responds(medium){
+              text-align: center;
+            }
+  
+        }
+
+    }
+
+
+  }
+
+    
+
+  //訂單明細 點了要打開
+  .myorder_item_detail{
+    
+    margin: 20px 10px;
+    // border: 2px solid $col_btn_blue;
+    // display: none;
+    background-image: url('../img/member/m_title_icon.png');
+    border-radius: 20px;
+    background-repeat:no-repeat;
+    background-position:bottom right;
+    // background-color: rgba($color: #ffffff, $alpha: 0.5);
+    background-color: rgba($color: $col_btn_blue, $alpha: 0.2);
+    
+    @include responds(medium){
+      margin: 20px 60px;
+    }
+
+      //商品名稱
+      .item_title{
+          @include responds(small){
+            display: none;
+          }
+      }
+
+      .item_list{
+        .s_show{
+          display: inline-block;
+
+            @include responds(medium){
+              display: none;
+            }
+        }
+ 
+      }
+    }
+  }
+
+///我的預約
+.member_receive{
+
+  .myreceive_item{
+    margin-bottom: 10px;
+    border-top: 2px dotted #157E8F;
+
+    .item_title{
+      // display: none;
+        @include responds(small){
+          display: none;
+        }
+    }
+
+    .item_list{
+      .s_show{
+        display: inline-block;
+
+          @include responds(medium){
+            display: none;
+          }
+      }
+
+      p:nth-child(2){
+        @include responds(medium){
+          padding-left:40px;
+        }
+
+    }
+
+    }    
+  }
+
+  .qrcode_wrap{
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+
+    .qrcode_pic{
+        width: 270px;
+        position: fixed;
+        text-align: center;
+        background-color: #fdf6e7;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        // margin: auto;
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: 10px;
+    
+        .btn_close{
+        display: block;
+        border-radius: 50%;
+        background-color: $col_btn_pink;
+        box-shadow: 2px 2px 0 1px #333;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        color: #fff;
+        cursor: pointer;
+        font-size:$m_fz;
+        line-height: 1.3; 
+        text-align: center;
+
+        }
+        .qrcode_success_url{
+          text-decoration:underline;
+          color: #157E8F;
+        }
+        .qrcode_pic_p{
+          font-weight: bold;
+        }
+
+      }
+
+  }
+
+}
+
+
+.baic_txt td , .gamerecord_txt td , .myanimal_txt td{
+  // width: 10%;
+
+  @include responds(small){
+    width: 42%;
+  }
+
+  @include responds(medium){
+    width: 10%;
+  }
+
+
+  padding: 10px;
+}
+
+//我的收藏
+
+.my_love{
+
+  .mylove_item{
+    text-align: center;
+
+    .loveanimal_pic{
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      position: relative;
+      // min-height: 200px;
+      width: 100%;
+      height: 0;
+      padding-bottom: 131%;
+      margin: auto;
+      margin-bottom: 10px;
+      
+        .lovebg_re{
+          position: relative;
+          width: 100%;
+        }
+    
+        .lovepic_ab{
+          width: 100%;
+          position: absolute;
+          // top: 0;
+          left: 0;
+          right:0;
+          bottom: 0%;
+          margin: auto;
+        }
+      
+      }
+      .baic_btn{
+        margin-top:10px;
+      }
+
+  }
+  
+}
+
+//
+
+.msg_alert{
+  position:fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
+    background-color:rgba(0,0,0,0.6);
+    z-index: 2;
+}
+
+.msg_alert_container{
+    width: 90%;
+    position:fixed;
+    background-color: #faa;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin:auto;
+    border-radius:10px;
+    box-sizing:border-box;
+    padding: 10px;
+
+    @include responds(medium){
+      width: 50%;
+  }
+  @include responds(large){
+  width:30%;
+  }
+
+}
+
+.msg_close{
+  @include btn_cloud(100px,$col_btn_blue);
+}
+
+
+///預約取消訊息
+.rev_alertwrap{
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  margin: auto;
+  background-color:rgba(0,0,0,0.6);
+  text-align: center;
+
+ .rev_alert_container{
+  width: 90%;
+  position:fixed;
+  background-color: #fdf6e7;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin:auto;
+  border-radius:10px;
+  box-sizing:border-box;
+  padding:10px;
+
+  @include responds(medium){
+    width: 50%;
+  }
+  @include responds(large){
+  width:30%;
+  }
+  }
+  .rev_btn_close{
+    display: block;
+    border-radius: 50%;
+    background-color: $col_btn_pink;
+    box-shadow: 2px 2px 0 1px #333;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: #fff;
+    cursor: pointer;
+    line-height: 1.3;
+    text-align: center;
+    span{
+      font-size:$m_fz;
+    }
+    }
+
+    .rev_title{
+      padding: 5px 0;
+      font-size: $lg_fz;
+      border-bottom: 3px dashed $col_btn_pink;  
+      }
+      .rev_cont {
+        padding: 10px;
+        box-sizing: border-box;
+        // text-align: left;
+   
+        @include btn_cloudb(100px);
+        p{
+          font-size:$m_fz;
+          margin-bottom: 10px;
+        }
+      }
+      .rev_alert_close {
+        display: inline-block;
+        @include btn_cloud(100px,$col_btn_pink);
+      }
+}
+
+
+///訂單取消訊息
+.order_alertwrap{
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  margin: auto;
+  background-color:rgba(0,0,0,0.6);
+  text-align: center;
+
+ .order_alert_container{
+  width: 90%;
+  position:fixed;
+  background-color: #fdf6e7;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin:auto;
+  border-radius:10px;
+  box-sizing:border-box;
+  padding:10px;
+
+  @include responds(medium){
+    width: 50%;
+  }
+  @include responds(large){
+  width:30%;
+  }
+  }
+  .order_btn_close{
+    display: block;
+    border-radius: 50%;
+    background-color: $col_btn_pink;
+    box-shadow: 2px 2px 0 1px #333;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: #fff;
+    cursor: pointer;
+    line-height: 1.3;
+    text-align: center;
+    span{
+      font-size:$m_fz;
+    }
+    }
+
+    .order_title{
+      padding: 5px 0;
+      font-size: $lg_fz;
+      border-bottom: 3px dashed $col_btn_pink;  
+      }
+      .order_cont {
+        padding: 10px;
+        box-sizing: border-box;
+        // text-align: left;
+   
+        @include btn_cloudb(100px);
+        p{
+          font-size:$m_fz;
+          margin-bottom: 10px;
+        }
+      }
+      .order_alert_close {
+        display: inline-block;
+        @include btn_cloud(100px,$col_btn_pink);
+      }
+
+}

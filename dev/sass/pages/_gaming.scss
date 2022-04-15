@@ -1,0 +1,690 @@
+.gaming_page{
+    @include msgalert(#fdf6e7,$col_btn_pink,$col_btn_pink);
+}
+
+@media all and (min-width:768px){
+    .gaming_page{
+        background-image: url(../img/game/body-bg.png);
+        background-position: 0% 5%; 
+        background-repeat:no-repeat;
+        background-attachment:fixed;
+    }
+    .gaming {
+        // *{
+        //     outline:1px solid red;
+        // }
+        width:1200px;
+        height:800px;
+        position:relative;
+        margin-left:auto;
+        margin-right:auto;
+        #question_page {
+            background-image: url(../img/game/gaming_question.png);
+            background-size: 120%;
+            background-position: 0 -110px;
+            width:100%;
+            height:650px;
+            position:absolute;
+            left:0;
+            right:0;
+            top:127px;
+            margin:auto;
+            z-index:2;
+            overflow:hidden;
+            /* display:none; */
+            /* display:flex; */
+            .gaming_cloud1{
+                width: 100px;
+                position:absolute;
+                left:-5%;
+                top:20%;
+                animation:gaming_cloud 80s linear infinite;
+                img{
+                    width: 100%;
+                }
+            }
+            .gaming_cloud2{
+                width: 100px;
+                position:absolute;
+                right:40%;
+                top:6%;
+                animation:gaming_cloud 120s linear infinite;
+                img{
+                    width: 100%;
+                }
+            }
+            .gaming_cloud3{
+                width: 100px;
+                position:absolute;
+                right:5%;
+                top:30%;
+                animation:gaming_cloud  172s linear infinite;
+                img{
+                    width: 100%;
+                }
+            }
+
+            @keyframes gaming_cloud {
+                25% { transform:translate(400px,-0px); }
+                50% { transform:translate(-400px,-0px); }
+                75% {transform:translate(400px,-0px);}
+            }
+            .vsTitle{
+                display:inline-block;
+                position:absolute;
+                left:50%;
+                top:5%;
+                transform:translateX(-50%);
+                text-align:center;
+                z-index:1;
+                h2{
+                    font-size: 32px;
+                    font-weight: 700;
+                }
+                p{
+                    margin-top:20px;
+                    font-size: 18px;
+                }
+            }
+            .gaming_animal {
+                position:absolute;
+                left:10%;
+                top:45%;
+                transform:translateY(-50%);
+                width: 300px;
+                height: 300px;
+                display:flex;
+                justify-content: center;
+                align-items:flex-end;
+                img {
+                    width: 70%;
+                    display: inline-block;
+                    position:absolute;
+                    z-index:1;
+                    animation:animalFall 0.3s linear forwards;
+                }
+                @keyframes animalFall {
+                    0%{ top:-200px; width:20%;}
+                    100% {top:100px; width:85%;}
+                }
+                .animal_shadow{
+                    width: 220px;
+                    height: 70px;
+                    bottom:-17%;
+                    border-radius: 50%;
+                    background-color:#c4c445;
+                    position:absolute;
+                    opacity:0.5;
+                    animation: shadow_inlarge 0.3s linear forwards;
+                }
+                @keyframes shadow_inlarge {
+                    0%{ width:50px;}
+                    100% {width:220px;}
+                }
+            }
+            .gaming_monster {
+                position:absolute;
+                right:-20%;
+                top:45%;
+                transform:translateY(-50%);
+                width: 300px;
+                height: 250px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                animation:monster_move 1s 0.5s forwards;
+
+                .monster_shadow{
+                    width: 220px;
+                    height: 50px;
+                    bottom:20%;
+                    border-radius: 50%;
+                    background-color:#c4c445;
+                    position:absolute;
+                    opacity:0.5;
+                }
+                @keyframes monster_move {
+                    0% { right:-20%; }
+                    100% {right:10%;}
+                }
+            }
+            .vs_pic{
+                width: 150px;
+                position:absolute;
+                left:50%;
+                top:40%;
+                transform:translate(-50%,-50%);
+                z-index:1;
+                img {
+                    width: 100%;
+                }
+            }
+            .red_line {
+                width: 200px;
+                
+                position:absolute;
+                left:51%;
+                top:43%;
+                transform:translate(-50%,-50%);
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        .pic {
+            height:200px;
+            width:100%;
+            height:70%;
+            // background-color: yellowgreen;
+        }
+        .question_content {
+            position:absolute;
+            bottom:1%;
+            width:100%;
+        
+            display:flex;
+            justify-content: space-around;
+        }
+        #questionBar {
+            text-align:center;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            width:530px;
+            height:150px;
+            margin-right:70px;
+            background-image: url(../img/game/gaming_diaFrame.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+
+        }
+        #choiceSection{
+            display:flex;
+            align-items: center;
+            width:530px;
+            height:150px;
+            background-image: url(../img/game/gaming_diaFrame.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            #choiceTitle {
+                flex:3;
+                font-size: 24px;
+                font-weight: 700;
+                text-align:center;
+            }
+            #choicesBar{
+                flex:6;
+                display:flex;
+                flex-wrap: wrap;
+                align-items: center;
+                p {
+                    display:inline-block;
+                    height:30px;
+                    width:50%;
+                    // padding-left:80px;
+                    box-sizing: border-box;
+                    cursor: pointer;
+                }
+            }
+        }
+
+
+        .calculation{
+            z-index:4;
+            width:100%;
+            height:650px;
+            background-image: url(../img/game/cal-bg.png);
+            display:flex;
+            align-items:center;
+            position:absolute;
+            left:50%;
+            top:55%;
+            transform:translate(-50%,-50%);
+            text-align:center;
+            display:none;
+            padding-top:30px;
+        
+            #solutionBar {
+                padding-left:7px;
+                padding-right:7px;
+                margin-top:30px;
+                height:200px;
+                width: 440px;
+                margin-left:auto;
+                margin-right:auto;
+                display:flex;
+                flex-direction: column;
+                justify-content:center;
+                background-image: url(../img/game/solutionBar.png);
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                #solutionHead {
+                    height:30%;
+                }
+                #solutionText {
+                    font-size: 16px;
+                    padding:10px;
+                }
+            }
+            #message{
+                width:405px;
+                position:absolute;
+                left:50%;
+                top:82%;
+                transform:translate(-50%,-50%);
+                z-index:2;
+                /* background-image: url('問題.png'); */
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                #showReward,#showScore{
+                    width:405px;
+                    margin-left:auto;
+                    margin-right:auto;
+                    display:flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    font-size: 0;
+                    img {
+                        width: 30px;
+                        height:30px;
+                        padding:5px;
+                        margin-right:10px;
+                    }
+                    .wrap{
+                        width:50%;
+                        display:flex;
+                        
+                        align-items: center;
+                        #reward_money,#ad_shopping,#score_time,#ad_survive_chart{
+                            height:30px;
+                            line-height: 30px;
+                            display:inline-block;
+                            img {
+                                display:inline-block;
+                                vertical-align: center;
+                            }
+                            a {
+                                display: inline-block;
+                                
+                                width:120px;
+                                border:3px solid #f29119;
+                                border-radius:10px; 
+                            }
+                            a:visited {
+                                color:#333333;
+                            }
+                        }
+                    }
+
+    
+                }
+            }
+            #retry {
+                position:absolute;
+                left:50%;
+                bottom:4%;
+                transform:translateX(-50%);
+                width:180px;
+                display:flex;
+                align-items: center;
+                justify-content: space-around;
+              
+                z-index:5;
+                span {
+                    padding-left:10px;
+                    padding-right:10px;
+                    border:3px solid #f29119;
+                    border-radius:10px; 
+                    cursor:pointer;
+                    &:hover {
+                        background-color: yellowgreen;
+                    }
+                }
+            }
+        }
+    }
+}
+///////手機版遊戲
+@media all and (max-width:768px){
+    .gaming {
+        // *{
+        //     outline:1px solid red;
+        // }
+        width:100%;
+        height:100%;
+        position:relative;
+        margin-left:auto;
+        margin-right:auto;
+        #question_page {
+            background-image: url(../img/game/gaming_question.png);
+            background-size: 120%;
+            background-position: 0 -110px;
+            width:100%;
+            height:100vh;
+            position:absolute;
+            left:0;
+            right:0;
+           
+            margin:auto;
+            z-index:2;
+            overflow:hidden;
+            /* display:none; */
+            /* display:flex; */
+            .gaming_cloud1{
+                width: 100px;
+                position:absolute;
+                left:-5%;
+                top:20%;
+                animation:gaming_cloud 80s linear infinite;
+                img{
+                    width: 100%;
+                }
+            }
+            .gaming_cloud2{
+                width: 100px;
+                position:absolute;
+                right:40%;
+                top:6%;
+                animation:gaming_cloud 120s linear infinite;
+                img{
+                    width: 100%;
+                }
+            }
+            .gaming_cloud3{
+                width: 100px;
+                position:absolute;
+                right:5%;
+                top:10%;
+                animation:gaming_cloud  172s linear infinite;
+                img{
+                    width: 100%;
+                }
+            }
+
+            @keyframes gaming_cloud {
+                25% { transform:translate(400px,-0px); }
+                50% { transform:translate(-400px,-0px); }
+                75% {transform:translate(400px,-0px);}
+            }
+            .vsTitle{
+                display:inline-block;
+                position:absolute;
+                left:54%;
+                top:1%;
+                transform:translateX(-50%);
+                text-align:center;
+                z-index:1;
+                h2{
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+                p{
+                    margin-top:10px;
+                    font-size: 14px;
+                }
+            }
+            .gaming_animal {
+                position:absolute;
+                left:2%;
+                top:14%;
+                transform:translateY(-50%);
+                width: 300px;
+                height: 300px;
+                display:flex;
+                justify-content: center;
+                align-items:flex-end;
+                img {
+                    width: 70%;
+                    display: inline-block;
+                    position:absolute;
+                    z-index:1;
+                    animation:animalFall 0.3s linear forwards;
+                }
+                @keyframes animalFall {
+                    0%{ top:-200px; width:30%;}
+                    100% {top:180px; width:70%;}
+                }
+                .animal_shadow{
+                    width: 220px;
+                    height: 50px;
+                    bottom:-17%;
+                    border-radius: 50%;
+                    background-color:#c4c445;
+                    position:absolute;
+                    opacity:0.5;
+                    animation: shadow_inlarge 0.3s linear forwards;
+                }
+                @keyframes shadow_inlarge {
+                    0%{ width:50px;}
+                    100% {width:220px;}
+                }
+            }
+            .gaming_monster {
+                position:absolute;
+                right:-20%;
+                top:29%;
+                transform:translateY(-50%);
+                // width: 300px;
+                height: 250px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                animation:monster_move 1s 0.5s forwards;
+
+                .monster_shadow{
+                    width: 220px;
+                    height: 50px;
+                    bottom:20%;
+                    border-radius: 50%;
+                    background-color:#c4c445;
+                    position:absolute;
+                    opacity:0.5;
+                }
+                @keyframes monster_move {
+                    0% { right:-40%; }
+                    100% {right:10%;}
+                }
+            }
+            .vs_pic{
+                width: 120px;
+                position:absolute;
+                left:52%;
+                top:40%;
+                transform:translate(-50%,-50%);
+                z-index:1;
+                img {
+                    width: 100%;
+                }
+            }
+            .red_line {
+                width: 120px;
+                
+                position:absolute;
+                left:54%;
+                top:43%;
+                transform:translate(-50%,-50%);
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        .pic {
+            height:200px;
+            width:100%;
+            height:70%;
+            // background-color: yellowgreen;
+        }
+        .question_content {
+            position:absolute;
+            bottom:1%;
+            width:100%;
+        
+            display:flex;
+            justify-content: space-between;
+        }
+        #questionBar {
+            text-align:center;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            padding-left:20px;
+            padding-right:20px;
+            height:100px;
+            font-family:Microsoft JhengHei;
+            background-image: url(../img/game/gaming_diaFrame.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+
+        }
+        #choiceSection{
+            display:flex;
+            align-items: center;
+            width: 400px;
+            padding-left:20px;
+            padding-right:20px;
+            height:100px;
+            background-image: url(../img/game/gaming_diaFrame.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            #choiceTitle {
+                flex:3;
+                font-weight: 700;
+                text-align:center;
+            }
+            #choicesBar{
+                flex:6;
+                display:flex;
+                flex-wrap: wrap;
+                align-items: center;
+                p {
+                    align-items: center;
+                    display:inline-block;
+                    font-size: 12px;
+                    height:35px;
+                    width:50%;
+                    box-sizing: border-box;
+                    cursor: pointer;
+                }
+            }
+        }
+
+
+        .calculation{
+            z-index:4;
+            width:100%;
+            height:360px;
+            background-image: url(../img/game/cal-bg.png);
+            display:flex;
+            align-items:center;
+            position:absolute;
+            text-align:center;
+            display:none;
+         
+            #gameover_title {
+                margin-top:5px;
+                width: 145px;
+            }
+            #solutionBar {
+                margin-top:5px;
+                height:150px;
+                width: 395px;
+                margin-left:auto;
+                margin-right:auto;
+                display:flex;
+                flex-direction: column;
+                justify-content:center;
+                background-image: url(../img/game/solutionBar.png);
+                background-size: 100%;
+                #solutionHead {
+                    height:30%;
+                }
+                #solutionText {
+                    font-size: 16px;
+                    padding:10px;
+                }
+            }
+            #message{
+                width:405px;
+                position:absolute;
+                left:50%;
+                top:77%;
+                transform:translate(-50%,-50%);
+                z-index:2;
+                /* background-image: url('問題.png'); */
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                font-size: 14px;
+                #showReward,#showScore{
+                    width:405px;
+                    margin-left:auto;
+                    margin-right:auto;
+                    display:flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    font-size: 0;
+                    img {
+                        width: 30px;
+                        height:30px;
+                        padding:5px;
+                        margin-right:10px;
+                    }
+                    .wrap{
+                        width:50%;
+                        display:flex;
+                        
+                        align-items: center;
+                        #reward_money,#ad_shopping,#score_time,#ad_survive_chart{
+                            height:30px;
+                            line-height: 25px;
+                            display:inline-block;
+                            img {
+                                display:inline-block;
+                                vertical-align: center;
+                            }
+                            a {
+                                display: inline-block;
+                                width:120px;
+                                border:3px solid #f29119;
+                                border-radius:10px; 
+                            }
+                            a:visited {
+                                color:#333333;
+                            }
+                        }
+                    }
+
+    
+                }
+            }
+            #retry {
+                position:absolute;
+                left:50%;
+                bottom:2%;
+                transform:translateX(-50%);
+                width:180px;
+                display:flex;
+                align-items: center;
+                justify-content: space-around;
+             
+                z-index:5;
+                img {
+                    width:30%;
+                }
+                span {
+                    padding-left:5px;
+                    padding-right:5px;
+                    border:3px solid #f29119;
+                    border-radius:10px; 
+                    cursor: pointer;
+                    &:hover {
+                        background-color: yellowgreen;
+                    }
+                }
+            }
+        }
+    }
+}
+

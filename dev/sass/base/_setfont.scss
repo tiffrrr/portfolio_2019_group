@@ -1,0 +1,46 @@
+@import "../base/var";
+
+body{
+    font-family: Microsoft JhengHei;
+}
+h1,h2,h3,h4,p,a,li,span,button,input{
+    font-family: Microsoft JhengHei;
+    letter-spacing: $ls;
+    line-height: $lh;
+}
+
+
+h1{
+    font-size: $h1_s_fz;
+}
+
+h2{
+    font-size: $h2_s_fz;
+}
+
+h3{
+    font-size: $h3_s_fz;
+}
+
+a,p{
+    font-size: $base_fz;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+@media all and (min-width:1200px){
+    h1{
+        font-size: $h1_fz;
+    }
+    
+    h2{
+        font-size: $h2_fz;
+    }
+    
+    h3{
+        font-size: $h3_fz;
+    }
+}

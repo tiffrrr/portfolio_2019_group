@@ -1,0 +1,123 @@
+.registered_gary.registered_show {
+    display:block;
+}
+
+.registered_gary {
+
+
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+
+    .registered_box {
+        @include btn_cloud(30%, $col_btn_pink);
+        position: absolute;
+        top: 0%;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        border-radius: 30px;
+        background: url(../img/login/login767.jpg) no-repeat  center 17%;
+        background-size: cover;
+        padding-top: 25px;
+        padding-bottom: 225px;
+        text-align: center;
+        width: 300px;
+        height: 300px;
+        box-shadow: 12px 12px 7px rgba(0, 0, 0, 0.7);
+       
+        .btn_cloud {
+            display: block;
+            margin: auto;
+            width: 120px;
+            padding: 5px;
+        }
+        .registered_del {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            border-radius: 50%;
+            position: absolute;
+            right: 7%;
+            top: 3%;
+            background: url(../img/login/del.png) no-repeat center center;
+        }
+
+
+form{
+    text-align: left;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100%;
+    margin: auto;
+        p {
+            position: relative;
+            margin-top: 15px;
+
+            input,select,option {
+                border-radius: 10px;
+                padding: 5px;
+                outline:none;
+                border:transparent;
+            }
+            
+            input{
+                cursor: text;
+
+            }
+        }}
+        
+        a { 
+            line-height: 40px;
+            color: #7c7676;
+            font-weight: 800;
+            text-decoration: underline;
+        }
+        a~a{
+            margin-left: 20px;
+        }
+
+        .msg{
+            font-size: $xs_fz;
+            color:red;
+        }
+    }
+
+
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .registered_gary {
+        .registered_box {
+            width: 360px;
+            height: 500px;
+            padding-top: 15px;
+            padding-bottom: 0px;
+            h2{
+                padding-top: 40px;
+            }
+            p {
+                text-align: center;
+            }
+            a {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            .btn_cloud {
+                margin-top: 15px;
+            }
+        }
+    }
+
+}

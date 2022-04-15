@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    @@include('template/csslink.html')
+    <title>遊戲頁面</title>
+    <script src="./js/gaming/p5.js"></script>
+    <script src="./js/gaming/p5.dom.min.js"></script>
+    <script src="./js/gaming/collide2d.js"></script>
+    <script src="./js/gaming/drop.js"></script>
+    <script src="./js/gaming/unicorn.js" async></script>
+    <script src="./js/gaming/sketch.js" async></script>
+    <script src="./js/gaming/train.js" async></script>
+    <script src="./js/gaming/reward.js" async></script>
+    <script src="./js/gaming/question.js" async></script>
+   
+ 
+</head>
+if( !sessionStorage['shopList']){
+<body class='gaming_page'>
+@@include('template/header.html')
+
+<!-- <audio 
+    id="flytoyou" 
+    preload="auto" 
+    src="img/game/flytoyou.mp3" 
+>
+</audio>
+<audio 
+    id="dontgrow" 
+    preload="auto" 
+    src="img/game/S.H.E不想長大.mp3" 
+>
+</audio>
+<audio 
+    id="battle" 
+    preload="auto" 
+    src="img/game/WildPokemonBattle.mp3" 
+>
+</audio>
+
+
+<audio 
+    id="route1" 
+    preload="auto" 
+    src="img/game/pokemon-Route1.mp3" 
+>
+</audio> -->
+
+<form method="post" accept-charset="utf-8" id="form1">
+    <input name="result_img" id='result_img' type="hidden"/>
+    <input name="user_no" id='user_no' type="hidden">
+</form>
+<div class="gaming">
+    <div id="question_page">
+        <div class="vsTitle"><h2>動物問答</h2><p>沒有力氣逃跑了...回答正確才可繼續進行遊戲</p></div>
+        <div class="gaming_cloud1"><img src="img/game/gaming_cloud.png" alt=""></div>
+        <div class="gaming_cloud2"><img src="img/game/gaming_cloud.png" alt=""></div>
+        <div class="gaming_cloud3"><img src="img/game/gaming_cloud.png" alt=""></div>
+        <div class="gaming_animal">
+            <img src="img/game/info_pic.png">
+            <div class="animal_shadow"></div>
+        </div>
+        <div class="gaming_monster">
+            <img src="img/game/蠍子.png">
+            <div class="monster_shadow"></div>
+        </div>
+        <div class="vs_pic"><img src="img/game/gaming_vs.png" alt=""></div>
+        <div class="red_line"><img src="img/game/gaming_redLine.png" alt=""></div>
+        <div class="question_content">
+            <div id="questionBar"></div>
+            <div id="choiceSection">
+                <div id="choiceTitle"><span>請選擇答案:</span></div>
+                <div id="choicesBar"></div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="calculation">
+            <img id="gameover_title" src="img/game/cal-title.png">
+            <div id="solutionBar">
+                <div id="solutionHead"></div>
+                <div id="solutionText"></div>
+
+            </div>
+            <div id="message"> 
+                <div id="showReward">
+                        <div class="wrap"><img src="img/game/gaming_coin.png" alt=""><p id="reward_money"></p></div>
+                        <div class="wrap"><img src="img/game/gaming_present.png" alt=""><p id="ad_shopping"><a href="shop.php">去動物商城</a></p></div>
+                </div>
+                <div id="showScore">
+                        <div class="wrap"><img src="img/game/gaming_clock.png" alt=""><p id="score_time"></p></div>
+                        <div class="wrap"><img src="img/game/gaming_cup.png" alt=""><p id="ad_survive_chart"><a href="game.html">生存排行榜</a></p></div>
+                </div>
+            </div>
+            <div id="retry"><img src="img/game/gaming_controller.png" alt=""><span>再玩一次</span></div>
+    </div>
+</div> 
+<!-- @@include('template/footer.html') -->
+
+
+<script>
+
+
+
+let calculation = document.getElementsByClassName('calculation')[0];
+let questionPage = document.getElementById('question_page');
+let questionBar = document.getElementById('questionBar');
+let choicesBar = document.getElementById('choicesBar');
+let score = document.getElementsByClassName('score')[0];
+let solutionBar = document.getElementById('solutionBar');
+let solutionHead = document.getElementById('solutionHead');
+let solutionText = document.getElementById('solutionText');
+let animalPic = document.querySelector('.gaming_animal img');
+let gaming_animal = document.querySelector('.gaming_animal img');
+let gaming_monster = document.querySelector('.gaming_monster img');
+
+
+
+function chosenArea(area){
+    if(!sessionStorage['sceneChoice']){
+        sessionStorage['sceneChoice'] = area;
+    }else{
+        sessionStorage['sceneChoice'] = area;
+    }
+}
+
+
+
+function restartGame(){
+    
+    message.style.display="none";
+    calculation.style.display="none";
+    questionPage.style.display="none";
+    life=sessionStorage['animal_life'];
+    timer=0;
+    n = Math.floor( Math.random()* questions.length);
+    questions[n].displayQuestion();    
+    loop();
+}
+
+window.addEventListener('resize',function(){
+        questionPage.style.width=2/5*(window.innerWidth)+'px';
+        questionPage.style.display="none";
+});
+
+
+
+
+//遊戲結束存圖檔
+function saveImage(){
+    var canvas = document.getElementsByTagName('canvas')[0];
+    var dataURL = canvas.toDataURL("image/png");
+    // console.log('dataURL:'+dataURL);
+    document.getElementById('result_img').value = dataURL;
+    // console.log(dataURL);
+    document.getElementById('user_no').value = sessionStorage['user_no'];
+    var formData = new FormData(document.getElementById("form1"));
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function(){
+        if( xhr.status == 200){
+            console.log('遊戲截圖成功');
+        }else{
+            console.log(xhr.status);
+        }
+    }
+    
+    xhr.open('POST', 'php/game/canvas_load_save.php', true);
+    xhr.send(formData);
+
+}
+
+
+//遊戲結束更新資料
+function updateScoreMoney(){
+    let xhr = new XMLHttpRequest();
+    xhr.onload =function(){
+        if(xhr.status == 200){
+            // console.log(xhr.responseText);
+            // sessionStorage['response'] = xhr.responseText;
+        }else {
+            alert(xhr.status);
+        }
+    }
+    // sessionStorage['game_record'] = timer;
+    if(sessionStorage['user_no']){
+        sessionStorage['game_money']=money;
+        if(timer>sessionStorage['game_record'] || sessionStorage['game_record']=='' || sessionStorage['game_record']=="null"){
+        saveImage();
+        var now = new Date(); 
+        let playTime = now.getFullYear() +'/'+ (Number(now.getMonth())+1*1) +'/' + now.getDate() + ' ' + now.getHours() +':'+now.getMinutes();
+        console.log(playTime);
+        var url = `php/game/userUpdateToDb.php?user_no=${sessionStorage['user_no']}&game_record=${timer}&game_money=${money}&game_date=${playTime}`;
+        sessionStorage['test'] = url;
+        }else {
+            var url = `php/game/userUpdateToDb.php?user_no=${sessionStorage['user_no']}&game_record=${sessionStorage['game_record']}&game_money=${money}&game_date=${sessionStorage['game_date']}` ;
+        }
+
+        xhr.open("Get", url,true);
+        xhr.send(null);
+    }
+  
+
+
+}
+
+//alert訊息
+function alertGameOver(text,title){
+
+    if(!title==""){
+    $(" body").append('<div class="msg_alert" id="msg"><div class="msg_alert_container"><div class="msg_title" id="msg_top"><span>'+title+'</span></div><div class="btn_close msg_clear"><span>×</span></div><div class="msg_cont" id="msg_cont">'+text+'</div><div class="msg_alert_close msg_clear"><a href="javascript:;" class="btn_cloud">關閉<span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span></a></div></div></div>');
+    $(".msg_clear").click(function (){
+    $("#msg").remove();
+        });
+    }else{
+    $(" body").append('<div class="msg_alert" id="msg"><div class="msg_alert_container"><div class="msg_title" id="msg_top"><span>提示</span></div><div class="btn_close msg_clear"><span>×</span></div><div class="msg_cont" id="msg_cont">'+text+'</div><div class="msg_alert_close msg_clear"><a href="javascript:;" class="btn_cloud ">關閉<span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span></a></div></div></div>');
+    $(".msg_clear").click(function (){
+    $("#msg").remove();
+    });
+    }
+
+}
+
+
+
+//alert訊息<<<<請從這邊複製>>>>
+function alertGaming(text,title){
+    if(window.innerWidth<=415){
+        if(!title==""){
+        $(" body").append('<div class="msg_alert" id="msg"><div class="msg_alert_container"><div class="msg_title" id="msg_top"><span>'+title+'</span></div><div class="btn_close msg_clear"><span>×</span></div><div class="msg_cont" id="msg_cont">'+text+'</div><div class="msg_alert_close msg_clear"><a href="javascript:;" class="btn_cloud">關閉<span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span></a></div></div></div>');
+        $(".msg_clear").click(function (){
+        $("#msg").remove();
+            });
+        }else{
+        $(" body").append('<div class="msg_alert" id="msg"><div class="msg_alert_container"><div class="msg_title" id="msg_top"><span>提示</span></div><div class="btn_close msg_clear"><span>×</span></div><div class="msg_cont" id="msg_cont">'+text+'</div><div class="msg_alert_close msg_clear"><a href="javascript:;" class="btn_cloud">關閉<span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span></a></div></div></div>');
+        $(".msg_clear").click(function (){
+        $("#msg").remove();
+        });
+        }
+    }
+}
+
+//範例 // alert('<p>已收到訂單取消請求，<br>待客服人員確認中...</p>','提示');
+//alert訊息<<<<請複製到這>>>>
+
+
+function doFirst(){
+
+    alertGaming("<p>手機版請先把螢幕轉成橫屏,並重新整理!</p>");
+    
+    getQuestions();
+    gaming_animal.src= sessionStorage['my_animal_img']+'?'+ new Date().getTime();
+    gaming_monster.src= scene[sessionStorage['sceneChoice']].monster;
+    let retry = document.getElementById('retry');
+    retry.addEventListener('click',restartGame);
+    questionPage.style.display="none";
+    calculation.style.display="none";
+    if(sessionStorage['sceneChoice'] == null){
+        sessionStorage['sceneChoice'] = chosenArea('desert');
+    }
+    flytoyou = new Audio("img/game/flytoyou.mp3");
+    dontgrow = new Audio("img/game/S.H.E不想長大.mp3" );
+    battle = new Audio("img/game/WildPokemonBattle.mp3");
+    route1 = new Audio("img/game/pokemon-Route1.mp3");
+
+}
+
+window.addEventListener('load',doFirst);
+window.addEventListener('beforeunload', updateScoreMoney);
+</script>    
+</body>
+</html>

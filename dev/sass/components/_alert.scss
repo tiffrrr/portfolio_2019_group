@@ -1,0 +1,135 @@
+@mixin msgalert($bgcolor,$linecolor,$btncolor) {
+
+.msg_alert {
+  width: 100%;
+  position: fixed;
+  z-index: 15;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  margin: auto;
+  background-color:rgba(0,0,0,0.6);
+  text-align: center;
+
+ .msg_alert_container{
+  width: 90%;
+  position:fixed;
+  background-color: $bgcolor;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin:auto;
+  border-radius:10px;
+  box-sizing:border-box;
+  padding:10px;
+
+  @include responds(medium){
+    width: 50%;
+  }
+  @include responds(large){
+  // width:30%;
+  width:23%;
+  }
+  }
+  .btn_close{
+    display: block;
+    border-radius: 50%;
+    background-color: $linecolor;
+    box-shadow: 2px 2px 0 1px #333;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    span{
+      font-size:$m_fz;
+    }
+    }
+
+    .msg_title{
+      padding: 5px 0;
+      font-size: $lg_fz;
+      border-bottom: 3px dashed $linecolor;  
+      }
+      .msg_cont {
+        padding: 10px;
+        box-sizing: border-box;
+        margin-bottom: 10px;//
+   
+        @include btn_cloudb(100px);
+        p{
+          font-size:$m_fz;
+          margin-bottom: 10px;
+        }
+      }
+      .msg_alert_close {
+        display: inline-block;
+        @include btn_cloud(100px,$btncolor);
+      }
+
+}
+}
+
+
+@mixin hmsgalert($bgcolor,$linecolor,$btncolor) {
+
+  .hmsg_alert {
+    width: 100%;
+    position: fixed;
+    z-index: 12;
+    text-align: center;
+    
+  
+   .hmsg_alert_container{
+    width: 90%;
+    position:fixed;
+    background-color: $bgcolor;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin:auto;
+    border-radius:10px;
+    box-sizing:border-box;
+    padding:10px;
+  
+    @include responds(medium){
+      width: 50%;
+    }
+    @include responds(large){
+    width:23%;
+    }
+    }
+      .hmsg_title{
+        padding: 5px 0;
+        font-size: $lg_fz;
+        margin-bottom: 20px;
+        border-bottom: 3px dashed $linecolor;  
+        }
+        .hmsg_cont {
+          padding: 10px;
+          box-sizing: border-box;
+          margin-bottom: 10px;
+     
+          @include btn_cloudb(100px);
+          p{
+            font-size:$m_fz;
+            margin-bottom: 10px;
+          }
+          .report_true{
+            margin-top: 10px;
+          }//
+        }
+        .hmsg_alert_close {
+          display: inline-block;
+          @include btn_cloud(100px,$btncolor);
+        }
+  
+  }
+  }
+
+
+

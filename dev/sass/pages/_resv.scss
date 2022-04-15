@@ -1,0 +1,594 @@
+.resv_body{
+    font-family: "Microsoft JhengHei", "Helvetica", "sans-serif";
+    background-color: #ceedeb;
+    background-image: url(../img/resv/bg.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    @include msgalert(#fdf6e7,$col_btn_pink,$col_btn_pink);
+    @media screen and (min-width:992px){
+        .msg_alert .msg_alert_container{
+            width: 19%;
+        }
+    }
+    
+
+    
+    // 第一個section開始 標題/雲朵/左側火車
+    .resv_banner{
+        overflow: hidden;
+        padding: 10% 0 5%;
+        text-align: center;
+        position: relative;
+        .container{
+            display: flex;
+            margin: auto;
+            max-width: 1200px;
+            padding: 10px;
+            box-sizing: border-box;
+            .banner_title{
+                font-size: 0;
+                width: 60%;
+                margin: auto;
+                position: relative;
+                background-image: url(../img/header/banner_cloud.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                padding: 40px 0px 30px 0px;
+                @media screen and (min-width:1200px){
+                    width: 30%;
+                    padding: 60px 0px 50px 0px;
+                }
+                .icon_l{
+                    width: 25px;
+                    height: 25px;
+                }
+                .icon_r{
+                    width: 25px;
+                    height: 25px;
+                }
+                .title{
+                    margin: 0px 10px;
+                    @media screen and (min-width:1200px){
+                        margin: 0px 20px;
+                    }
+                }
+            }
+            .cloud_topright, .cloud_train, .cloud_center, .cloud_animal, .cloud_buttom, .resv_train, .rhinoceros{
+                position: absolute;
+            }
+        }
+    }
+}
+.resv_calendargroup{
+    .resv_calendar{
+        background-image: url("../img/resv/calendar2.png");
+        z-index: 2;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 580px;
+        padding:230px  0 40px;
+        box-sizing: border-box;
+        @media screen and (min-width:1200px){
+            background-image: url("../img/resv/calendar_bg.png");
+            padding:260px  0 40px;
+        }
+
+        // 日曆主體開始
+        .calendarbox{
+            width: 80%;
+            margin: auto;
+            background:#f0e4ba;
+            border-radius: 20px;
+            .calendar_title{
+                text-align: center;
+                color: #776f6f;
+                padding-bottom: 2%;
+                box-sizing: border-box;
+                font-size: $h2_fz;
+                
+                // 左側月份切換
+                .fa-chevron-left {
+                    &:before{
+                        content: "\f053";
+                        cursor:pointer;
+                    }
+                }
+                // 右側月份切換
+                .fa-chevron-right {
+                    &:before{
+                        content: "\f054";
+                         cursor:pointer;
+                    }
+                }
+            }
+            .week_group{
+                font-size: $m_fz;
+                font-weight: bold;
+                color:$col_brown;
+                ul{
+                    display: flex;
+                    justify-content: center;
+                    li{
+                        width: 14.2%;
+                        height: 36px;
+                        line-height: 36px;
+                        font-size: 18px;
+                        list-style-type: none;
+                        display: block;
+                        box-sizing: border-box;
+                        text-align: center;
+                        border-bottom: 1px solid #ab8450;
+                        // cursor: pointer;
+                        // float: left;
+                    }
+                    .clearfix{
+                        clear: both;
+                    }
+                }
+            }
+            .day_group{
+                font-size: $m_fz;
+                font-weight: bold;
+                color:$col_brown;
+                ul{
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    li{
+                        width: 14.28%;
+                        height: 36px;
+                        line-height: 36px;
+                        font-size: 18px;
+                        list-style-type: none;
+                        display: block;
+                        box-sizing: border-box;
+                        text-align: center;
+                        border: 1px solid #ab8450;   
+                    }
+            
+                    // 今日
+                    .colorbox{
+                        color:#f19149;
+                    }
+                    // 今天之前的日期
+                    .lightgrey{
+                        color:#AAA;
+                    }                    
+                }
+            }
+            .curday_after{
+                &:hover{
+                    font-weight: bold;
+                    color: #e5ecec;
+                    background: #e89e4d;
+                    cursor:pointer;
+                }
+            }
+            .curday_after_check{
+                font-weight: bold;
+                color: #e5ecec;
+                background:#A65F16;
+            }
+        }
+        // 日曆主體結束
+
+        .calendar_text{
+            display: flex;
+            width: 80%;
+            margin: auto;
+            font-size: 0px;
+            li{
+                display: inline-block;
+                font-size: $s_fz;
+                padding: 5px;
+                // width: 5%;
+            }
+            .aviable{
+                background-color:$col_brown;
+                border-radius: 20px;
+                margin-left: 10px;
+            }
+            
+            .unaviable{
+                background-color: #a8a6a6;
+                border-radius: 20px;
+                margin-left: 10px;
+            }
+            .today_date{
+                background-color: #f19149;
+                border-radius: 20px;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+    // 第一個section結束
+    
+    // 第二個section開始
+    .resv_info{
+        width: 100%;
+        min-height:67vh;
+        .resv_desc{
+            // width: 0%;
+            margin: auto;
+            font-size: $xs_fz ;
+
+            padding-top:50px;
+        }
+        .container{
+            display: flex;
+            margin: auto;
+            max-width: 1200px;
+            padding: 10px;
+            box-sizing: border-box;
+            align-items: center;
+            
+
+            // 右側表單開始
+            .resv_form{
+                position: relative;
+                border: 1px solid #d1c0a5;
+                border-radius: 40px;
+                background-color: #f3edcb;
+                padding: 10px;
+                box-sizing: border-box;
+                // height: 470px;
+                border-width: 4.43px;
+                @media screen and (min-width:992px){
+                    padding: 4.23%;
+                }
+            }
+                .show_data{
+                    border: 3px dashed #d1c0a5;
+                    border-radius: 20px;
+                    box-sizing: border-box;
+                    background: rgba(240, 240, 240, 0.8);
+                    display: inline-block;
+                    width: 100%;
+                    padding: 10px;
+                    @media screen and (min-width:992px){
+                        padding: 4.16%;
+                    }
+                    .show_data_table{
+                        display:flex;
+                        flex-wrap: wrap;
+                    }
+                }
+                .show_data_table span{
+                    display:block;
+                    box-sizing: border-box;
+                    padding: 2px;
+                }
+                .table_content_row{
+                    display:flex;
+                    width: 100%;
+                }
+                .show_datano{
+                    width: 20%;
+                }
+                .show_datatime{
+                    width: 29%;
+                }
+                .show_datalen{
+                    width: 24%;
+                }
+                .show_datanum{
+                    width: 28%;
+                }
+                .resvform_title{
+                    padding: 10px;
+                }
+                .resvform_users{
+                    margin: auto;
+                    padding: 11px 6px;
+                    label{
+                        margin-right: 2.83%;
+                    }
+                    span{
+                        font-size: $xs_fz;
+                        color: #c92626;
+                        font-weight: bold;
+                    }
+                    input,select{
+                        padding: 5px;
+                        border-radius:8px;
+                        outline:none;
+                        border:2px solid #d1c0a5;
+                    }
+                }
+                // 驗證碼
+                #resv_canvas{
+                    border: 1px solid #ccc;
+                }
+                // 刷新
+                #refresh{
+                    width: 18px;
+                    opacity: 0.6;
+                    cursor: pointer;
+                    position:relative;
+                    left:3px;
+                    bottom: 1px;
+                }
+                .resv_submit{
+                    padding-bottom: 8px;
+                    @include btn_cloud (100px,$col_btn_pink);
+                    .btn_cloud{
+                        float: right;
+                    }
+                }
+            
+            // 右側表單結束
+        }
+        
+        // 下面火車
+        .entrances{
+                // margin-top: 80px;
+                // box-sizing: border-box;
+                // width: 100%;
+        }
+    }
+    // 第二個section結束
+
+
+
+
+@media screen and (max-width: 767px){
+    
+    //雲朵和火車
+    .resv_banner{
+        .banner_title{
+            padding-top:70px;
+        }
+        .cloudtop,.cloud_topright,.cloud_train,.cloud_center,.rhinoceros,.cloud_animal,.cloud_buttom{
+            width: 15%;
+        }
+        .cloud_buttom {
+            position: absolute;
+            top: 66%;
+            right: -7%;
+        }
+        .cloud_animal{
+            top: 71%;
+            right: 14%;
+        }
+        .cloudtop{
+            top: 13.09%;
+            left: -3.42%;
+        }
+        .cloud_topright{
+            right: 1%;
+            top: 32%;
+        }
+        .cloud_train{
+            bottom: 0%;
+            left: 11%;
+        }
+        .cloud_center{
+            bottom: 27%;
+            left: 3.5%;
+        }
+        .rhinoceros{
+            bottom: 12%;
+            right: 5%;
+        }
+        .cloud_buttom{
+            display: none;
+        }
+        .resv_train{
+            display: none;   
+        }
+        .rail{
+            display: none;
+        }
+        .cloud_animal{
+            top: 83%;
+            right: 4%;
+        }
+    }
+    .resv_info{
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .resv_desc{
+            width: 90%;
+            padding-bottom:20px;
+        }
+                
+
+        
+        .resv_form{
+            width: 100%;
+            margin: 20px 10px;
+        }
+        .wooden{
+            position: absolute;
+            top: -7%;
+            right: -7%;
+            width: 20%;
+        }
+        .resv_submit{
+            text-align: center;
+            .btn_cloud{
+                float: none;
+                text-align: center;
+                margin: 0;
+            }
+        }
+       
+        
+
+        //下面的火車
+        .entrances{
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;  
+            .train{
+                position: relative;
+                // animation: train 5s infinite;
+                z-index: 1;
+                .hand{
+                    position: absolute;
+                    top: 29%;
+                    left: 59%;
+                    transform: rotate(-24deg);
+                    width: 15%;
+                    // animation: hand 1s linear infinite;
+                }
+                .train_animal{
+                    width: 120%;
+                }
+            }
+            .gate{
+                position: relative;
+                .large_gate{
+                    display: none;
+                }
+                .gate_top{
+                    display: none;
+                }
+            }
+        }   
+    }
+}
+
+@media screen and (min-width: 768px) {
+    // 雲朵和火車
+    .resv_body{
+        .resv_banner{
+            .cloud_buttom {
+                position: absolute;
+                top: 66%;
+                right: -7%;
+            }
+            .cloudtop{
+                top: 13.09%;
+                left: -3.42%;
+            }
+            .cloud_topright{
+                right: 1%;
+                top: 32%;
+                animation: cloud_topright 5s linear infinite;
+            }
+            @keyframes cloud_topright {
+                0% {right: 0%;}
+                50%{right: 3%;}
+                100%{right: 0%;} 
+            }
+
+            .cloud_train{
+                bottom: 3%;
+                left: 19%;
+                animation: cloud_train 5s linear infinite;
+            }
+            @keyframes cloud_train {
+                0% {left: 19%;}
+                50%{left: 23%;}
+                100%{left: 19%;} 
+            }
+
+            .cloud_center{
+                bottom: 45%;
+                left: 4.5%;
+                animation: cloud_center 5s linear infinite;
+            }
+            @keyframes cloud_center {
+                0% {left: 4.5%;}
+                50%{left: 6.5%;}
+                100%{left: 4.5%;} 
+            }
+            .rhinoceros{
+                bottom: 12%;
+                right: 11%;
+                animation: rhinoceros 2s linear infinite;
+            }
+            @keyframes rhinoceros {
+                0% {bottom: 12%;}
+                50%{bottom: 11%;}
+                100%{bottom: 12%;} 
+            }
+            .cloud_buttom{
+                display: none;
+            }
+            .resv_train{
+                width: 9.8%;
+                position: absolute;
+                left: 0%;
+                top: 20%;
+                z-index: 3;
+                transform: rotate(-4deg);
+                transform-origin: left 100%;
+                animation: spin 5s infinite;   
+            }
+            // left train
+            .rail{
+                width: 10%;
+                position: absolute;
+                left: -2.4%;
+                top: 25%;
+                transform: rotate(0deg);
+            }
+            .cloud_animal{
+                top: 75%;
+                right: 8%;
+                width: 14%;
+            }  
+        }
+        .resv_info{
+            .container{
+                width: 100%;
+                .resv_calendargroup{
+                    width: 50%;
+                }
+                .resv_form{
+                    width: 50%;
+                    margin: 70px 6.67%;
+                    .wooden{
+                        position: absolute;
+                        top: -9%;
+                        right: -7%;
+                    }
+                }
+            }
+
+            // 下面的火車
+            .entrances{
+                overflow: hidden;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-end;  
+                .train{
+                    position: relative;
+                    animation: train 13s infinite;
+                    z-index: 1;
+                    .hand{
+                        position: absolute;
+                        top: 32%;
+                        left: 50%;
+                        transform: rotate(-24deg);
+                        animation: hand 1s linear infinite;
+                    }
+                }
+                .gate{
+                    position: relative;
+                    .gate_top{
+                        position: absolute;
+                        right: 0%;
+                        z-index: 2;
+                    }
+                    .small_gate{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

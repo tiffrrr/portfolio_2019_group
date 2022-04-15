@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>預約導覽</title>
+    @@include('template/csslink.html')
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+</head>
+
+<body class="resv_body">
+
+    <!-- header -->
+    @@include('template/header.html')
+    <!-- 標題/雲朵/左側火車 -->
+    <section class="resv_banner">
+        <div class="container">
+            <div class="banner_title">
+                <img class="icon_l" src="img/header/banner_icon_l.png" alt="">
+                <h1 class="title">預約導覽</h1>
+                <img class="icon_r" src="img/header/banner_icon_r.png" alt="">
+            </div>
+            <img src="img/resv/cloud_topright.png" alt="cloud" class="cloud_topright">
+            <img src="img/resv/cloud_train.png" alt="cloud" class="cloud_train">
+            <img src="img/resv/cloud_center.png" alt="cloud" class="cloud_center">
+            <img src="img/resv/cloud_animal.png" alt="cloud" class="cloud_animal">
+            <img src="img/resv/cloud_buttom.png" alt="cloud" class="cloud_buttom">
+            <img src="img/resv/train2.png" class="resv_train" alt="">
+            <img src="img/resv/3_rail.png" class="rail" alt="">
+            <!-- <img src="img/resv/train.png" alt="train" class="resv_train"> -->
+            <img src="img/resv/animal_guide.png" alt="rhinoceros" class="rhinoceros">
+        </div>
+    </section>
+
+    <section class="resv_info">
+        <div class="container">
+            <!-- 日曆開始 -->
+            <div class="resv_calendargroup">
+                <div class="resv_calendar">
+                    <!-- <img src="img/resv/calendar_bg.png" alt="calendbg"> -->
+                    <!-- 日曆主體開始 -->
+                    <div class="calendarbox">
+                        <div class="calendar_title">
+                            <span id="prev">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span id="calendar_year">Year</span>
+                            <span>/</span>
+                            <span id="calendar_month">Month</span>
+                            <span id="next">
+                                <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </div>
+                        <div class="calendar_body">
+                            <div class="week_group">
+                                <ul>
+                                    <li>日</li>
+                                    <li>一</li>
+                                    <li>二</li>
+                                    <li>三</li>
+                                    <li>四</li>
+                                    <li>五</li>
+                                    <li>六</li>
+                                </ul>
+                            </div>
+                            <div class="day_group ">
+                                <ul id="days">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 日曆主體結束 -->
+
+                    <div class="calendar_text">
+                        <ul>
+                            <li class="aviable"></li>
+                            <li>可預約</li>
+                            <li class="unaviable"></li>
+                            <li>不可預約</li>
+                            <li class="today_date"></li>
+                            <li>今日日期</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- 右側表單開始 -->
+            <div class="resv_form">
+
+                <div class="show_data">
+
+                    <p id='show_data_title'>請選擇日期以查看詳細資訊：</p>
+                    <div class="show_data_table">
+                        <!-- <div class='data_table_title'>
+                            <span>場次</span>
+                            <span >開始時間</span>
+                            <span>長度</span>
+                            <span >剩餘人數</span>
+                        </div> -->
+                        <!-- <div class='data_table_content'> -->
+                            <!-- <div class="teble_content_row"> -->
+                            <!-- <span>場次</span>
+                            <span class="show_datatime">開始時間</span>
+                            <span>長度</span>
+                            <span class="show_datanum">剩餘人數</span> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                    </div>
+                </div>
+                <img class="wooden" src="img/resv/wooden.png" alt="wooden">
+                <form action="get.php" method="get">
+                    <h3 class="resvform_title">本園區提供免費「定時導覽解說」服務，請點選日期進行預約。</h3>
+                    <div class="resvform_users">
+                        <div class="time resvform_users">
+                            <label for="time_select">時間:</label>
+                            <select id="time_select" disabled>
+                                <option value="">--選擇時間--</option>
+                                <!-- <option value="10am">上午10點</option>-->
+                            </select>
+                        </div>
+                        <div class="peoplenum resvform_users">
+                            <label for="peoplenum_select">人數:</label>
+                            <select id="peoplenum_select" disabled>
+                                <option value="">--選擇人數--</option>
+                                <!-- <option value="1">1</option>
+                                <option value="1">2</option>-->
+                            </select>
+                            <span id='numRemain'></span>
+                        </div>
+                        <div class="resvform_users">
+                            請輸入驗證碼：
+                            <input type="text" id="code" name="verific_code" size="10"><br>
+                            <canvas id="resv_canvas" width="70px" height="27px"></canvas>
+                            <img onclick="createcode()" src="img/resv/refresh.png" id="refresh">
+                        </div>
+                    </div>
+                    <p class="resv_submit">
+                        <a id='submit' href="#" class="btn_cloud" disabled>送出
+                            <span class="btn_cloudeffect"></span>
+                            <span class="btn_cloudeffect"></span>
+                            <span class="btn_cloudeffect"></span>
+                            <span class="btn_cloudeffect"></span>
+                        </a>
+                    </p>
+                </form>
+                <p class="resv_desc">
+                    確認詳情：會在預訂成功後立即確認，並將使用憑證發送至你的會員中心。
+                    如在註明的時限內沒有於收件箱或垃圾郵件箱中收到郵件，請及時通過郵件聯繫客戶服務
+                    注意事項：僅限指定日期使用.當日請出示憑證入場若預約當日臨時無法抵達，請事先於會員中心取消。
+                </p>
+            </div>
+            
+        </div>
+        <!-- 右側表單結束 -->
+
+        <!-- 下方火車 -->
+        <div class="entrances">
+            <div class="train">
+                <img src="img/resv/hand.png" alt="" class="hand">
+                <img src="img/resv/resv_train.png" alt="train_animal" class="train_animal">
+            </div>
+            <div class="gate">
+                <img src="img/resv/zooGate-1.png" alt="gate" class="large_gate">
+                <img src="img/resv/zooGate_top.png" alt="" class="gate_top">
+                <img src="img/resv/gate.png" alt="" class="small_gate">
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    @@include('template/footer.html')
+    <script src="js/resv/verfcode.js"></script>
+    <script src='js/resv/showInfo.js'></script>
+    <script src="js/resv/calendar.js"></script>
+    <script src="js/resv/resv.js"></script>
+
+
+</body>
+</html>

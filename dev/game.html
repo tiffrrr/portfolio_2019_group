@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @@include('template/csslink.html')
+    <script src='js/plugin/Chart.js' ></script>
+    
+    <title>生存遊戲</title>
+</head>
+
+<body class="game_body">
+@@include('template/header.html')
+
+
+<div class="game_banner">
+    <div class="container">
+        <div class="game_title">
+            <img class="icon_l" src="img/header/banner_icon_l.png" alt="">
+            <h1 class="title">生存遊戲</h1>
+            <img class="icon_r" src="img/header/banner_icon_r.png" alt="">
+        </div>
+    </div>
+</div>
+
+
+<div class="game_role">
+    <div class="container">
+        <div class="role_title"><h2>參加角色</h2></div>
+        <div class="role_info">
+            <div class="food_menu">
+                <ul>
+                    <li class="food"  draggable="true" >
+                        <img id='hamburger' data-feed='-20' src="img/game/food_hamburger.png" alt="漢堡">
+                    </li>
+                    <li class="food" draggable="true" data-feed='30'>
+                        <img id='fries' src="img/game/food_fries.png" alt="薯條">
+                    </li>                    
+                    <li class="food"  draggable="true" >
+                        <img id='fruit' data-feed='10' src="img/game/food_fruit.png" alt="楊桃">
+                    </li>
+                    <li class="food" draggable="true" data-feed='20'>
+                        <img id='apple' src="img/game/food_apple.png" alt="蘋果">
+                    </li>                    
+                    <li class="food" id='hand'>
+                        <img src="img/game/food_hand.png" alt="撫摸">
+                    </li>
+
+                </ul>
+            </div>
+           
+            <div class="cloud1">
+                <p></p>
+                <img src="img/game/role_cloud.png" alt="">
+            </div>
+            <div class="cloud2">
+                <img src="img/game/role_cloud2.png" alt="">
+            </div>
+            <div class="role_pic">
+                <div class="info_pic">
+                    <div class="leftArrow"><</div>
+                    <img src="./img/home/1.png" alt="">
+                    <div class="animal_words"><p></p></div>
+                    <div class="rightArrow">></div>
+                </div>
+                <div class="info_name">
+                    <h2>你的動物名稱</h2>
+                </div>
+
+            </div>
+            <div class="role_value">
+                @@include('template/radar.html')
+  
+            </div>
+        </div>
+    </div>
+</div>
+<div class="game_scene">
+    <div class="container">
+        <div class="scene_title"><h2>選擇場景</h2></div>
+        <div class="scene_map">
+            <div class="forest_pointer">
+                <div class="forest_pointer_title">森林</div>
+                <img src="img/game/scene_arrow.png" alt="">
+            </div>
+            <div class="desert_pointer">
+                <div class="desert_pointer_title">沙漠</div>
+                <img src="img/game/scene_arrow.png" alt="">
+            </div>
+            <div class="mountain_pointer">
+                <div class="moutain_pointer_title">高山</div>
+                <img src="img/game/scene_arrow.png" alt="">
+            </div>
+            <!-- <img src="img/game/scene_map.png" alt=""> -->
+            <div class="game_full_map">
+                <img src="img/game/game_forest.png" alt="">
+                <img src="img/game/game_desert.png" alt="">
+                <img src="img/game/game_mountain.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="game_playing">
+    <div class="playing_container">
+        <div class="game_intro_window">
+            <div id="game_control_title"><h2>操作說明</h2></div>
+            <img id="game_intro_content" src="./img/game/game_intro_content.png" alt="">
+            <img id="game_closeBtn" src="./img/game/game_intro_closeBtn.png" alt=""></div>
+        <div class="arrowLeft"><</div>
+
+        <div class="playing_intro">
+            <a href="javascript:showIntro();" class="btn_c_nextpage btn_cloudb">
+                操作說明
+                @@include('template/btn_sp.html') 
+            </a>
+        
+        </div>
+        <!-- <a href="gaming.html" onclick="chosenArea('desert')"></a> -->
+            <div class="playing_desert playing_window">
+                <input type="hidden" id="userNo" value="1">
+                <p>
+                    <a href="gaming.html" class="btn_cloudp" onclick="chosenArea('desert')">
+                    進入遊戲
+                    @@include('template/btn_sp.html')
+                </a>
+                </p>
+            </div>
+            <div class="playing_forest playing_window">
+                <p>
+                    <a href="gaming.html" class="btn_cloudp" onclick="chosenArea('forest')">
+                    進入遊戲
+                    @@include('template/btn_sp.html')
+                </a>
+                </p>
+            </div>
+            <div class="playing_mountain playing_window">
+                <p>
+                    <a href="gaming.html" class="btn_cloudp" onclick="chosenArea('mountain')">
+                    進入遊戲
+                    @@include('template/btn_sp.html')
+                </a>
+                </p>
+            </div>
+        <div class="arrowRight">></div>
+    </div>
+
+</div>
+<div class="game_rank">
+    <div class="container">
+        <div class="rank_title"><h2>生存排行榜</h2></div>
+        <div class="rank_chart">
+                <div class="rank_top10_title">排行榜前十名</div>
+                <div class="chart_top">
+                    <div class="chart_top1">
+                        <div class="top1_title">
+                            <img src="img/game/top_pic.png" alt="">
+                            <div class="top_score">168秒</div>
+                            <div class="top_animal">艾咪</div>
+                            <div class="top_player">AABB</div>
+                        </div>
+
+                    </div>
+                    <div class="chart_top2">
+                        <div class="top2_title">
+                            <img src="img/game/top_pic.png" alt="">
+                            <div class="top_score">168秒</div>
+                            <div class="top_animal">艾咪</div>
+                            <div class="top_player">AABB</div>
+                        </div>
+
+                    </div>
+                    <div class="chart_top3">
+                        <div class="top3_title">
+                            <img src="img/game/top_pic.png" alt="">
+                            <div class="top_score">168秒</div>
+                            <div class="top_animal">艾咪</div>
+                            <div class="top_player">AABB</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="chart_ranking">
+
+                    <table class="ranking_table">
+                            <!-- <tr>
+                                <td>排名</td>
+                                <td>動物名稱</td>
+                                <td>會員名稱</td>
+                                <td>時間</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>小白獸</td>
+                                <td>apple7788</td>
+                                <td>112秒</td>
+                            </tr> -->
+                        </table>
+                    <img src="img/game/chart_ranking_bottom.png" alt="">
+                </div>
+        </div>
+    </div>
+</div>
+
+@@include('template/footer.html')
+<script src="js/modify/radar.js" ></script>
+
+<script>
+
+
+let x,y,z,areaChoice;
+let tempUserNo = 1;
+let userDataDesc = [];
+let feed=0;
+
+
+//隨機函數
+function rand(min, max){
+    return   Math.floor(Math.random()*(max-min+1)) + min;
+}
+
+// 更新雷達圖資料
+function updatechart(){
+    let total_eml_forest = sessionStorage['environ_adapt_1'];
+    let total_eml_mountain = sessionStorage['environ_adapt_2'];
+    let total_eml_desert = sessionStorage['environ_adapt_3'];
+    myRadarChart.data.datasets[0].data = [total_eml_forest , total_eml_mountain , total_eml_desert];
+    myRadarChart.update();
+}
+
+// 更新生命力
+function updatehealth(){
+    let total_health = sessionStorage['animal_life'];
+    let health_box = document.querySelector(".life_ability .pic");
+    // console.log(health_box);
+    health_box.innerHTML = '';
+    for (let i=1; i<=total_health; i++){
+        let hart = document.createElement('img');
+        hart.src = 'img/modify/icon_life.png';
+        health_box.appendChild(hart);
+    }
+}
+
+// 更新跳躍力
+function updatejump(){
+    let total_jump = sessionStorage['animal_jump'];
+    let jump = document.getElementsByClassName('bar_add')[0];
+    let jump_value = document.getElementsByClassName('meter')[0];
+    jump.style.width = `${total_jump *2}0%`;
+    jump_value.innerText = total_jump + 'm';
+}
+
+//角色欄動畫
+function roleInfoAnimation(){
+    if(window.innerWidth>=768){
+        $que('.cloud1')[0].style.transition = '2s';
+        $que('.cloud1')[0].style.transform = 'translateX(-280%)';
+        setTimeout(function(){ $que('.cloud1')[0].style.opacity=0 },100);
+        setTimeout(function(){ $que('.cloud1')[0].style.opacity=0 },700);
+        setTimeout(function(){ $que('.cloud1')[0].style.opacity=1 },1200);
+
+        $que('.cloud2')[0].style.transition = '2s';
+        $que('.cloud2')[0].style.transform = 'translateX(280%)';
+        setTimeout(function(){ $que('.cloud2')[0].style.opacity=0 },100);
+        setTimeout(function(){ $que('.cloud2')[0].style.opacity=0 },700);
+        setTimeout(function(){ $que('.cloud2')[0].style.opacity=1 },1200);
+    }
+}
+
+//排行榜特效
+function rankFadeIn(){
+        // console.log('進來排行榜區');
+    
+    // if(window.innerWidth>=768){
+    //     x = 1491;
+    // }else if(window.innerWidth<767){
+    //     x = 1200;
+    // }
+
+if(window.innerWidth>=768){
+    if(scrollY>1491){
+        for(var i=0; i<$que('.ranking_table tr').length; i++){
+            $que('.ranking_table tr')[i].style.opacity =0;
+           
+        }
+        $que('.chart_top1')[0].style.opacity =0;
+        $que('.chart_top2')[0].style.opacity =0;
+        $que('.chart_top3')[0].style.opacity =0;
+
+        setTimeout(function(){$que('.chart_top1')[0].classList.add('topFadeIn')},0);
+        setTimeout(function(){$que('.chart_top2')[0].classList.add('topFadeIn')},400);
+        setTimeout(function(){$que('.chart_top3')[0].classList.add('topFadeIn')},800);
+
+
+        setTimeout(function(){$que('.ranking_table tr')[0].classList.add('trFadeIn');},1200);
+        setTimeout(function(){$que('.ranking_table tr')[1].classList.add('trFadeIn');},1500);
+        setTimeout(function(){$que('.ranking_table tr')[2].classList.add('trFadeIn');},1800);
+        setTimeout(function(){$que('.ranking_table tr')[3].classList.add('trFadeIn');},2100);
+        setTimeout(function(){$que('.ranking_table tr')[4].classList.add('trFadeIn');},2400);
+        setTimeout(function(){$que('.ranking_table tr')[5].classList.add('trFadeIn');},2700);
+        setTimeout(function(){$que('.ranking_table tr')[6].classList.add('trFadeIn');},3000);
+        setTimeout(function(){$que('.ranking_table tr')[7].classList.add('trFadeIn');},3300);
+
+        for(var j=1; j<$que('.ranking_table tr').length; j++){
+            if($que('.ranking_table tr')[j].children[2].innerText == sessionStorage['user_name']){
+                highlight($que('.ranking_table tr')[j].children[2]);
+            }
+        }
+        
+        if($que('.top1_title .top_player')[0].innerText == sessionStorage['user_name']){
+                highlight($que('.top1_title .top_player')[0]);
+        }
+        if($que('.top2_title .top_player')[0].innerText == sessionStorage['user_name']){
+                highlight($que('.top2_title .top_player')[0]);
+        }
+        if($que('.top3_title .top_player')[0].innerText == sessionStorage['user_name']){
+                highlight($que('.top3_title .top_player')[0]);
+        }
+      
+    }
+}
+    function highlight(element){
+        element.parentNode.style.transition = '0.5s';
+
+        element.style.color = '#4eb1d1';
+        element.style.fontWeight = '700';
+        element.parentNode.children[1].style.color = '#41acfe';
+        element.parentNode.children[0].style.fontWeight = '700';
+        element.parentNode.children[0].style.color = '#41acfe';
+        element.parentNode.children[1].style.fontWeight = '700';
+        element.parentNode.children[2].style.color = '#41acfe';
+        element.parentNode.children[2].style.fontWeight = '700';
+        element.parentNode.children[3].style.color = '#41acfe';
+        element.parentNode.children[3].style.fontWeight = '700';
+
+    }
+
+    
+
+}
+
+
+
+function $id(id){
+    return document.getElementById(id);
+}
+function $cls(cls){
+    return document.getElementsByClassName(cls);
+}
+function $que(css_selector){
+    return document.querySelectorAll(css_selector);
+}
+
+//動物走動&對話
+function animalWalking(trigger){
+
+        $que(".info_pic img")[0].classList.remove('animalBreathing');
+        $que(".animal_words")[0].classList.remove('animalSayWords');
+        $que(".info_pic img")[0].classList.remove('animalHello');
+        $que(".animal_words")[0].style.display="none";
+
+
+    if(window.innerWidth>=768 && sessionStorage['my_animal_img'] && sessionStorage['my_animal_name']!='董董'){//如果有登入
+        var environ = [sessionStorage['environ_adapt_1'],sessionStorage['environ_adapt_2'],sessionStorage['environ_adapt_3']];
+        environ.sort(function(a,b){ return parseInt(b)-parseInt(a) });
+
+        if(environ[0] == sessionStorage['environ_adapt_1']){
+            env = '森林';
+        }else if(environ[0] == sessionStorage['environ_adapt_2']){
+            env = '高山';
+        }else if(environ[0] == sessionStorage['environ_adapt_3']){
+            env = '沙漠';
+        }
+
+        var randomTalk;
+        var n;
+
+            if(trigger=='firstTime'){
+                
+                if(sessionStorage['animal_jump']<=2 && sessionStorage['animal_life']<=2){
+                    // console.log(1);
+                    randomTalk = [
+                        [`${sessionStorage['user_name']} 你好啊~~`,`我們當好朋友吧~~`],
+                        [`好想去${env}玩啊`,`感覺我在那裡能待很久`],
+                        [`五短必有一長`,`雖然我不擅長跳躍 我還有別的優點`],
+                        [`新身體感覺好不舒服啊`,`感覺體力下滑了`]
+                    ];
+                    n = rand(0,3);
+                }else if(sessionStorage['animal_jump']<=2 && sessionStorage['animal_life']>2){
+                    // console.log(2);
+                    randomTalk = [
+                        [`${sessionStorage['user_name']} 你好啊~~`,`我們當好朋友吧~~`],
+                        [`好想去${env}玩啊`,`感覺我在那裡能待很久`],
+                        [`五短必有一長`,`雖然我不擅長跳躍 我還有別的優點`],
+                    ];
+                    n = rand(0,2);
+                }else if(sessionStorage['animal_jump']>2 && sessionStorage['animal_life']>2){
+                    // console.log(3);
+
+                    randomTalk = [
+                        [`${sessionStorage['user_name']} 你好啊~~`,`我們當好朋友吧~~`],
+                        [`好想去${env}玩啊`,`感覺我在那裡能待很久`],
+                    ];
+                    n = rand(0,1);
+                }else if(sessionStorage['animal_jump']>2 && sessionStorage['animal_life']<=2) {
+                    // console.log(4);
+                    randomTalk = [
+                        [`${sessionStorage['user_name']} 你好啊~~`,`我們當好朋友吧~~`],
+                        [`好想去${env}玩啊`,`感覺我在那裡能待很久`],
+                        [`新身體感覺好不舒服啊`,`感覺體力下滑了`]
+                    ];
+                    n = rand(0,2);
+                    // console.log('n:'+n);
+                }
+
+
+                if(sessionStorage['user_name']&&sessionStorage['user_no']){
+                    
+                    $que(".animal_words")[0].style.display="block";
+                    $que(".info_pic img")[0].classList.add('animalHello');//動物移動
+                    $que(".animal_words")[0].classList.add('animalSayWords');//對話框移動
+                    $que(".animal_words p")[0].innerText = randomTalk[n][0];
+                    // `${sessionStorage['user_name']} 你好啊~~`;
+                        // if(n==0){
+                        //     audio.play();//播放聲音
+                        // }
+                        setTimeout(function(){
+                            $que(".animal_words p")[0].innerText = randomTalk[n][1];
+                        },2500);
+
+                        setTimeout(function(){
+                            $que(".info_pic img")[0].classList.remove('animalHello');
+                            $que(".animal_words")[0].classList.remove('animalSayWords');
+                            $que(".info_pic img")[0].classList.add('animalBreathing');
+                            $que(".animal_words")[0].style.display="none";
+                        },5000);
+
+                }else {
+                    $que(".animal_words")[0].style.display="none";
+
+                }
+            }
+            if(trigger == 'delicious'){
+                audio.play();//播放聲音
+                $que(".info_pic img")[0].classList.add('animalBreathing');
+                $que(".animal_words")[0].style.display="block";
+                $que(".animal_words p")[0].innerText = `真好吃`;
+                    setTimeout(function(){
+                        $que(".animal_words")[0].style.display="none";
+                    },2000);
+
+            }
+            
+            if(trigger == 'junk'){
+                // $que(".info_pic img")[0].classList.add('animalBreathing');
+                // $que(".info_pic img")[0].classList.add('animal_falling_down');
+                $que(".animal_words")[0].style.display="block";
+                $que(".animal_words p")[0].innerText = `咳咳....你餵我吃了什麼...`;
+                    setTimeout(function(){
+                        $que(".animal_words")[0].style.display="none";//臉色發灰
+                        $que(".info_pic img")[0].style.transition = '0.5s all';
+                        $que(".info_pic img")[0].style.filter = 'grayscale(100%)';
+                        $que(".info_pic img")[0].style.transformOrigin = 'center bottom';
+                        $que(".info_pic img")[0].style.transform = 'rotateZ(90deg)';
+                    },2000);
+                    setTimeout(function(){
+                        $que(".info_pic img")[0].classList.add('animalBreathing');
+                        $que(".info_pic img")[0].style.transform = 'rotateZ(0deg)';
+                    },4000);
+            }
+
+            if(trigger == 'fries'){
+                $que(".info_pic img")[0].classList.add('animalBreathing');
+                $que(".animal_words")[0].style.display="block";
+                $que(".animal_words p")[0].innerText = `讚啦 我剛好在發育`;
+                setTimeout(function(){
+                        $que(".animal_words")[0].style.display="none";
+                    },2000);
+            }
+
+            if(trigger == 'apple'){
+                $que(".info_pic img")[0].classList.add('animalBreathing');
+                $que(".animal_words")[0].style.display="block";
+                $que(".animal_words p")[0].innerText = `An Apple a Day Keeps A Doctor Away.`;
+                setTimeout(function(){ $que(".animal_words")[0].style.display="none"; },2000);
+            }
+
+            //撫摸
+            if(trigger == 'faceBrush' && sessionStorage['my_animal_name']!='小丸子'){
+                console.log(sessionStorage['my_animal_name']!='小丸子');
+                $que(".animal_words")[0].style.display="block";
+                $que(".animal_words p")[0].innerText = `討厭~~`;
+                $que(".info_pic img")[0].classList.add('animalBreathing');
+                setTimeout(function(){$que(".animal_words")[0].style.display="none";},2000);
+                
+            }
+    }
+
+
+
+    // console.log($que(".info_pic img")[0].classList);
+}
+
+
+
+//顯示遊戲說明
+function showIntro(){
+    let introWindow = document.getElementsByClassName('game_intro_window')[0];
+    introWindow.style.display="block";
+}
+//關掉遊戲說明
+function closeIntro(){
+    let introWindow = document.getElementsByClassName('game_intro_window')[0];
+    introWindow.style.display="none";
+}
+
+//選擇區域
+function chosenArea(area){
+    alertGame("<p>手機版請先把螢幕轉成橫屏!!</p>");
+    if(sessionStorage['sceneChoice'] == null){
+        sessionStorage['sceneChoice'] = area;
+    }else{
+        sessionStorage['sceneChoice'] = area;
+    }
+}
+
+
+
+//alert訊息
+function alertGame(text,title){
+
+    if(window.innerWidth<=375){ //如果手機版不是橫屏
+        
+        if(!title==""){
+        $(" body").append('<div class="msg_alert" id="msg"><div class="msg_alert_container"><div class="msg_title" id="msg_top"><span>'+title+'</span></div><div class="btn_close msg_clear"><span>×</span></div><div class="msg_cont" id="msg_cont">'+text+'</div><div class="msg_alert_close msg_clear"><a href="javascript:;" class="btn_cloud">關閉<span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span></a></div></div></div>');
+        $(".msg_clear").click(function (){
+        $("#msg").remove();
+            });
+        }else{
+        $(" body").append('<div class="msg_alert" id="msg"><div class="msg_alert_container"><div class="msg_title" id="msg_top"><span>提示</span></div><div class="btn_close msg_clear"><span>×</span></div><div class="msg_cont" id="msg_cont">'+text+'</div><div class="msg_alert_close msg_clear"><a href="javascript:;" class="btn_cloud">關閉<span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span><span class="btn_cloudeffect"></span></a></div></div></div>');
+        $(".msg_clear").click(function (){
+        $("#msg").remove();
+        });
+        }
+    }
+}
+
+
+//地圖指標
+    function mapPointer(location){
+        $cls('desert_pointer')[0].classList.remove('pointer_shaking');
+        $cls('mountain_pointer')[0].classList.remove('pointer_shaking');
+        $cls('forest_pointer')[0].classList.remove('pointer_shaking');
+        $cls('forest_pointer')[0].style.filter ="hue-rotate(360deg)";
+        $cls('desert_pointer')[0].style.filter ="hue-rotate(360deg)";
+        $cls('mountain_pointer')[0].style.filter ="hue-rotate(360deg)";
+
+        if(location.indexOf('forest')!=-1){
+            $cls('forest_pointer')[0].classList.add('pointer_shaking');
+            $cls('forest_pointer')[0].style.filter ="hue-rotate(180deg)";
+        }
+        if(location.indexOf('desert')!=-1){
+            $cls('desert_pointer')[0].classList.add('pointer_shaking');
+            $cls('desert_pointer')[0].style.filter ="hue-rotate(180deg)";
+        }
+        if(location.indexOf('mountain')!=-1){
+            $cls('mountain_pointer')[0].classList.add('pointer_shaking');
+            $cls('mountain_pointer')[0].style.filter ="hue-rotate(180deg)";
+        }
+    }
+
+    function picClicked(e){
+        if( e.target.style.left== x){
+            sliderRight();
+        }else if ( e.target.style.left == z ){
+            sliderLeft();
+        }   
+    }
+
+    
+    
+    function sliderLeft(){
+        let enterGame=document.querySelectorAll('.playing_window p');
+
+        if(window.innerWidth>=768){
+            for(var j=0;j<$cls('playing_window').length; j++){
+                enterGame[j].style.display="none";
+                if($cls('playing_window')[j].style.left!= x){
+                    $cls('playing_window')[j].style.left = parseInt($cls('playing_window')[j].style.left)- 30 + '%';
+    
+                }else {
+                    $cls('playing_window')[j].style.left = z;
+    
+                }
+                if($cls('playing_window')[j].style.left== x){ 
+                    $cls('playing_window')[j].style.zIndex = 2; 
+                    $cls('playing_window')[j].classList.add('normalScale');
+                    $cls('playing_window')[j].classList.remove('scaleUp');
+                }
+                if($cls('playing_window')[j].style.left== y){ 
+                    $cls('playing_window')[j].style.zIndex = 4;
+                    $cls('playing_window')[j].classList.remove('normalScale'); 
+                    $cls('playing_window')[j].classList.add('scaleUp');
+                    enterGame[j].style.display="block";
+                    mapPointer($cls('playing_window')[j].classList.value);
+
+                }
+                if($cls('playing_window')[j].style.left == z){ 
+                    $cls('playing_window')[j].style.zIndex = 2; 
+                    $cls('playing_window')[j].classList.add('normalScale');
+                    $cls('playing_window')[j].classList.remove('scaleUp');
+                }
+            }
+        }else {
+            for(var k=0;k<$cls('playing_window').length;k++){
+
+                if($cls('playing_window')[k].style.zIndex!=2){
+                    $cls('playing_window')[k].style.zIndex++;
+                    if($cls('playing_window')[k].style.zIndex==2){
+                        if($cls('playing_window')[k].classList.value.indexOf('forest')!=-1){
+                            mapPointer('forest');
+                        }
+                        if($cls('playing_window')[k].classList.value.indexOf('desert')!=-1){
+                            mapPointer('desert');
+                        }
+                        if($cls('playing_window')[k].classList.value.indexOf('mountain')!=-1){
+                            mapPointer('mountain');
+                        }
+                    }
+                }else{
+                    $cls('playing_window')[k].style.zIndex=0;
+                    // console.log($cls('playing_window')[k].classList.value);
+
+                }
+                
+            }
+        }
+    }
+    
+    function sliderRight(){
+        let enterGame=document.querySelectorAll('.playing_window p');
+        if(window.innerWidth>=768){
+            for(var j=0;j<$cls('playing_window').length; j++){
+                enterGame[j].style.display="none";                
+                if($cls('playing_window')[j].style.left != z){
+                    $cls('playing_window')[j].style.left = parseInt($cls('playing_window')[j].style.left) + 30 + '%';
+    
+                }else {
+                    $cls('playing_window')[j].style.left =  x;
+                }
+                
+                if($cls('playing_window')[j].style.left== x){ 
+                    $cls('playing_window')[j].style.zIndex = 2; 
+                    $cls('playing_window')[j].classList.add('normalScale');
+                    $cls('playing_window')[j].classList.remove('scaleUp');
+                }
+                if($cls('playing_window')[j].style.left== y){ 
+                    $cls('playing_window')[j].style.zIndex = 4;
+                    $cls('playing_window')[j].classList.remove('normalScale'); 
+                    $cls('playing_window')[j].classList.add('scaleUp');
+                    enterGame[j].style.display="block";
+                    mapPointer($cls('playing_window')[j].classList.value);
+                }
+                if($cls('playing_window')[j].style.left == z){ 
+                    $cls('playing_window')[j].style.zIndex = 2; 
+                    $cls('playing_window')[j].classList.add('normalScale');
+                    $cls('playing_window')[j].classList.remove('scaleUp');
+                }
+               
+            }
+        }else {
+            for(var k=0;k<$cls('playing_window').length;k++){
+                if($cls('playing_window')[k].style.zIndex!=0){
+                    $cls('playing_window')[k].style.zIndex--;
+
+                }else{
+                    $cls('playing_window')[k].style.zIndex=2;
+                    if($cls('playing_window')[k].style.zIndex==2){
+                        if($cls('playing_window')[k].classList.value.indexOf('forest')!=-1){
+                            mapPointer('forest');
+                        }
+                        if($cls('playing_window')[k].classList.value.indexOf('desert')!=-1){
+                            mapPointer('desert');
+                        }
+                        if($cls('playing_window')[k].classList.value.indexOf('mountain')!=-1){
+                            mapPointer('mountain');
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    function pointerToMap(e){
+        if(window.innerWidth>=768){
+            if(e.currentTarget==$cls('forest_pointer')[0]){
+                if($cls('playing_forest')[0].style.left == x){
+                    sliderRight();
+                }else if($cls('playing_forest')[0].style.left == z){
+                    sliderLeft();
+                }
+            }
+            if(e.currentTarget==$cls('desert_pointer')[0]){
+                if($cls('playing_desert')[0].style.left == x){
+                    sliderRight();
+                }else if($cls('playing_desert')[0].style.left == z){
+                    sliderLeft();
+                }
+            }
+            if(e.currentTarget==$cls('mountain_pointer')[0]){
+                if($cls('playing_mountain')[0].style.left == x){
+                    sliderRight();
+                }else if($cls('playing_mountain')[0].style.left == z){
+                    sliderLeft();
+                }
+            }
+        }else if(window.innerWidth<=767){
+
+        }
+
+    }
+    
+    function getCusAnimal(){
+        var xhr = new XMLHttpRequest();
+        xhr.onload=function (){
+            if( xhr.status == 200 ){ 
+                // console.log(JSON.parse(xhr.responseText));
+                userData = JSON.parse(xhr.responseText);
+                // console.log(userData.animal_howl);
+
+                sessionStorage['my_animal_img'] = userData.my_animal_img;
+                sessionStorage['my_animal_name'] = userData.my_animal_name;
+                sessionStorage['animal_life'] =userData.animal_life;
+                sessionStorage['animal_jump'] =userData.animal_jump;
+                sessionStorage['game_record'] =userData.game_record;
+                sessionStorage['game_date'] =userData.game_date;
+                sessionStorage['animal_howl'] = userData.animal_howl;
+                sessionStorage['environ_adapt_1'] =userData.environ_adapt_1;
+                sessionStorage['environ_adapt_2'] =userData.environ_adapt_2;
+                sessionStorage['environ_adapt_3'] =userData.environ_adapt_3;
+
+                if(sessionStorage['game_record']>=100){ //大於100秒就解鎖新的角色
+                    $cls('rightArrow')[0].onclick = function(){
+                        sessionStorage['my_animal_img'] ='img/game/gaming_maruko.png';
+                        sessionStorage['animal_life'] =9;
+                        sessionStorage['animal_jump'] =3;
+                        sessionStorage['my_animal_name'] = '小丸子'; 
+                        flyStatus = true;
+                        $que(".info_pic img")[0].style.transition = '0.5s';
+                        $que(".info_pic img")[0].src = 'img/game/gaming_maruko.png';
+                        $que(".info_pic img")[0].style.width= '60%';
+                        $que(".info_name")[0].innerText = '一百秒解鎖角色--小丸子';
+                    }
+                    if(sessionStorage['my_animal_name'] == '小丸子' ){
+                        $cls('leftArrow')[0].onclick = function(){
+                            sessionStorage['my_animal_img'] = userData.my_animal_img;
+                            sessionStorage['my_animal_name'] = userData.my_animal_name;
+                            sessionStorage['animal_life'] =userData.animal_life;
+                            sessionStorage['animal_jump'] =userData.animal_jump;
+                            $que(".info_pic img")[0].src = userData.my_animal_img +'?'+ new Date().getTime();
+                            $que(".info_pic img")[0].style.width= '80%';
+                            $que(".info_name")[0].innerText = sessionStorage['my_animal_name'];
+                        }
+                    }
+                }
+                
+                //顯示角色資料
+                
+                $que(".info_pic img")[0].src = userData.my_animal_img +'?'+ new Date().getTime();
+                $que(".info_name")[0].innerText = sessionStorage['my_animal_name'];
+
+            }else{
+                alert( xhr.status );
+            }
+        }
+        if(sessionStorage['user_no']){
+            var url = "php/game/getCusAnimal.php?user_no="+ sessionStorage['user_no'];
+            xhr.open("Get", url, true);  //readyState : 1
+            xhr.send( null );
+        }else{ //沒登入時的預設動物數值
+                sessionStorage['my_animal_img'] = './img/home/1.png';
+                sessionStorage['animal_life'] =2;
+                sessionStorage['animal_jump'] =1;
+                sessionStorage['environ_adapt_1'] =5;
+                sessionStorage['environ_adapt_2'] =5;
+                sessionStorage['environ_adapt_3'] =5;
+            
+        }
+
+    }   
+  
+    function getRankingData(){
+ 
+        var xhr = new XMLHttpRequest();
+        xhr.onload=function (){
+            if( xhr.status == 200 ){ 
+                userDataDesc = JSON.parse(xhr.responseText);
+
+
+                //塞入前三名照片跟資料
+                $que('.top1_title img')[0].src = userDataDesc[0].my_animal_img;
+                console.log('userDataDesc[0].my_animal_img'+userDataDesc[0].my_animal_img);
+                $que('.top1_title .top_score')[0].innerText = userDataDesc[0].game_record + '秒';
+                $que('.top1_title .top_animal')[0].innerText = userDataDesc[0].my_animal_name;
+                $que('.top1_title .top_player')[0].innerText = userDataDesc[0].user_name;
+
+                $que('.top2_title img')[0].src = userDataDesc[1].my_animal_img;
+                $que('.top2_title .top_score')[0].innerText = userDataDesc[1].game_record + '秒';
+                $que('.top2_title .top_animal')[0].innerText = userDataDesc[1].my_animal_name;
+                $que('.top2_title .top_player')[0].innerText = userDataDesc[1].user_name;
+
+                $que('.top3_title img')[0].src = userDataDesc[2].my_animal_img;
+                $que('.top3_title .top_score')[0].innerText = userDataDesc[2].game_record + '秒';
+                $que('.top3_title .top_animal')[0].innerText = userDataDesc[2].my_animal_name;
+                $que('.top3_title .top_player')[0].innerText = userDataDesc[2].user_name;
+       
+                HTMLstr = "<tr><td>排名</td><td>動物名稱</td><td>會員名稱</td><td>時間</td></tr>";
+                
+                for(var i=3; i<10; i++ ){
+                    
+                    HTMLstr += '<tr>';
+                    HTMLstr += `<td>${i+1}</td><td>${userDataDesc[i].my_animal_name}</td><td>${userDataDesc[i].user_name}</td><td>${userDataDesc[i].game_record} 秒</td>`;
+                    HTMLstr += '</tr>';
+                }
+                $que('.chart_ranking .ranking_table')[0].innerHTML =HTMLstr;
+
+
+
+            }else{
+                alert( xhr.status );
+            }
+        }
+        var url = "php/game/getRankingData.php";
+        xhr.open("Get", url, true);  //readyState : 1
+        xhr.send( null );
+ 
+
+
+    }
+
+
+
+    //餵食的拖拉事件
+    function dragStart(e){
+        this.className += ' hold';
+    
+
+    }
+    function dragEnd(e){
+        this.className = 'food';
+        if(e.target.id == 'hamburger'){
+            animalWalking('junk');
+        }
+        if(e.target.id == 'fruit'){
+            animalWalking('delicious');
+        }
+        if(e.target.id == 'fries'){
+            animalWalking('fries');
+        }
+        if(e.target.id == 'apple'){
+            animalWalking('apple');
+        }
+    }
+
+    function dragOver(e){
+        e.preventDefault();
+        e.target.style.opacity=0.5;
+    }
+
+    function dragEnter(e){
+        e.preventDefault();
+
+        
+    }
+
+    function dragLeave(e){
+        e.target.style.opacity=1;
+    }
+
+    function dragDrop(e){
+        // this.append(food);
+        console.log('放置完成');
+        e.target.style.opacity=1;
+        // console.log('....');
+    }
+
+
+    function doFirst(){
+
+        getRankingData();
+        getCusAnimal();
+        animalWalking('firstTime');
+
+        roleInfoAnimation();
+
+        updatechart();
+        updatehealth();
+        updatejump();
+        //安裝聲音檔
+        audio = new Audio(sessionStorage['animal_howl']);
+
+        //餵食安裝事件
+        const foods = document.querySelectorAll('.food img');
+        const animal = document.querySelectorAll('.info_pic')[0];
+        var feed =0;
+
+        //食物及動物都裝上拖放事件
+        for( const food of foods){
+            food.addEventListener('dragstart', dragStart);
+            food.addEventListener('dragend', dragEnd);
+        }
+
+        animal.addEventListener('dragover', dragOver);
+        animal.addEventListener('dragenter', dragEnter);
+        animal.addEventListener('dragleave', dragLeave);
+        animal.addEventListener('drop', dragDrop);
+        //拿掉按右鍵會出現的選單
+        $que('.game_role')[0].addEventListener("contextmenu", function(e){
+            e.preventDefault();
+        }, false);
+        //手安裝click事件
+        $id('hand').addEventListener('click', function(e){
+            //更換滑鼠指標圖案
+            document.querySelector('.role_info').style.cursor ="url('img/game/cursor3.png'),auto";
+            //在動物身上裝上按滑鼠事件 按了會臉紅
+            document.querySelector('.info_pic img').addEventListener('mousedown', function(e){
+                this.style.transition = '1.5s';
+                console.log(e.clientX, e.clientY);
+                if(sessionStorage['my_animal_name']!='小丸子'){
+                    this.style.filter = 'hue-rotate(290deg)';
+                }
+                setTimeout(function(){
+                    animalWalking('faceBrush');
+                },500);
+
+            })
+            //安裝按右鍵取消滑鼠指標圖案的事件
+            document.querySelector('.role_info').addEventListener('mousedown', function(e){
+                if(e.button==2){
+                    document.querySelector('.role_info').style.cursor ="url(''),auto";
+                }
+            });
+        });
+        //安裝雲朵click 顯示食物選單事件
+        $que('.food_menu')[0].style.opacity = 0;
+        $que('.cloud2')[0].addEventListener('click', function(){
+            this.style.display='block';
+            this.style.opacity = 0;
+            $que('.food_menu')[0].style.opacity = 1;
+            $que('.cloud1 p')[0].innerHTML = `園長也不知的~秘密餵食區`;
+            $que('.cloud1 p')[0].style.color='red';
+        });
+        //按外面區域就取消食物選單
+        $que('body')[0].addEventListener('mousedown', function(e){
+            if(e.button==2){
+                $que('.food_menu')[0].style.opacity = 0;
+                $que('.cloud2')[0].style.opacity = 1;
+                $que('.cloud1 p')[0].innerHTML = ``;
+            }
+        });
+
+        //Slider
+        $cls('arrowLeft')[0].addEventListener('click', sliderLeft);
+        $cls('arrowRight')[0].addEventListener('click', sliderRight);
+        //地圖指標安裝事件
+        $cls('forest_pointer')[0].addEventListener('click', pointerToMap);
+        $cls('desert_pointer')[0].addEventListener('click', pointerToMap);
+        $cls('mountain_pointer')[0].addEventListener('click', pointerToMap);
+
+        $que(".info_pic img")[0].addEventListener('click', function(){animalWalking('firstTime');});
+
+        let enterGame=document.querySelectorAll('.playing_window p');
+        let closeBtn = document.getElementById('game_closeBtn');
+        closeBtn.addEventListener('click', closeIntro);
+        let gameIntro =document.getElementsByClassName('btn_c_nextpage')[0];
+        gameIntro.addEventListener('click', showIntro );
+        let introWindow = document.getElementsByClassName('game_intro_window')[0];
+            introWindow.style.display="none";
+        $cls('forest_pointer')[0].classList.add('pointer_shaking');
+        $cls('forest_pointer')[0].style.filter ="hue-rotate(180deg)";
+        //Slider初始狀態
+        if(window.innerWidth>=768){
+            x="-5%"; y= "25%";  z= "55%";
+            for(var i=0; i<$cls('playing_window').length; i++){
+                enterGame[i].style.display="none";                
+                $cls('playing_window')[i].addEventListener('click', picClicked);
+                $cls('playing_window')[i].style.left = i*30 - 5+ '%';
+                    if($cls('playing_window')[i].style.left== x){ 
+                        $cls('playing_window')[i].style.zIndex = 2; 
+                        $cls('playing_window')[i].classList.add('normalScale');
+                        $cls('playing_window')[i].classList.remove('scaleUp');
+                    }
+                    if($cls('playing_window')[i].style.left== y){ 
+                        $cls('playing_window')[i].style.zIndex = 4;
+                        $cls('playing_window')[i].classList.remove('normalScale'); 
+                        $cls('playing_window')[i].classList.add('scaleUp');
+                        enterGame[i].style.display="block";
+                    }
+                    if($cls('playing_window')[i].style.left == z){ 
+                        $cls('playing_window')[i].style.zIndex = 2; 
+                        $cls('playing_window')[i].classList.add('normalScale');
+                        $cls('playing_window')[i].classList.remove('scaleUp');
+                    }
+            }
+        }else if(window.innerWidth<=767){
+            for(var i=0; i<$cls('playing_window').length; i++){
+                $cls('playing_window')[i].style.zIndex = i;
+            } 
+        }
+        
+    }
+    
+    window.addEventListener('load', doFirst);
+
+    window.addEventListener('resize',function(){
+        if(window.innerWidth<=767){
+            for(var i=0; i<$cls('playing_window').length; i++){
+                $cls('playing_window')[i].style.zIndex = i;
+                $cls('playing_window')[i].style.left = 0;
+            }
+        }else{
+            x="-5%"; y= "25%";  z= "55%";
+            for(var i=0; i<$cls('playing_window').length; i++){
+                $cls('playing_window')[i].addEventListener('click', picClicked);
+                $cls('playing_window')[i].style.left = i*30 - 5+ '%';
+                    if($cls('playing_window')[i].style.left== x){ 
+                        $cls('playing_window')[i].style.zIndex = 2; 
+                        $cls('playing_window')[i].classList.add('normalScale');
+                        $cls('playing_window')[i].classList.remove('scaleUp');
+                    }
+                    if($cls('playing_window')[i].style.left== y){ 
+                        $cls('playing_window')[i].style.zIndex = 4;
+                        $cls('playing_window')[i].classList.remove('normalScale'); 
+                        $cls('playing_window')[i].classList.add('scaleUp');
+                    }
+                    if($cls('playing_window')[i].style.left == z){ 
+                        $cls('playing_window')[i].style.zIndex = 2; 
+                        $cls('playing_window')[i].classList.add('normalScale');
+                        $cls('playing_window')[i].classList.remove('scaleUp');
+                    }
+            }
+        }
+    });
+    
+    window.addEventListener('scroll',rankFadeIn);
+
+</script>
+    
+</body>
+</html>

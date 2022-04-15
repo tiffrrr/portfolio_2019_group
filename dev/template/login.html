@@ -1,0 +1,91 @@
+
+<section id="login_gary" class="login_gary">
+    <div class="login_box">
+        <div id="login_del" class="login_del"></div>
+        <p class="login_box_title">會員登入</p>
+        <form action="#">
+            <p> 帳號：<input type="text" placeholder="請輸入帳號" id='user_id' name="user_id"></p>
+            <p> 密碼：<input type="password" placeholder="請輸入密碼" id='user_psw' name="user_psw"> </p>
+        </form>
+        <button class="btn_cloud" id='login_btn'> 登入<span class="btn_cloudeffect"></span>
+            <span class="btn_cloudeffect"></span>
+            <span class="btn_cloudeffect"></span>
+            <span class="btn_cloudeffect"></span></button>
+        <a id="registered" href="#">立即註冊</a> <a id="forgetPsw" href="#">忘記密碼</a>
+    </div>
+</section>
+
+
+
+
+
+
+<section id="registered_gary" class="registered_gary">
+    <div class="registered_box">
+            <div id="registered_del" class="registered_del"></div>
+        <p class="login_box_title">會員註冊</p>
+        <form action="#" id="myForm">
+            <p> 
+                會員帳號：
+                <input  @change="idErrMsg" type="text" v-model="id"  placeholder="最大長度：10*" maxlength="10">
+                <br><span class="msg">{{idMsg}}</span>
+            </p>
+
+            
+            <p>
+                會員密碼：
+                <input type="password" v-model="psw"  placeholder="最大長度：10" maxlength="10"> 
+                </p>
+            <p> 
+                確認密碼：
+                <input type="password" v-model="pswConfirm"  placeholder="確認密碼*"><br>
+                <span class="msg">{{pswConfirmErrMsg}}</span>
+            </p>
+            <p> 選擇提示語： 
+                <select v-model="qsn">
+                <option value="" >--請選擇--</option>
+                <option v-for="qsn in qsns">{{qsn.hint_no+"."+qsn.hint_question}}</option>
+            </select><br>
+            </p>
+            <p>輸入答案：<input v-model="hint" type="text" name="hint" placeholder="密碼提示答案*"></p>
+        </form>
+        <button class="btn_cloud" id="register_finish" @click="submit">完成<span class="btn_cloudeffect"></span>
+            <span class="btn_cloudeffect"></span>
+            <span class="btn_cloudeffect"></span>
+            <span class="btn_cloudeffect"></span></button>
+        <a href="#" class="backLogin">返回登入</a> 
+    </div>
+</section>
+
+
+
+
+
+<section  class="forgetPsw_gary" id="forgetPsw_gary">
+    <div class="forgetPsw_box">
+        <div id="forgetPsw_del" class="forgetPsw_del"></div>
+        <p class="forgetPsw_box_title">{{title}}</p>
+        <form action="#">
+            <p v-if="!qsn"> 帳號：<input v-model="id" @input="idMsg=''" type="text" placeholder="請輸入帳號"></p>
+            <p v-if="!qsn" class="msg"> {{idMsg}}</p>
+            <p v-if="qsn && !result">{{qsn}}</p>
+            <p v-if="qsn && !result"  @input="ansMsg=''"> 答案：<input v-model="ans" type="text" placeholder="請輸入答案"> </p>
+            <p v-if="qsn && !result" class="msg">{{ansMsg}}</p>
+            <p v-if="result && !done"> 重設密碼<input v-model="psw" type="password" placeholder="請輸入密碼"> </p>
+            <p v-if="result && !done"> 確認密碼<input v-model="pswCheck" type="password" placeholder="請再次輸入密碼"><span class="msg">{{pswMsg}}</span> </p>
+            <p v-if="done">{{done}}</p>
+        </form>
+        <button v-if="!done" @click="getQsn" class="btn_cloud" id='login_btn'> {{btn}}<span class="btn_cloudeffect"></span>
+            <span class="btn_cloudeffect"></span>
+            <span class="btn_cloudeffect"></span>
+            <span class="btn_cloudeffect"></span></button>
+            <a href="#" class="backLogin" >返回登入</a> 
+    </div>
+</section>
+
+
+
+
+
+<script>
+</script>
